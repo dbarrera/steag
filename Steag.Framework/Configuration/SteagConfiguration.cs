@@ -20,5 +20,18 @@ namespace Steag.Framework.Configuration
                 this["ConnectionStringKey"] = value;
             }
         }
+
+        [ConfigurationProperty("MappingSource", IsRequired = true)]
+        public string MappingSource
+        {
+            get
+            {
+                return (string)this["MappingSource"];
+            }
+            set
+            {
+                this["MappingSource"] = value;
+            }
+        }
     }
 }
