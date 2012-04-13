@@ -59,6 +59,14 @@
     <None Include="steag.snk" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Steag.Business\Steag.Business.csproj">
+      <Project>{2DDAEC45-9EE1-4FBD-80A5-C5ABADC21C18}</Project>
+      <Name>Steag.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Steag.Data\Steag.Data.csproj">
+      <Project>{70DF53BA-F2A9-4954-9222-8F23533333D6}</Project>
+      <Name>Steag.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Steag.Framework\Steag.Framework.csproj">
       <Project>{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}</Project>
       <Name>Steag.Framework</Name>

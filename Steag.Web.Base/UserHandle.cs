@@ -18,15 +18,20 @@ namespace Steag.Web.Base
             {
                 var user = HttpContext.Current.Session[USER_SESSION_IDENTITY];
                 if (Equals(user, null))
-                    user = new User();
+                    user = CreateDefaultUser();
 
                 return (typeof(User).IsAssignableFrom(user.GetType())) ?
-                    user as User : new User();
+                    user as User : CreateDefaultUser();
             }
             set
             {
                 HttpContext.Current.Session[USER_SESSION_IDENTITY] = value;
             }
+        }
+
+        private User CreateDefaultUser()
+        {
+            return new User(0, 0, "Guest");
         }
 
         private UserHandle()

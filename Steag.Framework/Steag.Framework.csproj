@@ -52,6 +52,11 @@
     <Compile Include="Caching\CacheFactory.cs" />
     <Compile Include="Caching\ICache.cs" />
     <Compile Include="Caching\ICacheFactory.cs" />
+    <Compile Include="Configuration\SteagConfiguration.cs" />
+    <Compile Include="Event\EventDispatcher.cs" />
+    <Compile Include="Event\EventListener.cs" />
+    <Compile Include="Event\IEventListener.cs" />
+    <Compile Include="IIdentifiable.cs" />
     <Compile Include="Model\PageSecurity\Page.cs" />
     <Compile Include="Model\PageSecurity\UserRolePage.cs" />
     <Compile Include="Model\UserAccount.cs" />
@@ -65,9 +70,7 @@
   <ItemGroup>
     <None Include="steag.snk" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

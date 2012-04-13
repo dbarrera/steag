@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handler\ISystemAccessHandler.cs" />
     <Compile Include="LogicBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Handler\SystemAccessHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Steag.Data\Steag.Data.csproj">

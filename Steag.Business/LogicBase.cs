@@ -10,6 +10,21 @@ namespace Steag.Business
     {
         public virtual User CurrentUser { get; protected set; }
 
+        private Framework.Event.EventDispatcher EventDispatcher
+        {
+            get { return Framework.Event.EventDispatcher.Current; }
+        }
+
+        protected void RaiseEvent(string eventName, EventArgs e)
+        {
+            EventDispatcher.RaiseEvent(eventName, this, e);
+        }
+
+        protected void RaiseEvent(string eventName, object sender, EventArgs e)
+        {
+            EventDispatcher.RaiseEvent(eventName, sender, e);
+        }
+
         protected LogicBase(User user)
         {
             CurrentUser = user;
