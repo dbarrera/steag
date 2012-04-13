@@ -46,8 +46,15 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CryptoTest.cs" />
+    <Compile Include="Caching\CacheFactoryTest.cs" />
+    <Compile Include="Caching\CacheTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Steag.Framework\Steag.Framework.csproj">
+      <Project>{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}</Project>
+      <Name>Steag.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
