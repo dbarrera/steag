@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001.Framework", "001.Framework", "{CFA3D724-6874-4185-830E-83C91CB38BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Steag.Framework", "..\Unit.Tests\Test.Steag.Framework\Test.Steag.Framework.csproj", "{22818020-8544-42B1-9C3E-3535C25C05F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002.Data", "002.Data", "{EC7DE407-E2E1-46DB-9DC2-266AD0267F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Steag.Data", "..\Unit.Tests\Test.Steag.Data\Test.Steag.Data.csproj", "{28676976-C18D-432E-A760-A8AC24746E31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003.Business", "003.Business", "{10C72261-8A84-48DC-A146-07B83DC8634D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Steag.Business", "..\Unit.Tests\Test.Steag.Business\Test.Steag.Business.csproj", "{560BF3E1-F9D8-4F10-9009-55BE65344FAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "004.Web.Base", "004.Web.Base", "{7E76B029-A478-4668-A98D-5A5CB849E777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Steag.Web.Base", "..\Unit.Tests\Test.Steag.Web.Base\Test.Steag.Web.Base.csproj", "{489A59DD-5722-4393-A625-657B524905E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005.Web.Presentation", "005.Web.Presentation", "{8CA35CA8-228A-4372-A4C8-C21C1ED3115E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Steag.Web.Presentation.Security", "..\Unit.Tests\Test.Steag.Web.Presentation.Security\Test.Steag.Web.Presentation.Security.csproj", "{CCF2F6A8-9619-4AEC-8EF3-3942847AA595}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28676976-C18D-432E-A760-A8AC24746E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28676976-C18D-432E-A760-A8AC24746E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28676976-C18D-432E-A760-A8AC24746E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28676976-C18D-432E-A760-A8AC24746E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560BF3E1-F9D8-4F10-9009-55BE65344FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560BF3E1-F9D8-4F10-9009-55BE65344FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560BF3E1-F9D8-4F10-9009-55BE65344FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560BF3E1-F9D8-4F10-9009-55BE65344FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489A59DD-5722-4393-A625-657B524905E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489A59DD-5722-4393-A625-657B524905E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489A59DD-5722-4393-A625-657B524905E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489A59DD-5722-4393-A625-657B524905E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF2F6A8-9619-4AEC-8EF3-3942847AA595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF2F6A8-9619-4AEC-8EF3-3942847AA595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF2F6A8-9619-4AEC-8EF3-3942847AA595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF2F6A8-9619-4AEC-8EF3-3942847AA595}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22818020-8544-42B1-9C3E-3535C25C05F5} = {CFA3D724-6874-4185-830E-83C91CB38BDF}
+		{28676976-C18D-432E-A760-A8AC24746E31} = {EC7DE407-E2E1-46DB-9DC2-266AD0267F60}
+		{560BF3E1-F9D8-4F10-9009-55BE65344FAC} = {10C72261-8A84-48DC-A146-07B83DC8634D}
+		{489A59DD-5722-4393-A625-657B524905E9} = {7E76B029-A478-4668-A98D-5A5CB849E777}
+		{CCF2F6A8-9619-4AEC-8EF3-3942847AA595} = {8CA35CA8-228A-4372-A4C8-C21C1ED3115E}
+	EndGlobalSection
+EndGlobal

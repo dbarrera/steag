@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steag.Framework", "..\Steag.Framework\Steag.Framework.csproj", "{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Steag.Framework", "..\Unit.Tests\Test.Steag.Framework\Test.Steag.Framework.csproj", "{22818020-8544-42B1-9C3E-3535C25C05F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "009.Test", "009.Test", "{45059C31-56CA-491D-9EBD-BE9B39DC3BC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001.Framework", "001.Framework", "{052C3761-A60D-4AC3-9018-266A0E651096}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF840BA3-ADC7-4C80-940F-A3C9D09A372F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22818020-8544-42B1-9C3E-3535C25C05F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22818020-8544-42B1-9C3E-3535C25C05F5} = {45059C31-56CA-491D-9EBD-BE9B39DC3BC9}
+		{DF840BA3-ADC7-4C80-940F-A3C9D09A372F} = {052C3761-A60D-4AC3-9018-266A0E651096}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001.Database", "001.Database", "{63822E7A-2CC6-4D08-80B1-BBCE2184A831}"
+EndProject
+Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "Steag.Database", "..\Steag.Database\Steag.Database.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002.Deployment", "002.Deployment", "{309060DE-46EC-442E-AD42-5E3CE387065C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Steag.Deployment", "..\Steag.Deployment\Steag.Deployment.vdproj", "{94E1A345-4BDF-4853-B43B-ABB9E969AA82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{94E1A345-4BDF-4853-B43B-ABB9E969AA82}.Debug|Any CPU.ActiveCfg = Debug
+		{94E1A345-4BDF-4853-B43B-ABB9E969AA82}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3} = {63822E7A-2CC6-4D08-80B1-BBCE2184A831}
+		{94E1A345-4BDF-4853-B43B-ABB9E969AA82} = {309060DE-46EC-442E-AD42-5E3CE387065C}
+	EndGlobalSection
+EndGlobal
