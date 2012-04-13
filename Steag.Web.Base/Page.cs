@@ -20,13 +20,18 @@ namespace Steag.Web.Base
             get { return GetType().FullName; }
         }
 
+        protected virtual bool RequiresAuthentication { get; set; }
+
         protected override void OnPreInit(EventArgs e)
         {
-            var hasAccess = SystemAccessHandler.Current.HasAccess(CurrentUser.RoleID, Identity);
-            if(!hasAccess)
+            if (RequiresAuthentication)
             {
-                //Redirect page
+                var hasAccess = SystemAccessHandler.Current.HasAccess(CurrentUser.RoleID, Identity);
+                if (!hasAccess)
+                {
+                    //Redirect page
 
+                }
             }
             base.OnPreInit(e);
         }

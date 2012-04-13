@@ -32,6 +32,10 @@ namespace Steag.Framework.Event
             Listeners.Add(listener);
         }
 
+        private EventDispatcher()
+        {
+        }
+
         public static EventDispatcher Current
         {
             get { _eventDispatcher = _eventDispatcher ?? new EventDispatcher();
