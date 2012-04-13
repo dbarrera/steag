@@ -6,8 +6,8 @@ using Steag.Framework.Authentication;
 
 namespace Steag.Web.Base
 {
-    public abstract class Page : System.Web.UI.Page
+    public interface IUserHandle
     {
-        public virtual User CurrentUser { get; protected set; }
+        User CurrentUser { get; set; }
     }
 }
