@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Steag.Security.DEVELOPMENT" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+  <Table Name="dbo.SystemSettings" Member="SystemSettings">
+    <Type Name="Steag.Framework.Model.SystemSettings">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccount" Member="UserAccount">
+    <Type Name="Steag.Framework.Model.UserAccount">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="UserName" Member="UserName" Storage="_UserName" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Member="Password" Storage="_Password" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Salt" Member="Salt" Storage="_Salt" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UserRoleID" Member="UserRoleID" Storage="_UserRoleID" DbType="BigInt" />
+      <Column Name="FirstName" Member="FirstName" Storage="_FirstName" DbType="NVarChar(250)" />
+      <Column Name="MiddleName" Member="MiddleName" Storage="_MiddleName" DbType="NVarChar(250)" />
+      <Column Name="LastName" Member="LastName" Storage="_LastName" DbType="NVarChar(250)" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRole" Member="UserRole">
+    <Type Name="Steag.Framework.Model.UserRole">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="RoleCode" Member="RoleCode" Storage="_RoleCode" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(250)" />
+      <Column Name="IsTemplate" Member="IsTemplate" Storage="_IsTemplate" DbType="Bit NOT NULL" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRoleWebPage" Member="UserRoleWebPage">
+    <Type Name="Steag.Framework.Model.UserRoleWebPage">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" AutoSync="Always" />
+      <Column Name="UserRoleID" Member="UserRoleID" Storage="_UserRoleID" DbType="BigInt NOT NULL" IsPrimaryKey="true" />
+      <Column Name="WebPageID" Member="WebPageID" Storage="_WebPageID" DbType="BigInt NOT NULL" IsPrimaryKey="true" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModififed" Member="DateModififed" Storage="_DateModififed" DbType="DateTime" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebPageRegistry" Member="WebPageRegistry">
+    <Type Name="Steag.Framework.Model.WebPageRegistry">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="PageIdentity" Member="PageIdentity" Storage="_PageIdentity" DbType="NVarChar(250)" />
+      <Column Name="FullName" Member="FullName" Storage="_FullName" DbType="NVarChar(250)" />
+      <Column Name="AssemblyName" Member="AssemblyName" Storage="_AssemblyName" DbType="NVarChar(250)" />
+      <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(250)" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+    </Type>
+  </Table>
+</Database>

@@ -6,7 +6,7 @@ using Steag.Framework.Authentication;
 
 namespace Steag.Business
 {
-    public abstract class LogicBase
+    public abstract class LogicBase: IDisposable
     {
         public virtual User CurrentUser { get; protected set; }
 
@@ -28,6 +28,17 @@ namespace Steag.Business
         protected LogicBase(User user)
         {
             CurrentUser = user;
+        }
+
+        protected LogicBase()
+            :this(User.Default)
+        { 
+            
+        }
+
+        public void Dispose()
+        {
+            CurrentUser = null;
         }
     }
 }

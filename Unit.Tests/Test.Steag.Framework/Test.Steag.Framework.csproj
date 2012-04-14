@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Caching\CacheFactoryTest.cs" />
     <Compile Include="Caching\CacheTest.cs" />
+    <Compile Include="Security\MD5CryptoTest.cs" />
     <Compile Include="Event\EventDispatcherTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

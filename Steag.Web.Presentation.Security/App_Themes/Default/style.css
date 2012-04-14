@@ -1,0 +1,64 @@
+﻿body
+{
+    font-family: Arial, Tahoma, Serif;
+    font-size: 12px;
+}
+
+
+/* Label */
+.label-font
+{
+    font-weight: bold;    
+}
+
+/* Width */
+.width-80
+{
+    width: 80px;    
+}
+.width-120
+{
+    width: 120px;
+}
+.width-150
+{
+    width: 150px;
+}
+
+.width-200
+{
+    width: 200px;
+}
+
+/* Height */
+.height-30
+{
+    height: 30px;    
+}
+/* Positioning Classes */
+.fleft
+{
+    float: left;    
+}
+
+.fright
+{
+    float: right;    
+}
+.clear
+{
+    clear: both;    
+}
+.clearleft
+{
+    clear: left;
+}
+.clearright
+{
+    clear: right;    
+}
+
+.align-center
+{
+    text-align: center;
+}

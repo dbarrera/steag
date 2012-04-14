@@ -7,17 +7,43 @@ namespace Steag.Framework.Authentication
 {
     public class User
     {
+        private static User _user;
+
         public Int64 RoleID { get; private set; }
 
         public Int64 UserID { get; private set; }
 
         public string UserName { get; private set; }
 
-        public User(Int64 roleID, Int64 userID, string userName)
+        public string EmailAddress { get; private set; }
+
+        public string Theme { get; set; }
+
+        public string WebTheme { get; set; }
+
+        public User(Int64 roleID, 
+            Int64 userID, 
+            string userName,
+            string emailAddress,
+            string theme,
+            string webtheme)
         {
             RoleID = roleID;
             UserID = userID;
             UserName = userName;
+            EmailAddress = emailAddress;
+            Theme = theme;
+            WebTheme = webtheme;
+        }
+
+        
+        public static User Default
+        {
+            get
+            {
+                _user = _user ?? new User(0, 0, string.Empty, string.Empty, string.Empty, string.Empty);
+                return _user;
+            }
         }
     }
 }

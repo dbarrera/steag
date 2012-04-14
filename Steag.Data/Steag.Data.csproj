@@ -50,9 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="DataContext.designer.cs" />
     <Compile Include="DataSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDataSession.cs" />
+    <Compile Include="UserAccountDataSession.cs" />
+    <Compile Include="UserRoleAcccessDataSession.cs" />
+    <Compile Include="UserRoleDataSession.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="steag.snk" />

@@ -138,4 +138,9 @@
   <ItemGroup>
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\UserAccount.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+  </ItemGroup>
 </Project>
