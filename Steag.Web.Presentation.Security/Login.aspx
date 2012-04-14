@@ -10,10 +10,25 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div id="divLogin">        
-        <steag:LoginControl ID="loginControl" runat="server" OnLogin="loginControl_Login" />
+    <div id="divLoginHeader">
+        <div id="divLoginLogo" class="fleft">
+            <img src="images/steaglogo-small.png" alt="STEAG Stage Power Inc." />
+        </div>
+        <div id="divLoginCaption" class="fleft padding-left-30 padding-top-30">
+            <span class="heading-1">
+                Security Management System
+            </span>
+        </div>
     </div>
-    </form>
+    <div class="clear"></div>
+    <div class="margin-auto width-500">
+        <form id="formMain" runat="server">
+        <div id="divLogin" class="align-center">        
+            <steag:LoginControl ID="loginControl" runat="server" OnLogin="loginControl_Login" />
+        </div>
+        </form>
+    </div>
+    <div id="divLoginFooter">
+    </div>
 </body>
 </html>

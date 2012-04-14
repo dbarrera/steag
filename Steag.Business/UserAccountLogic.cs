@@ -12,39 +12,61 @@ namespace Steag.Business
     public class UserAccountLogic: LogicBase
     {
         public event EventHandler UserNotFound;
+        public event EventHandler InvalidPassword;
+
+        private UserAccountDataSession _userAccountDataSession;
+
+        protected override DataSession CurrentDataSession
+        {
+            get { return DataSession; }
+        }
+
+        private UserAccountDataSession DataSession
+        {
+            get
+            {
+                _userAccountDataSession = _userAccountDataSession ?? new UserAccountDataSession();
+                return _userAccountDataSession;
+            }
+        }
 
         public UserAccount GetUserByID(long id)
         {
-            using (var userAccountSession = new UserAccountDataSession())
-            {
-                return userAccountSession.GetUserByID(id);
-            }
+            return DataSession.GetUserByID(id);
         }
 
         public UserAccount GetUserByUserName(string userName)
         {
-            using (var userAccountSession = new UserAccountDataSession())
-            {
-                return userAccountSession.GetUserByUserName(userName);
-            }
+            return DataSession.GetUserByUserName(userName);
         }
 
         public IEnumerable<UserAccount> GetAllUsers()
         {
-            using (var userAccountSession = new UserAccountDataSession())
-            {
-                return userAccountSession.GetAllUsers();
-            }
+            
+            return DataSession.GetAllUsers();
         }
 
         public IEnumerable<UserAccount> GetAllUsers(bool isActive)
-        {
-            using (var userAccountSession = new UserAccountDataSession())
-            {
-                return userAccountSession.GetAllUsers(isActive);
-            }
+        {            
+            return DataSession.GetAllUsers(isActive);   
         }
 
+        public void AddUserAccount(UserAccount userAccount)
+        {
+            if (Equals(userAccount, null))
+                throw new ArgumentNullException("userAccount");
+
+            DataSession.AddUserAccount(userAccount);
+        }
+
+        public void AddUserAccounts(IEnumerable<UserAccount> accounts)
+        {
+            if (Equals(accounts, null))
+                throw new ArgumentNullException("accounts");
+
+            DataSession.AddUserAccounts(accounts);
+        }
+        
         public bool AllowLogin(string username, string password, ref User user)
         {
             var userAccount = GetUserByUserName(username);
@@ -74,7 +96,11 @@ namespace Steag.Business
 
                 return true;
             }
-            return false;        
+
+            if (!Equals(InvalidPassword, null))
+                InvalidPassword.Invoke(this, EventArgs.Empty);
+            
+            return false;
         }
     }
 }

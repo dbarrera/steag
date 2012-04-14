@@ -9,12 +9,14 @@ using System.IO;
 using System.Configuration;
 using Steag.Framework.Configuration;
 using Steag.Framework.Authentication;
+using System.Reflection;
 
 namespace Steag.Data
 {
     public abstract class DataSession: IDisposable
     {
         private DataContext _dataContext;
+        private static XmlMappingSource _xmlMappingSource;
 
         public virtual User CurrentUser { get; protected set; }
 
@@ -32,6 +34,31 @@ namespace Steag.Data
         {
             EventDispatcher.RaiseEvent(eventName, sender, e);    
         }
+        
+        private static XmlMappingSource MappingSource
+        {
+            get
+            { 
+                if(Equals(_xmlMappingSource, null))
+                {
+                    var mappingSourceFile = SteagConfiguration.Default.MappingSource;
+
+                    if (!File.Exists(mappingSourceFile))
+                        throw new FileNotFoundException(mappingSourceFile);
+
+                    using (var stream = new FileStream(mappingSourceFile, FileMode.Open))
+                    {
+                        _xmlMappingSource = XmlMappingSource.FromStream(stream);
+                    }
+                }
+                return _xmlMappingSource;
+            }
+        }
+
+        public static void ResetMappingSource()
+        {
+            _xmlMappingSource = null;
+        }
 
         protected internal virtual DataContext DataContext
         {
@@ -46,15 +73,7 @@ namespace Steag.Data
                     if(Equals(connectionString, null))
                         throw new Exception(string.Format("Unknown Connection String {0}", connectionStringKey));
 
-                    var mappingSourceFile = SteagConfiguration.Default.MappingSource;
-
-                    if(!File.Exists(mappingSourceFile))
-                        throw new FileNotFoundException(mappingSourceFile);
-
-                    var mappingSource = XmlMappingSource.FromStream(File.Open(mappingSourceFile, FileMode.Open));
-
                     var providerName = connectionString.ProviderName;
-
                     var factory = DbProviderFactories.GetFactory(providerName);
 
                     if(Equals(factory, null))
@@ -63,7 +82,7 @@ namespace Steag.Data
                     var dbConnection = factory.CreateConnection();
                     dbConnection.ConnectionString = connectionString.ConnectionString;
                     
-                    _dataContext = new DataContext(dbConnection, mappingSource);
+                    _dataContext = new DataContext(dbConnection, MappingSource);
                 }
                 return _dataContext;
             }

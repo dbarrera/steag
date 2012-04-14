@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control.cs" />
+    <Compile Include="Control.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="IUserHandle.cs" />
     <Compile Include="Page.cs">
       <SubType>ASPXCodeBehind</SubType>

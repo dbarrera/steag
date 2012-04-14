@@ -15,7 +15,16 @@ namespace Steag.Web.Presentation.Security
     {
         public override string Description
         {
-            get { return "STEAG Security System Login Page"; }
+            get { return "STEAG Security Management System Login Page"; }
+        }
+
+        private string ReturnUrl
+        {
+            get
+            {
+                var returnUrl = Request.QueryString["returnUrl"];
+                return Equals(returnUrl, null) ? string.Empty : returnUrl;
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,27 +34,38 @@ namespace Steag.Web.Presentation.Security
 
         protected void loginControl_Login(object sender, EventArgs e)
         {
+            RaiseEvent("Login.aspx#Login", sender, e);
+
             var args = e as LoginEventArgs;
             User user = null;
 
             var userAccountLogic = new UserAccountLogic();
             userAccountLogic.UserNotFound += UserNotFound;
+            userAccountLogic.InvalidPassword += InvalidPassword;
+
             var allowLogin = userAccountLogic.AllowLogin(args.UserName, args.Password, ref user);
 
             if (allowLogin)
             {
                 UserHandle.Current.CurrentUser = user;
-                //Response.Redirect("");
-            }
-            else
-            { 
-                //Invalid Password
+                RaiseEvent("Login.aspx#LoginSuccessful", sender, e);
+                if (!string.IsNullOrEmpty(ReturnUrl))
+                    Response.Redirect(ReturnUrl);
+                Response.Redirect("Dashboard.aspx");
             }
         }
 
         protected void UserNotFound(object sender, EventArgs e)
-        { 
-            // UserNotFound
+        {
+            RaiseEvent("Login.aspx#UserNotFound", sender, e);
+            loginControl.SetErrorMessage("User not found");
+            
+        }
+
+        protected void InvalidPassword(object sender, EventArgs e)
+        {
+            RaiseEvent("Login.aspx#InvalidPassword", sender, e);
+            loginControl.SetErrorMessage("Invalid Password");
         }
     }
 }

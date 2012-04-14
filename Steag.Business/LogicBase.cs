@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Steag.Data;
 using Steag.Framework.Authentication;
 
 namespace Steag.Business
@@ -25,6 +26,8 @@ namespace Steag.Business
             EventDispatcher.RaiseEvent(eventName, sender, e);
         }
 
+        protected abstract DataSession CurrentDataSession { get; }
+
         protected LogicBase(User user)
         {
             CurrentUser = user;
@@ -39,6 +42,11 @@ namespace Steag.Business
         public void Dispose()
         {
             CurrentUser = null;
+        }
+
+        public virtual void SubmitChanges()
+        {
+            CurrentDataSession.SubmitChanges();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Steag.Web.Presentation.Security.Controls
         public string Password { get; set; }
     }
 
-    public partial class LoginControl : System.Web.UI.UserControl
+    public partial class LoginControl : Steag.Web.Base.Control
     {
         public event EventHandler Login;
 
@@ -30,6 +30,11 @@ namespace Steag.Web.Presentation.Security.Controls
                 var args = new LoginEventArgs { UserName = txtUserName.Text, Password = txtPassword.Text };
                 Login.Invoke(sender, args);
             }
+        }
+
+        public void SetErrorMessage(string message)
+        {
+            txtError.Text = message;
         }
     }
 }

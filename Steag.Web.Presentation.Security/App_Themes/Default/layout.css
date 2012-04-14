@@ -1,0 +1,20 @@
+﻿#divLoginFooter
+{
+    height: 100px;
+    background:  #b2c2ca;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#divLoginHeader
+{
+    height: 170px;  
+    margin: auto;
+    border-bottom: 1px solid #aaa;
+    margin: 0 0 30px 0;  
+}
+#divLoginCaption
+{
+    margin: auto;
+}
