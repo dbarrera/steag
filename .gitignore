@@ -292,3 +292,10 @@
 /Steag.Web.Presentation.Security/bin/System.Xml.Linq.dll
 /Steag.Web.Presentation.Security/bin/System.Xml.dll
 /Steag.Web.Presentation.Security/bin/System.dll
+/1Build/build.log
+/1Build/bin/Web
+/bin/Moq.dll
+/bin/Test.Steag.Data.dll
+/bin/Test.Steag.Data.pdb
+/bin/Test.Steag.Framework.dll
+/bin/Test.Steag.Framework.pdb

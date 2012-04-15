@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002.Deployment", "002.Deplo
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Steag.Deployment", "..\Steag.Deployment\Steag.Deployment.vdproj", "{94E1A345-4BDF-4853-B43B-ABB9E969AA82}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003.Installers", "003.Installers", "{29A970E6-9C38-4635-BBC8-279FCD708F16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

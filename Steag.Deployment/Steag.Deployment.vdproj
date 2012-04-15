@@ -31,6 +31,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -47,6 +55,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -98,20 +114,56 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{4C6F2762-250E-4E7D-82DC-65B304135C98}:_1CB4A89197F24297B17E3B1C597ECD0C"
+                    "{4C6F2762-250E-4E7D-82DC-65B304135C98}:_1A27EFE236AF4A608DF290836679EF2D"
                     {
                     "AllowScriptSourceAccess" = "11:FALSE"
-                    "AllowReadAccess" = "11:FALSE"
+                    "AllowReadAccess" = "11:TRUE"
                     "AllowWriteAccess" = "11:FALSE"
                     "AllowDirectoryBrowse" = "11:FALSE"
                     "LogVisits" = "11:TRUE"
                     "Index" = "11:TRUE"
                     "ExecutePermissions" = "3:2"
-                    "Name" = "8:bin"
+                    "Name" = "8:Configuration"
                     "AlwaysCreate" = "11:TRUE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_20F1F860C8D547D68C7A030771F4420C"
+                    "Property" = "8:_C49A3AEDE87844C0B82C77AC1875CAE0"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{4C6F2762-250E-4E7D-82DC-65B304135C98}:_A0ED98BD116F48CF91930CE8AA446D54"
+                    {
+                    "AllowScriptSourceAccess" = "11:FALSE"
+                    "AllowReadAccess" = "11:TRUE"
+                    "AllowWriteAccess" = "11:FALSE"
+                    "AllowDirectoryBrowse" = "11:FALSE"
+                    "LogVisits" = "11:TRUE"
+                    "Index" = "11:TRUE"
+                    "ExecutePermissions" = "3:2"
+                    "Name" = "8:Database"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_7ECF1605AE634D2C930CB3F411E6486F"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{4C6F2762-250E-4E7D-82DC-65B304135C98}:_ECD3BF913EE94D77B453274B0BF29442"
+                    {
+                    "AllowScriptSourceAccess" = "11:FALSE"
+                    "AllowReadAccess" = "11:TRUE"
+                    "AllowWriteAccess" = "11:FALSE"
+                    "AllowDirectoryBrowse" = "11:FALSE"
+                    "LogVisits" = "11:TRUE"
+                    "Index" = "11:TRUE"
+                    "ExecutePermissions" = "3:2"
+                    "Name" = "8:Web"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_A69F7A62156B4FBC8AEF3C1CA747D908"
                         "Folders"
                         {
                         }
