@@ -24,7 +24,7 @@ namespace Steag.Web.Presentation.Security.Base
             }
         }
 
-        protected virtual IDataSource GetDefaultDataSource()
+        protected virtual IDataSource NewDataSource()
         {
             return DataManager.CreateDefaultDataSource();
         }

@@ -41,7 +41,7 @@ namespace Steag.Web.Presentation.Security
             User user = null;
             bool allowLogin;          
             
-            using (var dataSource = GetDefaultDataSource())
+            using (var dataSource = NewDataSource())
             {                
                 using (var userAccountLogic = new UserAccountLogic(dataSource))
                 {
