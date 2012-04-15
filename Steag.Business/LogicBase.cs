@@ -7,10 +7,14 @@ using Steag.Framework.Authentication;
 
 namespace Steag.Business
 {
-    public abstract class LogicBase: IDisposable
+    public abstract class LogicBase: ILogic, IDisposable
     {
-        public virtual User CurrentUser { get; protected set; }
 
+        #region CurrentUser
+        public virtual User CurrentUser { get; protected set; }
+        #endregion
+
+        #region EventHandling
         private Framework.Event.EventDispatcher EventDispatcher
         {
             get { return Framework.Event.EventDispatcher.Current; }
@@ -25,28 +29,51 @@ namespace Steag.Business
         {
             EventDispatcher.RaiseEvent(eventName, sender, e);
         }
+        #endregion
 
-        protected abstract DataSession CurrentDataSession { get; }
+        #region CurrentDataSession
+        protected abstract IDataSession CurrentDataSession { get; }
+        #endregion
 
-        protected LogicBase(User user)
+        #region CurrentDataSource
+        protected virtual IDataSource CurrentDataSource { get; set; }
+        #endregion
+
+        #region Constructor
+        protected LogicBase(User user, IDataSource dataSource)
         {
             CurrentUser = user;
+            CurrentDataSource = dataSource;
         }
 
-        protected LogicBase()
-            :this(User.Default)
-        { 
-            
+        protected LogicBase(IDataSource dataSource)
+            :this(User.Default, dataSource)
+        {             
         }
+        #endregion
 
+        #region Dispose
         public void Dispose()
         {
-            CurrentUser = null;
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
-        public virtual void SubmitChanges()
+        protected virtual void Dispose(bool disposing)
         {
-            CurrentDataSession.SubmitChanges();
+            if (disposing)
+            {
+                if (!Equals(CurrentUser, null))
+                {
+                    CurrentUser.Dispose();
+                    CurrentUser = null;
+                }
+
+                if(!Equals(CurrentDataSession, null))
+                    CurrentDataSession.Dispose();
+            }
         }
+        #endregion
+
     }
 }

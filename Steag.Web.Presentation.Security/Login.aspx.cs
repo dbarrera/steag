@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Steag.Web.Base;
 using Steag.Web.Presentation.Security.Controls;
 using Steag.Business;
+using Steag.Data;
 using Steag.Framework.Authentication;
 
 namespace Steag.Web.Presentation.Security
@@ -33,17 +34,23 @@ namespace Steag.Web.Presentation.Security
         }
 
         protected void loginControl_Login(object sender, EventArgs e)
-        {
+        {    
             RaiseEvent("Login.aspx#Login", sender, e);
 
             var args = e as LoginEventArgs;
             User user = null;
+            bool allowLogin;          
+            
+            using (var dataSource = GetDefaultDataSource())
+            {                
+                using (var userAccountLogic = new UserAccountLogic(dataSource))
+                {
+                    userAccountLogic.UserNotFound += UserNotFound;
+                    userAccountLogic.InvalidPassword += InvalidPassword;
 
-            var userAccountLogic = new UserAccountLogic();
-            userAccountLogic.UserNotFound += UserNotFound;
-            userAccountLogic.InvalidPassword += InvalidPassword;
-
-            var allowLogin = userAccountLogic.AllowLogin(args.UserName, args.Password, ref user);
+                    allowLogin = userAccountLogic.AllowLogin(args.UserName, args.Password, ref user);
+                }
+            }
 
             if (allowLogin)
             {

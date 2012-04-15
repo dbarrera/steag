@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Steag.Framework.Authentication
 {
-    public class User
+    public class User: IDisposable
     {
         private static User _user;
 
@@ -43,6 +43,23 @@ namespace Steag.Framework.Authentication
             {
                 _user = _user ?? new User(0, 0, string.Empty, string.Empty, string.Empty, string.Empty);
                 return _user;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if(disposing)
+            {
+                UserName = null;
+                EmailAddress = null;
+                Theme = null;
+                WebTheme = null;
             }
         }
     }

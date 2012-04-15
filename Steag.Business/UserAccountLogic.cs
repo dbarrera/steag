@@ -11,12 +11,15 @@ namespace Steag.Business
 {
     public class UserAccountLogic: LogicBase
     {
+        #region Events
         public event EventHandler UserNotFound;
         public event EventHandler InvalidPassword;
+        #endregion
 
+        #region DataSession
         private UserAccountDataSession _userAccountDataSession;
 
-        protected override DataSession CurrentDataSession
+        protected override IDataSession CurrentDataSession
         {
             get { return DataSession; }
         }
@@ -25,10 +28,25 @@ namespace Steag.Business
         {
             get
             {
-                _userAccountDataSession = _userAccountDataSession ?? new UserAccountDataSession();
+                _userAccountDataSession = _userAccountDataSession ?? new UserAccountDataSession(CurrentUser, CurrentDataSource);
                 return _userAccountDataSession;
             }
         }
+        #endregion
+
+        #region Constructor
+        public UserAccountLogic(User user, IDataSource dataSource)
+            :base(user, dataSource)
+        {
+        }
+
+        public UserAccountLogic(IDataSource dataSource)
+            :base(dataSource)
+        {             
+        }
+        #endregion
+
+        #region Methods
 
         public UserAccount GetUserByID(long id)
         {
@@ -102,5 +120,7 @@ namespace Steag.Business
             
             return false;
         }
+
+        #endregion
     }
 }

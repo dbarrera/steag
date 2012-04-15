@@ -8,9 +8,16 @@ namespace Steag.Data
 {
     public class UserRoleDataSession: DataSession
     {
-        public UserRoleDataSession(User user)
-            : base(user)
+
+        public UserRoleDataSession(IDataSource dataSource)
+            : base(dataSource)
         { 
+        }
+
+        public UserRoleDataSession(User user, IDataSource dataSource)
+            : base(user, dataSource)
+        { 
+        
         }
     }
 }

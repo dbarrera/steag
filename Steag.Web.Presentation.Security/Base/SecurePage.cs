@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Steag.Web.Base;
+using Steag.Data;
 
 namespace Steag.Web.Presentation.Security.Base
 {
@@ -26,6 +27,10 @@ namespace Steag.Web.Presentation.Security.Base
             }
         }
 
+        protected virtual IDataSource GetDefaultDataSource()
+        {
+            return DataManager.CreateDefaultDataSource();
+        }
         
     }
 }

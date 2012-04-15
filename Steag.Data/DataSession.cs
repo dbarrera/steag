@@ -13,13 +13,28 @@ using System.Reflection;
 
 namespace Steag.Data
 {
-    public abstract class DataSession: IDisposable
+    public abstract class DataSession: IDataSession, IDisposable
     {
-        private DataContext _dataContext;
-        private static XmlMappingSource _xmlMappingSource;
 
+        #region DataSource
+        protected virtual IDataSource DataSource { get; set; }
+
+        internal DataSource CurrentDataSource
+        {
+            get
+            { 
+                if(!DataSource.GetType().IsAssignableFrom(typeof(DataSource)))
+                    throw new Exception("");
+                return DataSource as DataSource;
+            }
+        }
+        #endregion
+
+        #region CurrentUser
         public virtual User CurrentUser { get; protected set; }
+        #endregion
 
+        #region EventHandling
         private Framework.Event.EventDispatcher EventDispatcher
         {
             get { return Framework.Event.EventDispatcher.Current; }
@@ -34,79 +49,63 @@ namespace Steag.Data
         {
             EventDispatcher.RaiseEvent(eventName, sender, e);    
         }
-        
-        private static XmlMappingSource MappingSource
+        #endregion
+
+        #region CurrentDataContext
+        protected virtual System.Data.Linq.DataContext CurrentDataContext
         {
             get
-            { 
-                if(Equals(_xmlMappingSource, null))
-                {
-                    var mappingSourceFile = SteagConfiguration.Default.MappingSource;
-
-                    if (!File.Exists(mappingSourceFile))
-                        throw new FileNotFoundException(mappingSourceFile);
-
-                    using (var stream = new FileStream(mappingSourceFile, FileMode.Open))
-                    {
-                        _xmlMappingSource = XmlMappingSource.FromStream(stream);
-                    }
-                }
-                return _xmlMappingSource;
+            {
+                if(Equals(CurrentDataSource, null))
+                    throw new Exception("CurrentDataSource is not initialized");
+                return CurrentDataSource.DataContext;
             }
         }
+        #endregion
 
-        public static void ResetMappingSource()
-        {
-            _xmlMappingSource = null;
-        }
-
+        #region DataContext
         protected internal virtual DataContext DataContext
         {
             get
             {
-                if(Equals(_dataContext, null))
-                {                   
-                    var connectionStringKey = SteagConfiguration.Default.ConnectionStringKey;
-                    
-                    var connectionString = ConfigurationManager.ConnectionStrings[connectionStringKey];
-
-                    if(Equals(connectionString, null))
-                        throw new Exception(string.Format("Unknown Connection String {0}", connectionStringKey));
-
-                    var providerName = connectionString.ProviderName;
-                    var factory = DbProviderFactories.GetFactory(providerName);
-
-                    if(Equals(factory, null))
-                        throw new Exception(string.Format("Unknown Provider {0}", providerName));
-
-                    var dbConnection = factory.CreateConnection();
-                    dbConnection.ConnectionString = connectionString.ConnectionString;
-                    
-                    _dataContext = new DataContext(dbConnection, MappingSource);
-                }
-                return _dataContext;
+                if (typeof(DataContext).IsAssignableFrom(CurrentDataSource.DataContext.GetType()))
+                    return CurrentDataSource.DataContext as DataContext;
+                throw new Exception("This DataSession's CurrentDataSource is not compatible source.");
             }
         }
+        #endregion
 
-        protected DataSession(User user)
+        #region Constructor
+        protected DataSession(User user, IDataSource dataSource)
         {
+            DataSource = dataSource;
             CurrentUser = user;
+        }        
+
+         protected DataSession(IDataSource dataSource)
+            : this(User.Default, dataSource)
+        { 
+        }
+        #endregion
+
+        #region Dispose
+         public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);                 
         }
 
-        protected DataSession()
+        protected virtual void Dispose(bool disposing)
         {
-            CurrentUser = User.Default;
+            if (disposing)
+            {
+                if (!Equals(CurrentUser, null))
+                {
+                    CurrentUser.Dispose();
+                    CurrentUser = null;
+                }                
+            }
         }
-
-        public void SubmitChanges()
-        {
-            DataContext.SubmitChanges();
-        }
-
-        public void Dispose()
-        {
-            CurrentUser = null;
-            _dataContext = null;            
-        }
+        #endregion
     }
 }

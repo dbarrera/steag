@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Steag.Data;
 
 namespace Steag.Web.Presentation.Security.Base
 {
@@ -21,6 +22,11 @@ namespace Steag.Web.Presentation.Security.Base
             {
                 CurrentUser.WebTheme = value;
             }
+        }
+
+        protected virtual IDataSource GetDefaultDataSource()
+        {
+            return DataManager.CreateDefaultDataSource();
         }
     }
 }

@@ -9,15 +9,16 @@ using Steag.Framework.Authentication;
 namespace Steag.Data
 {
     public class UserAccountDataSession: DataSession
-    {
-        public UserAccountDataSession(User user)
-            :base(user)
-        {                      
+    {       
+
+        public UserAccountDataSession(IDataSource dataSource)
+            : base(dataSource)
+        { 
         }
 
-        public UserAccountDataSession()
-            : base()
-        { 
+        public UserAccountDataSession(User user, IDataSource dataSource)
+            :base(user, dataSource)
+        {
         }
 
         public UserAccount GetUserByID(long id)
