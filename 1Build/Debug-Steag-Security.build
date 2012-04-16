@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<project name="STEAG Security Management System" default="deploy.build" basedir=".">
+	<!-- Properties -->
+	<property name="nant.settings.currentframework" value="net-4.0" />
+	<property name="build.configuration" value="debug" />   
+	<include buildfile="Default.Properties" />
+	<!-- End of Properties -->
+	
+	<!-- Targets -->
+	
+	<target name="init" failonerror="true">
+		<echo message="Build Script Starting" />
+		<delete dir="${publish.dir}" if="${directory::exists('${publish.dir}')}" />
+		<mkdir dir="${publish.dir}" />		
+		<call target="build.web" />		
+	</target>
+	
+	<target name="copy.build.files" depends="init" failonerror="true">
+		<copy todir="${publish.web.dir}\bin" includeemptydirs="true" overwrite="false" verbose="true">
+			<fileset basedir="${assemblies.dir}">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>	
+		<copy todir="${publish.web.dir}" includeemptydirs="true" overwrite="true" verbose="true">  
+			<fileset basedir="${presentation.path}">
+				<include name="**/*.*" />  
+			</fileset>
+		</copy>			
+	</target>
+	
+	<target name="deploy.build" depends="copy.build.files" failonerror="true">
+		<echo message="Build Completed" />
+	</target>  
+	
+	<target name="build.web" failonerror="true">
+		<foreach item="File" property="filename" >
+			<in>
+				<items>
+					<include name="${solution.dir}\00*.sln" />
+				</items>
+			</in>
+			<do>
+				<echo message="Building ${filename}" />
+				<exec program="${MSBuildPath}">
+					<arg line="/p:Configuration=${build.configuration}"/>
+					<arg line='"${filename}"' />
+				</exec>
+			</do>
+		</foreach> 
+	</target>
+	
+	<target name="build.test" depends="init" failonerror="true">
+		<copy todir="${tests.output.dir}" includeemptydirs="true" overwrite="false" verbose="true">
+			<fileset basedir="${assemblies.dir}">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>	
+		
+		<exec program="${MSBuildPath}">
+				<arg line="/p:Configuration=${build.configuration}"/>
+				<arg line='"${solution.dir}\800.Steag.Unit.Test.sln"' />
+		</exec>
+		
+		<echo message="Running Steag.Framework Test" />
+		<exec program="${MSTestPath}">
+			<arg line='"/testcontainer:${tests.output.dir}\Test.Steag.Framework.dll"' />
+		</exec>
+		<call target="pause" />	
+		
+		<echo message="Running Steag.Data Test" />
+		<exec program="${MSTestPath}">
+			<arg line='"/testcontainer:${tests.output.dir}\Test.Steag.Data.dll"' />
+		</exec>
+		<call target="pause" />	
+		
+		<echo message="Running Steag.Business Test" />
+		<exec program="${MSTestPath}">
+			<arg line='"/testcontainer:${tests.output.dir}\Test.Steag.Business.dll"' />
+		</exec>
+		<call target="pause" />	
+		
+		<echo message="Running Steag.Web.Base Test" />
+		<exec program="${MSTestPath}">
+			<arg line='"/testcontainer:${tests.output.dir}\Test.Steag.Web.Base.dll"' />
+		</exec>
+		<call target="pause" />	
+		
+		<echo message="Running Steag.Web.Presentation.Security Test" />
+		<exec program="${MSTestPath}">
+			<arg line='"/testcontainer:${tests.output.dir}\Test.Steag.Web.Presentation.Security.dll"' />
+		</exec>
+		<call target="pause" />	
+	</target>
+	
+	<target name="build.database" failonerror="true">
+	</target>
+	
+	<target name="pause" failonerror="true">
+		<exec program="pause" />
+	</target>
+	<!-- End of Targets -->
+	
+</project>

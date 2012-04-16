@@ -8,5 +8,7 @@ namespace Steag.Framework
     public interface IIdentifiable
     {
         string Identity { get; }
+
+        string Description { get; }
     }
 }

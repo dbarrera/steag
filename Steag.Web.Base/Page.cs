@@ -20,6 +20,8 @@ namespace Steag.Web.Base
             get { return GetType().FullName; }
         }
 
+        public abstract string Description { get; }
+
         protected virtual bool RequiresAuthentication { get; set; }
 
         protected override void OnPreInit(EventArgs e)
