@@ -10,7 +10,8 @@ namespace Steag.Web.Base
     public class UserHandle: IUserHandle
     {
         private const string USER_SESSION_IDENTITY = "86E5C2B4-A3F9-4694-8126-EBB6C7702DFF";
-        private static IUserHandle _userHandle;
+        private const string DEFAULT_THEME = "Default";
+        private static IUserHandle _userHandle;        
 
         public User CurrentUser
         {             
@@ -31,7 +32,7 @@ namespace Steag.Web.Base
 
         private User CreateDefaultUser()
         {
-            return new User(0, 0, "Guest");
+            return new User(0, 0, "Guest", "guest@steag.com", string.Empty, DEFAULT_THEME);
         }
 
         private UserHandle()

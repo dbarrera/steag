@@ -9,15 +9,32 @@ using System.IO;
 using System.Configuration;
 using Steag.Framework.Configuration;
 using Steag.Framework.Authentication;
+using System.Reflection;
 
 namespace Steag.Data
 {
-    public abstract class DataSession
+    public abstract class DataSession: IDataSession, IDisposable
     {
-        private DataContext _dataContext;
 
+        #region DataSource
+        protected virtual IDataSource DataSource { get; set; }
+
+        internal DataSource CurrentDataSource
+        {
+            get
+            { 
+                if(!DataSource.GetType().IsAssignableFrom(typeof(DataSource)))
+                    throw new Exception("");
+                return DataSource as DataSource;
+            }
+        }
+        #endregion
+
+        #region CurrentUser
         public virtual User CurrentUser { get; protected set; }
+        #endregion
 
+        #region EventHandling
         private Framework.Event.EventDispatcher EventDispatcher
         {
             get { return Framework.Event.EventDispatcher.Current; }
@@ -32,56 +49,63 @@ namespace Steag.Data
         {
             EventDispatcher.RaiseEvent(eventName, sender, e);    
         }
+        #endregion
 
-        protected virtual System.Data.Linq.DataContext DataContext
+        #region CurrentDataContext
+        protected virtual System.Data.Linq.DataContext CurrentDataContext
         {
             get
             {
-                if(Equals(_dataContext, null))
-                {
-                    var section = System.Configuration.ConfigurationManager.GetSection("Steag.Security");
-
-                    if(Equals(section, null))
-                        throw new Exception("Config Section Steag.Security is not implemented");
-
-                    if(!typeof(SteagConfiguration).IsAssignableFrom(section.GetType()))
-                        throw new Exception(string.Format("Congif Section Steag.Security is not of type {0}", typeof(SteagConfiguration).FullName));
-
-                    var configSection = section as SteagConfiguration;
-                    
-                    var connectionStringKey = configSection.ConnectionStringKey;
-                    
-                    var connectionString = ConfigurationManager.ConnectionStrings[connectionStringKey];
-
-                    if(Equals(connectionString, null))
-                        throw new Exception(string.Format("Unknown Connection String {0}", connectionStringKey));
-
-                    var mappingSourceFile = configSection.MappingSource;
-
-                    if(!File.Exists(mappingSourceFile))
-                        throw new FileNotFoundException(mappingSourceFile);
-
-                    var mappingSource = XmlMappingSource.FromStream(File.Open(mappingSourceFile, FileMode.Open));
-
-                    var providerName = connectionString.ProviderName;
-
-                    var factory = DbProviderFactories.GetFactory(providerName);
-
-                    if(Equals(factory, null))
-                        throw new Exception(string.Format("Unknown Provider {0}", providerName));
-
-                    var dbConnection = factory.CreateConnection();
-                    dbConnection.ConnectionString = connectionString.ConnectionString;
-
-                    _dataContext = new DataContext(dbConnection, mappingSource);
-                }
-                return _dataContext;
+                if(Equals(CurrentDataSource, null))
+                    throw new Exception("CurrentDataSource is not initialized");
+                return CurrentDataSource.DataContext;
             }
         }
+        #endregion
 
-        protected DataSession(User user)
+        #region DataContext
+        protected internal virtual DataContext DataContext
         {
-            CurrentUser = user;
+            get
+            {
+                if (typeof(DataContext).IsAssignableFrom(CurrentDataSource.DataContext.GetType()))
+                    return CurrentDataSource.DataContext as DataContext;
+                throw new Exception("This DataSession's CurrentDataSource is not compatible source.");
+            }
         }
+        #endregion
+
+        #region Constructor
+        protected DataSession(User user, IDataSource dataSource)
+        {
+            DataSource = dataSource;
+            CurrentUser = user;
+        }        
+
+         protected DataSession(IDataSource dataSource)
+            : this(User.Default, dataSource)
+        { 
+        }
+        #endregion
+
+        #region Dispose
+         public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);                 
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (!Equals(CurrentUser, null))
+                {
+                    CurrentUser.Dispose();
+                    CurrentUser = null;
+                }                
+            }
+        }
+        #endregion
     }
 }

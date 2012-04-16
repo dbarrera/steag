@@ -6,7 +6,7 @@ using Steag.Framework.Authentication;
 
 namespace Steag.Web.Base
 {
-    public abstract class Control: System.Web.UI.Control
+    public abstract class Control: System.Web.UI.UserControl
     {
         public virtual User CurrentUser { get; protected set; }
 

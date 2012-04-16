@@ -38,21 +38,50 @@
     <AssemblyOriginatorKeyFile>steag.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataCachingManager.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="DataContext.designer.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="DataSession.cs" />
+    <Compile Include="DataSource.cs" />
+    <Compile Include="IDataCachingManager.cs" />
+    <Compile Include="IDataSession.cs" />
+    <Compile Include="IDataSource.cs" />
+    <Compile Include="Mapping\IMappingSource.cs" />
+    <Compile Include="Mapping\MappingSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDataSession.cs" />
+    <Compile Include="UserAccountDataSession.cs" />
+    <Compile Include="UserRoleAcccessDataSession.cs" />
+    <Compile Include="UserRoleDataSession.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="steag.snk" />
