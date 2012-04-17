@@ -24,7 +24,7 @@
     <PreviousProjectVersion>4.0</PreviousProjectVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>D:\1Projects\Microsoft.NET\steag\Database</OutputPath>
+    <OutputPath>..\Database</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TargetConnectionString>
     </TargetConnectionString>
@@ -39,7 +39,7 @@
     <DBSchemaFileName>STEAG.Security.Management.PRODUCTION</DBSchemaFileName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>D:\1Projects\Microsoft.NET\steag\Database</OutputPath>
+    <OutputPath>..\Database</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TargetConnectionString>
     </TargetConnectionString>
@@ -119,6 +119,7 @@
     <Folder Include="Schema Objects\Database Level Objects\Storage\Full Text Catalogs\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Functions\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Schemes\" />
+    <Folder Include="Scripts\Post-Deployment\DefaultData" />
   </ItemGroup>
   <ItemGroup>
     <PropertiesFile Include="Properties\Database.sqlsettings">
@@ -144,5 +145,22 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\UserAccount.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\UserRole.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\SystemSettings.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Scripts\Post-Deployment\DefaultData\UserRoleDefault.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Post-Deployment\DefaultData\UserAccountDefault.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Post-Deployment\DefaultData\SystemSettingsDefault.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>
