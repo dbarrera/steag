@@ -18,7 +18,10 @@ namespace Steag.Web.Presentation.Security
         {
             // Code that runs on application startup
             var listener = new LogWriterTraceListener();
-            TraceUtil.AddListener(listener);            
+            TraceUtil.AddListener(listener);
+
+            var systemAccessHandler = new Authentication.SteagSystemAccessHandler();
+            Steag.Business.Handler.SystemAccessHandler.SetCurrentSystemAccessHandler(systemAccessHandler);
         }
 
         void Application_End(object sender, EventArgs e)
