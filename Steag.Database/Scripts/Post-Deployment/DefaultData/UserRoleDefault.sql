@@ -1,0 +1,11 @@
+﻿-- =============================================
+-- Script Template
+-- =============================================
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('ADMINISTRATOR TEMPLATE','STEAG Security System Administrator Template',1,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('GATE 1 SECURITY TEMPLATE','Gate 1 Security Personnel Template',1,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('GATE 2 SECURITY TEMPLATE','Gate 2 Security Personnel Template',1,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('EMPLOYEE TEMPLATE','STEAG Employee Template',1,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Administrator','STEAG Security System Administrator',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Gate 1 Security','Gate 1 Security Personnel',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Gate 2 Security','Gate 2 Security Personnel',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
+INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Employee','STEAG Employee',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')

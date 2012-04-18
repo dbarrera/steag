@@ -108,6 +108,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\SteagSystemAccessHandler.cs" />
     <Compile Include="Base\RegularPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
