@@ -11,16 +11,17 @@
 }
 #loginControl-header
 {
-    background: #b2c2ca;
+    background: url('images/login-header-background.png');
     width: 100%;  
-    padding: 5px 10px 5px 10px;
-    border: 1px solid #b2c2ca;   
+    padding: 8px 10px 2px 10px;
+    border: 1px solid #b2c2ca; 
+    border-bottom: 0px;  
 }
 #loginControl-header span
 {
     font-size: 14px;
     font-weight: bold;
-    color: #fff;
+    color: #323030;
 }
 .login-row-height
 {

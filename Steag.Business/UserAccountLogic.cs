@@ -84,7 +84,16 @@ namespace Steag.Business
 
             DataSession.AddUserAccounts(accounts);
         }
-        
+
+        public void DeleteUserAccount(UserAccount account)
+        {
+
+            if (Equals(account, null))
+                throw new ArgumentNullException("account");
+
+            DataSession.DeleteUserAccount(account);
+        }
+
         public bool AllowLogin(string username, string password, ref User user)
         {
             var userAccount = GetUserByUserName(username);

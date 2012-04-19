@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Steag.Web.Presentation.Security {
+namespace Steag.Web.Presentation.Security.Controls {
     
     
-    public partial class Login {
+    public partial class LogonControl {
         
         /// <summary>
-        /// loginControl control.
+        /// txtUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.LoginControl loginControl;
+        protected global::System.Web.UI.WebControls.Literal txtUser;
     }
 }

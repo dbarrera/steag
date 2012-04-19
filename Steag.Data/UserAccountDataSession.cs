@@ -50,5 +50,11 @@ namespace Steag.Data
         {
             DataContext.UserAccount.InsertAllOnSubmit(accounts);
         }
+
+        public void DeleteUserAccount(UserAccount account)
+        {
+            DataContext.UserAccount.DeleteOnSubmit(account);
+        }
+
     }
 }

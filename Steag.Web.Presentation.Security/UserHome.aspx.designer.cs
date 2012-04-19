@@ -10,15 +10,6 @@
 namespace Steag.Web.Presentation.Security {
     
     
-    public partial class Login {
-        
-        /// <summary>
-        /// loginControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.LoginControl loginControl;
+    public partial class UserHome {
     }
 }

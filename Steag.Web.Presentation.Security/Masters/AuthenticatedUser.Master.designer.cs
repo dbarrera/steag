@@ -10,7 +10,16 @@
 namespace Steag.Web.Presentation.Security.Masters {
     
     
-    public partial class Default {
+    public partial class AuthenticatedUser {
+        
+        /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
         /// title control.
@@ -31,6 +40,15 @@ namespace Steag.Web.Presentation.Security.Masters {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// logonControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Steag.Web.Presentation.Security.Controls.LogonControl logonControl;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Steag.Web.Presentation.Security.Masters {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Menu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Menu;
         
         /// <summary>
         /// MainContent control.

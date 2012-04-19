@@ -11,7 +11,7 @@ namespace Steag.Web.Presentation.Security.Controls
 {
 
 
-    public partial class AuthenticatedUserMenuControl
+    public partial class Guard2MenuControl
     {
     }
 }

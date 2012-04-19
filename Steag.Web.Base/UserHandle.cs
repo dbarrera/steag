@@ -35,6 +35,11 @@ namespace Steag.Web.Base
             return new User(0, 0, "Guest", "guest@steag.com", string.Empty, DEFAULT_THEME);
         }
 
+        public void ExpireUser()
+        {
+            CurrentUser = null;
+        }
+
         private UserHandle()
         {
         }
