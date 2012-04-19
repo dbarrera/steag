@@ -9,6 +9,36 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[SystemSettings]
+           ([CompanyName]
+           ,[Address1]
+           ,[Address2]
+           ,[Country]
+           ,[State]
+           ,[PostalCode]
+		   ,[FiscalYear]
+           ,[LastSARFID]
+           ,[LastEACSID]
+           ,[LastECDAPID]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('STEAG State Power Inc.',
+           NULL,
+           NULL,
+           NULL,
+           NULL,
+           NULL,
+		   0,
+           0,
+           0,
+           0,
+           1,
+           GETDATE(),
+           1,
+           GETDATE())
 -- =============================================
 -- Script Template
 -- =============================================
