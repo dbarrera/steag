@@ -8,7 +8,10 @@ namespace Steag.Web.Base
 {
     public abstract class Control: System.Web.UI.UserControl
     {
-        public virtual User CurrentUser { get; protected set; }
+        public virtual User CurrentUser
+        {
+            get { return UserHandle.Current.CurrentUser; }
+        }
 
         private Framework.Event.EventDispatcher EventDispatcher
         {

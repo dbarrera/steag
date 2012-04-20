@@ -13,15 +13,6 @@ namespace Steag.Web.Presentation.Security {
     public partial class Login {
         
         /// <summary>
-        /// formMain control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formMain;
-        
-        /// <summary>
         /// loginControl control.
         /// </summary>
         /// <remarks>

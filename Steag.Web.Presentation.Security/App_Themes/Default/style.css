@@ -2,6 +2,9 @@
 {
     font-family: Arial, Tahoma, Serif;
     font-size: 12px;
+    margin: 0;
+    padding: 0;
+    background: #b2c2ca;
 }
 
 
@@ -33,7 +36,10 @@
 {
     width: 500px;
 }
-
+.width-960
+{
+    width: 960px;    
+}
 /* Height */
 .height-30
 {
@@ -42,6 +48,18 @@
 .height-20
 {
     height: 20px;
+}
+.height-39
+{
+    height: 39px;
+}
+.min-height-300
+{
+    min-height: 300px;    
+}
+.min-height-400
+{
+    min-height: 400px;    
 }
 /* Positioning Classes */
 .fleft
@@ -78,7 +96,10 @@
 {
     text-align: right;
 }
-
+.padding-0
+{
+    padding: 0;    
+}
 .padding-20
 {
     padding: 20px 20px 20px 20px;    
@@ -87,6 +108,10 @@
 .padding-10
 {
     padding: 10px 10px 10px 10px;
+}
+.padding-top-10
+{
+    padding-top: 10px;    
 }
 .padding-top-30
 {
@@ -112,7 +137,7 @@
 
 .heading-1
 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     color: #323030;
 }
@@ -120,4 +145,12 @@
 .error-text
 {
     color: Red;
+}
+
+.btn-action
+{
+    background: #b2c2ca;
+    color: #133e82;
+    font-weight: bold;    
+    height: 25px;
 }

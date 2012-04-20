@@ -32,7 +32,7 @@
             &nbsp;
             </div>
             <div class="fleft align-right width-200">
-                <asp:Button ID="btnLogin" runat="server" Text="Log In" 
+                <asp:Button ID="btnLogin" class="btn-action" runat="server" Text="Log In" 
                     onclick="btnLogin_Click" />
             </div>
         </div>

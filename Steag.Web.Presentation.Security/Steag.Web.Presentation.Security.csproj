@@ -94,21 +94,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
+    <Content Include="App_Themes\Default\images\login-header-background.png" />
+    <Content Include="App_Themes\Default\images\menu-background.png" />
+    <Content Include="App_Themes\Default\images\menu-separator.png" />
     <Content Include="App_Themes\Default\layout.css" />
     <Content Include="App_Themes\Default\login-control.css" />
     <Content Include="App_Themes\Default\style.css" />
     <Content Include="Configuration\datasource-schema.xml" />
-    <Content Include="Controls\AuthenticatedUserMenuControl.ascx" />
+    <Content Include="Controls\AdminMenuControl.ascx" />
+    <Content Include="Controls\Guard1MenuControl.ascx" />
+    <Content Include="Controls\Guard2MenuControl.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
+    <Content Include="Controls\LogonControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\steaglogo-medium.png" />
     <Content Include="images\steaglogo-small.png" />
     <Content Include="Login.aspx" />
+<<<<<<< HEAD
     <Content Include="TestForm.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+=======
+    <Content Include="Logout.aspx" />
+    <Content Include="UserHome.aspx" />
+    <Content Include="Web.config" />
+>>>>>>> 656b9ba31b798d6ce6e3c0bd172a97826ddcc4fc
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -117,19 +130,43 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Authentication\SteagSystemAccessHandler.cs" />
+    <Compile Include="Base\MasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Base\RegularPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Base\SecurePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\AuthenticatedUserMenuControl.ascx.cs">
-      <DependentUpon>AuthenticatedUserMenuControl.ascx</DependentUpon>
+    <Compile Include="Controls\AdminMenuControl.ascx.cs">
+      <DependentUpon>AdminMenuControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\AuthenticatedUserMenuControl.ascx.designer.cs">
-      <DependentUpon>AuthenticatedUserMenuControl.ascx</DependentUpon>
+    <Compile Include="Controls\AdminMenuControl.ascx.designer.cs">
+      <DependentUpon>AdminMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Guard1MenuControl.ascx.cs">
+      <DependentUpon>Guard1MenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Guard1MenuControl.ascx.designer.cs">
+      <DependentUpon>Guard1MenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Guard2MenuControl.ascx.cs">
+      <DependentUpon>Guard2MenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Guard2MenuControl.ascx.designer.cs">
+      <DependentUpon>Guard2MenuControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\LoginControl.ascx.cs">
       <DependentUpon>LoginControl.ascx</DependentUpon>
@@ -137,6 +174,16 @@
     </Compile>
     <Compile Include="Controls\LoginControl.ascx.designer.cs">
       <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LogonControl.ascx.cs">
+      <DependentUpon>LogonControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LogonControl.ascx.designer.cs">
+      <DependentUpon>LogonControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -155,6 +202,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\AuthenticatedUser.Master.cs">
+      <DependentUpon>AuthenticatedUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\AuthenticatedUser.Master.designer.cs">
+      <DependentUpon>AuthenticatedUser.Master</DependentUpon>
+    </Compile>
     <Compile Include="Masters\Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,12 +224,21 @@
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="TestForm.aspx.cs">
       <DependentUpon>TestForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TestForm.aspx.designer.cs">
       <DependentUpon>TestForm.aspx</DependentUpon>
+=======
+    <Compile Include="UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+>>>>>>> 656b9ba31b798d6ce6e3c0bd172a97826ddcc4fc
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -191,12 +261,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Themes\Dark\" />
-    <Folder Include="App_Themes\Default\images\" />
+    <Folder Include="UserAccount\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Default.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Masters\AuthenticatedUser.Master" />
     <None Include="steag.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

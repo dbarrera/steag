@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyDataSession.cs" />
     <Compile Include="DataCachingManager.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContext.designer.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Mapping\IMappingSource.cs" />
     <Compile Include="Mapping\MappingSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDataSession.cs" />
     <Compile Include="UserAccountDataSession.cs" />
     <Compile Include="UserRoleAcccessDataSession.cs" />
     <Compile Include="UserRoleDataSession.cs" />
