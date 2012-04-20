@@ -30,7 +30,10 @@ namespace Steag.Web.Presentation.Security
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (CurrentUser.RoleID > 0)
+            {
+                Response.Redirect("UserHome.aspx");
+            }
         }
 
         protected void loginControl_Login(object sender, EventArgs e)
@@ -57,8 +60,8 @@ namespace Steag.Web.Presentation.Security
                 UserHandle.Current.CurrentUser = user;
                 RaiseEvent("Login.aspx#LoginSuccessful", sender, e);
                 if (!string.IsNullOrEmpty(ReturnUrl))
-                    Response.Redirect(ReturnUrl);
-                Response.Redirect("Dashboard.aspx");
+                    Response.Redirect(string.Format("{0}",ReturnUrl));
+                Response.Redirect("UserHome.aspx");
             }
         }
 

@@ -1,4 +1,4 @@
-﻿INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
+﻿INSERT INTO [dbo].[UserAccount]
            ([UserName]
            ,[Password]
            ,[Salt]
@@ -27,7 +27,7 @@
            1,
            GETDATE())
 
-INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
+INSERT INTO [dbo].[UserAccount]
            ([UserName]
            ,[Password]
            ,[Salt]
@@ -56,7 +56,7 @@ INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
            1,
            GETDATE())
 
-INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
+INSERT INTO [dbo].[UserAccount]
            ([UserName]
            ,[Password]
            ,[Salt]
@@ -75,6 +75,64 @@ INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
            'fzyjtTarbKBuxvu3eKriYQ==',
            '82AP+PZTRfKLlKVlGayPZb/55SkXvzj6bIVZh3sr9nrFUX7zPcKh2/vUs7vD1IaVt7PrDJjHaAmHdHSjjRrNeg==',
            7,
+           NULL,
+           NULL,
+           NULL,
+           NULL,
+           1,
+           1,
+            GETDATE(),
+           1,
+           GETDATE())
+		   
+INSERT INTO [dbo].[UserAccount]
+           ([UserName]
+           ,[Password]
+           ,[Salt]
+           ,[UserRoleID]
+           ,[FirstName]
+           ,[MiddleName]
+           ,[LastName]
+           ,[EmailAddress]
+           ,[IsActive]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('Employee1',
+           'fzyjtTarbKBuxvu3eKriYQ==',
+           '82AP+PZTRfKLlKVlGayPZb/55SkXvzj6bIVZh3sr9nrFUX7zPcKh2/vUs7vD1IaVt7PrDJjHaAmHdHSjjRrNeg==',
+           8,
+           NULL,
+           NULL,
+           NULL,
+           NULL,
+           1,
+           1,
+            GETDATE(),
+           1,
+           GETDATE())
+		   
+INSERT INTO [dbo].[UserAccount]
+           ([UserName]
+           ,[Password]
+           ,[Salt]
+           ,[UserRoleID]
+           ,[FirstName]
+           ,[MiddleName]
+           ,[LastName]
+           ,[EmailAddress]
+           ,[IsActive]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('Employee2',
+           'fzyjtTarbKBuxvu3eKriYQ==',
+           '82AP+PZTRfKLlKVlGayPZb/55SkXvzj6bIVZh3sr9nrFUX7zPcKh2/vUs7vD1IaVt7PrDJjHaAmHdHSjjRrNeg==',
+           8,
            NULL,
            NULL,
            NULL,

@@ -67,6 +67,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="IUserHandle.cs" />
+    <Compile Include="MasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Page.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
