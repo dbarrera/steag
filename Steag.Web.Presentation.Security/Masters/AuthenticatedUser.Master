@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AuthenticatedUser.master.cs" Inherits="Steag.Web.Presentation.Security.Masters.AuthenticatedUser" %>
+<%@ Register src="../Controls/LogonControl.ascx" tagname="LogonControl" tagprefix="steag" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="header">
+        <div id="header-logo" class="fleft">
+            <img src="images/steaglogo-small.png" alt="STEAG Stage Power Inc." />
+        </div>
+        <div class="fright padding-top-10">
+            <steag:LogonControl runat="server" ID="logonControl" EnableViewState="false"></steag:LogonControl>
+        </div>
+        <div id="system-caption" class="fleft padding-left-30 padding-top-30">
+            <span class="heading-1">
+                Security Management System
+            </span>
+        </div>        
+    </div>    
+    <div id="content-wrapper">   
+        <form id="form1" runat="server">
+            <div id="menu">
+                <asp:ContentPlaceHolder ID="Menu" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div id="content">
+                <div>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </form>        
+    </div>
+    <div id="footer">
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

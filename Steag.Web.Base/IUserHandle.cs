@@ -9,5 +9,7 @@ namespace Steag.Web.Base
     public interface IUserHandle
     {
         User CurrentUser { get; set; }
+
+        void ExpireUser();
     }
 }

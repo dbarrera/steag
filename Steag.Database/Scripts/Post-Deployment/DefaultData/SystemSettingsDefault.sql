@@ -5,6 +5,10 @@
            ,[Country]
            ,[State]
            ,[PostalCode]
+		   ,[FiscalYear]
+           ,[LastSARFID]
+           ,[LastEACSID]
+           ,[LastECDAPID]
            ,[UserCreated]
            ,[DateCreated]
            ,[UserModified]
@@ -16,6 +20,10 @@
            NULL,
            NULL,
            NULL,
+		   0,
+           0,
+           0,
+           0,
            1,
            GETDATE(),
            1,

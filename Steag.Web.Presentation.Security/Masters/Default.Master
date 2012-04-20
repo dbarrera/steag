@@ -4,17 +4,38 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <div id="header">
+        <div id="header-logo" class="fleft">
+            <img src="images/steaglogo-small.png" alt="STEAG Stage Power Inc." />
+        </div>
+        <div id="system-caption" class="fleft padding-left-30 padding-top-30">
+            <span class="heading-1">
+                Security Management System
+            </span>
+        </div>
+    </div>    
+    <div id="content-wrapper">   
+        <div id="content">
+        <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
+            </asp:ContentPlaceHolder>
+        </div>
+        </form>
+        </div>
+    </div>
+    <div id="footer">
+        <asp:ContentPlaceHolder ID="footer" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-    </form>
 </body>
 </html>

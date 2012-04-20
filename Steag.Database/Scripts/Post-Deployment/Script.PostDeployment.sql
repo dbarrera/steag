@@ -9,6 +9,6 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-:r .\DefaultData\SystemSettings.sql
+:r .\DefaultData\SystemSettingsDefault.sql
 :r .\DefaultData\UserRoleDefault.sql
 :r .\DefaultData\UserAccountDefault.sql

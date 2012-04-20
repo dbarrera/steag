@@ -15,7 +15,7 @@ namespace Steag.Web.Base
             get { return UserHandle.Current.CurrentUser; }
         }
 
-        public string Identity
+        public virtual string Identity
         {
             get { return GetType().FullName; }
         }
@@ -31,8 +31,7 @@ namespace Steag.Web.Base
                 var hasAccess = SystemAccessHandler.Current.HasAccess(CurrentUser.RoleID, Identity);
                 if (!hasAccess)
                 {
-                    //Redirect page
-
+                    UserHasNoAccess(CurrentUser);
                 }
             }
             base.OnPreInit(e);
@@ -51,6 +50,11 @@ namespace Steag.Web.Base
         protected void RaiseEvent(string eventName, object sender, EventArgs e)
         {
             EventDispatcher.RaiseEvent(eventName, sender, e);
+        }
+
+        protected virtual void UserHasNoAccess(User user)
+        { 
+        
         }
     }
 }

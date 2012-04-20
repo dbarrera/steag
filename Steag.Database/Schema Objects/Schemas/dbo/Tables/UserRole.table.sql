@@ -18,3 +18,5 @@ GO
 
 ALTER TABLE [dbo].[UserRole] ADD  CONSTRAINT [DF_UserRole_IsTemplate]  DEFAULT ((0)) FOR [IsTemplate]
 GO
+
+
