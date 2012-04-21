@@ -112,16 +112,9 @@
     <Content Include="images\steaglogo-medium.png" />
     <Content Include="images\steaglogo-small.png" />
     <Content Include="Login.aspx" />
-<<<<<<< HEAD
-    <Content Include="TestForm.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-=======
-    <Content Include="Logout.aspx" />
-    <Content Include="UserHome.aspx" />
-    <Content Include="Web.config" />
->>>>>>> 656b9ba31b798d6ce6e3c0bd172a97826ddcc4fc
+	<Content Include="Logout.aspx" />
+	<Content Include="UserHome.aspx" />
+	<Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -224,21 +217,12 @@
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="TestForm.aspx.cs">
-      <DependentUpon>TestForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestForm.aspx.designer.cs">
-      <DependentUpon>TestForm.aspx</DependentUpon>
-=======
-    <Compile Include="UserHome.aspx.cs">
+	<Compile Include="UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserHome.aspx.designer.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
->>>>>>> 656b9ba31b798d6ce6e3c0bd172a97826ddcc4fc
     </Compile>
   </ItemGroup>
   <ItemGroup>
