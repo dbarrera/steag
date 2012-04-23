@@ -107,14 +107,16 @@
     <Content Include="Controls\Guard2MenuControl.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
     <Content Include="Controls\LogonControl.ascx" />
+    <Content Include="Controls\SarfInputControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\steaglogo-medium.png" />
     <Content Include="images\steaglogo-small.png" />
     <Content Include="Login.aspx" />
-	<Content Include="Logout.aspx" />
-	<Content Include="UserHome.aspx" />
-	<Content Include="Web.config" />
+    <Content Include="Logout.aspx" />
+    <Content Include="SarfTest.aspx" />
+    <Content Include="UserHome.aspx" />
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -178,6 +180,13 @@
     <Compile Include="Controls\MenuControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Controls\SarfInputControl.ascx.cs">
+      <DependentUpon>SarfInputControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SarfInputControl.ascx.designer.cs">
+      <DependentUpon>SarfInputControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -217,7 +226,14 @@
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-	<Compile Include="UserHome.aspx.cs">
+    <Compile Include="SarfTest.aspx.cs">
+      <DependentUpon>SarfTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SarfTest.aspx.designer.cs">
+      <DependentUpon>SarfTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

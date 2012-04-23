@@ -79,6 +79,7 @@
     <Compile Include="IDataSource.cs" />
     <Compile Include="Mapping\IMappingSource.cs" />
     <Compile Include="Mapping\MappingSource.cs" />
+    <Compile Include="SarfDataSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDataSession.cs" />
     <Compile Include="UserAccountDataSession.cs" />

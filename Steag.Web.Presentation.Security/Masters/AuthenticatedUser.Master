@@ -6,11 +6,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>
-        <asp:ContentPlaceHolder ID="title" runat="server">
-        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="title" runat="server" />
     </title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
 <body>
     <div id="header">
@@ -29,19 +27,18 @@
     <div id="content-wrapper">   
         <form id="form1" runat="server">
             <div id="menu">
-                <asp:ContentPlaceHolder ID="Menu" runat="server"></asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="Menu" runat="server" />
             </div>
             <div id="content">
                 <div>
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
                 </div>
             </div>
         </form>        
     </div>
     <div id="footer">
-        <asp:ContentPlaceHolder ID="footer" runat="server">
-        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="footer" runat="server" />
     </div>
+    <asp:ContentPlaceHolder ID="last" runat="server" />
 </body>
 </html>
