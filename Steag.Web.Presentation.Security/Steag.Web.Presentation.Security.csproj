@@ -107,6 +107,7 @@
     <Content Include="Controls\Guard2MenuControl.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
     <Content Include="Controls\LogonControl.ascx" />
+    <Content Include="Controls\RadScriptManagerDefault.ascx" />
     <Content Include="Controls\SarfInputControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="Controls\MenuControl.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\RadScriptManagerDefault.ascx.cs">
+      <DependentUpon>RadScriptManagerDefault.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\RadScriptManagerDefault.ascx.designer.cs">
+      <DependentUpon>RadScriptManagerDefault.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\SarfInputControl.ascx.cs">
       <DependentUpon>SarfInputControl.ascx</DependentUpon>

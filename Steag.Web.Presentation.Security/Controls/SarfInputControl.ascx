@@ -26,25 +26,14 @@
     </telerik:RadDatePicker>
 </div>
 <div>
-    <span>Filed by</span>
-
-</div>
-<div>
     <span>Purpose</span>
     <telerik:RadTextBox ID="purposeTextBox" runat="server" TextMode="MultiLine" AutoPostBack="false">
     </telerik:RadTextBox>
 </div>
 <div>
-    <span>SourIP</span>
-</div>
-<div>
     <span>Status</span>
     <telerik:RadTextBox ID="statusTextBox" runat="server" AutoPostBack="false">
     </telerik:RadTextBox>
-</div>
-<div>
-    <span>Approved by</span>
-
 </div>
 <div>
     <span>Date Visited</span>
@@ -55,9 +44,6 @@
             </SpecialDays>
         </Calendar>
     </telerik:RadDatePicker>
-</div>
-<div>
-    <span>Visit verified by</span>
 </div>
 <%--SARFCode - nvarchar(60)
 DateFiled - datetime

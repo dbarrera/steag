@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Steag.Web.Presentation.Security.Controls
 {
-    public partial class SarfInputControl : System.Web.UI.UserControl
+    public partial class SarfInputControl : Steag.Web.Base.Control
     {
         public string SarfCode;
 
