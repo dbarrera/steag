@@ -30,17 +30,11 @@ namespace Steag.Web.Presentation.Security
 
         protected void Page_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-
-
-
-=======
             if (CurrentUser.RoleID > 0)
             {
                 Response.Redirect("UserHome.aspx");
             }
->>>>>>> 656b9ba31b798d6ce6e3c0bd172a97826ddcc4fc
+
         }
 
         protected void loginControl_Login(object sender, EventArgs e)
