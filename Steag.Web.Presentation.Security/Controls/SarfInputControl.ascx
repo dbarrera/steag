@@ -1,11 +1,15 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SarfInputControl.ascx.cs" Inherits="Steag.Web.Presentation.Security.Controls.SarfInputControl" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 
-<div>
-    <span>SARF Code</span>
-    <asp:Literal ID="SarfCodeLiteral" runat="server"></asp:Literal>
+<div class="fleft">
+    <div class="fleft width-80">
+        <span>SARF Code</span>
+    </div>
+    <div class="fleft">
+        <asp:Literal ID="SarfCodeLiteral" runat="server"></asp:Literal>
+    </div>
 </div>
-<div>
+<div class="fleft">
     <span>Date Filed</span>
     <telerik:RadDatePicker ID="dateFiledDatePicker" runat="server">
         <Calendar>
@@ -45,7 +49,8 @@
         </Calendar>
     </telerik:RadDatePicker>
 </div>
-<%--SARFCode - nvarchar(60)
+<%--
+SARFCode - nvarchar(60)
 DateFiled - datetime
 DateOfVisit - datetime
 FiledBy - bigint
@@ -59,4 +64,5 @@ IsActive - bit
 UserCreated - bigint
 DateCreated - datetime
 UserModified - bigint
-DateModified - datetime--%>
+DateModified - datetime
+--%>

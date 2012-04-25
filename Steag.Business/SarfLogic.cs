@@ -29,13 +29,13 @@ namespace Steag.Business
         #endregion
 
         #region Constructor
-        public SarfLogic(User user, IDataSource dataSource)
-            : base(user, dataSource)
+        public SarfLogic(IDataSource dataSource)
+            : base(dataSource)
         {
         }
 
-        public SarfLogic(IDataSource dataSource)
-            : base(dataSource)
+        public SarfLogic(User user, IDataSource dataSource)
+            : base(user, dataSource)
         {
         }
         #endregion

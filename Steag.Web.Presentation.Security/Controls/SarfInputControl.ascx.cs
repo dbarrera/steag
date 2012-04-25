@@ -9,7 +9,7 @@ namespace Steag.Web.Presentation.Security.Controls
 {
     public partial class SarfInputControl : Steag.Web.Base.Control
     {
-        public string SarfCode;
+        public string SarfCode { get; set; }
 
         public SarfInputControl()
         {
