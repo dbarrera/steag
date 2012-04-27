@@ -22,21 +22,21 @@ namespace Steag.Web.Presentation.Security {
         protected global::Steag.Web.Presentation.Security.Controls.RadScriptManagerDefault RadManager;
         
         /// <summary>
-        /// Sarf control.
+        /// SarfControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.SarfInputControl Sarf;
+        protected global::Steag.Web.Presentation.Security.Controls.SarfInputControl SarfControl;
         
         /// <summary>
-        /// addSarfButton control.
+        /// AddSarfButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadButton addSarfButton;
+        protected global::Telerik.Web.UI.RadButton AddSarfButton;
     }
 }

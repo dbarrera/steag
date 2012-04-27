@@ -19,7 +19,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SarfCodeLiteral;
+        public global::System.Web.UI.WebControls.Literal SarfCodeLiteral;
         
         /// <summary>
         /// dateFiledDatePicker control.
@@ -28,7 +28,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadDatePicker dateFiledDatePicker;
+        public global::Telerik.Web.UI.RadDatePicker dateFiledDatePicker;
         
         /// <summary>
         /// dateOfVisitDatePicker control.
@@ -37,7 +37,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadDatePicker dateOfVisitDatePicker;
+        public global::Telerik.Web.UI.RadDatePicker dateOfVisitDatePicker;
         
         /// <summary>
         /// purposeTextBox control.
@@ -46,7 +46,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadTextBox purposeTextBox;
+        public global::Telerik.Web.UI.RadTextBox purposeTextBox;
         
         /// <summary>
         /// statusTextBox control.
@@ -55,7 +55,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadTextBox statusTextBox;
+        public global::Telerik.Web.UI.RadTextBox statusTextBox;
         
         /// <summary>
         /// dateVisitedDatePicker control.
@@ -64,6 +64,6 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadDatePicker dateVisitedDatePicker;
+        public global::Telerik.Web.UI.RadDatePicker dateVisitedDatePicker;
     }
 }

@@ -6,10 +6,13 @@
 	[Country] [nvarchar](250) NULL,
 	[State] [nvarchar](250) NULL,
 	[PostalCode] [nvarchar](10) NULL,
+	[LastSarfCode] [bigint] NULL,
+	[LastEacsCode] [bigint] NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
 	[DateModified] [datetime] NULL,
+	[Year] [int] NULL,
  CONSTRAINT [PK_SystemSettings] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -17,5 +20,3 @@
 ) ON [PRIMARY]
 
 GO
-
-

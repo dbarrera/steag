@@ -45,6 +45,39 @@ namespace Steag.Business
         {
             return DataSession.GetSarfByID(id);
         }
+
+        public SARF GetSarfByCode(string sarfCode)
+        {
+            return DataSession.GetSarfByCode(sarfCode);
+        }
+
+        public IEnumerable<SARF> GetAllRecord()
+        {
+            bool excludeInactive = true;
+
+            return DataSession.GetAllSarf(excludeInactive);
+        }
+
+        public void AddSarf(SARF sarf)
+        {
+            DataSession.AddSarf(sarf);
+        }
+
+        public void AddSarfs(IEnumerable<SARF> sarfs)
+        {
+            if (Equals(sarfs, null))
+                throw new ArgumentNullException("SARF");
+
+            DataSession.AddSarfs(sarfs);
+        }
+
+        public void DeleteSarf(SARF sarf)
+        {
+            if (Equals(sarf, null))
+                throw new ArgumentNullException("SARF");
+
+            DataSession.DeleteSarf(sarf);
+        }
         #endregion
     }
 }

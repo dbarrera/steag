@@ -5,6 +5,8 @@
            ,[Country]
            ,[State]
            ,[PostalCode]
+           ,[LastSarfCode]
+           ,[LastEacsCode]
            ,[UserCreated]
            ,[DateCreated]
            ,[UserModified]
@@ -16,6 +18,8 @@
            NULL,
            NULL,
            NULL,
+           1000,
+           1000,
            1,
            GETDATE(),
            1,

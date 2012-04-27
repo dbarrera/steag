@@ -12,9 +12,9 @@
 </asp:Content>
 <asp:Content ID="ContentSarf" ContentPlaceHolderID="MainContent" runat="server">
     <steag:RadScriptManagerDefault ID="RadManager" runat="server" />
-    <steag:SarfInput ID="Sarf" runat="server" />
-    <telerik:RadButton ID="addSarfButton" runat="server" Text="Add">
-    </telerik:RadButton> 
+    <steag:SarfInput ID="SarfControl" runat="server" />
+    <telerik:RadButton ID="AddSarfButton" runat="server" Text="Add" onclick="AddSarfButton_Click">
+    </telerik:RadButton>
 </asp:Content>
 <asp:Content ID="Last" ContentPlaceHolderID="last" runat="server">
 
