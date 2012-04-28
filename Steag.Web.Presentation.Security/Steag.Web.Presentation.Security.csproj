@@ -110,6 +110,7 @@
     <Content Include="Controls\Guard2MenuControl.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
     <Content Include="Controls\LogonControl.ascx" />
+    <Content Include="Controls\PasswordEntryControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\steaglogo-medium.png" />
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="Controls\MenuControl.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PasswordEntryControl.ascx.cs">
+      <DependentUpon>PasswordEntryControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PasswordEntryControl.ascx.designer.cs">
+      <DependentUpon>PasswordEntryControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserRoleDropDown.cs" />
     <Compile Include="Default.aspx.cs">

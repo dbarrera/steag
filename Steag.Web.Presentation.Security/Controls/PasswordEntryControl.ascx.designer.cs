@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Steag.Web.Presentation.Security.UserAccount {
+namespace Steag.Web.Presentation.Security.Controls {
     
     
-    public partial class Register {
+    public partial class PasswordEntryControl {
         
         /// <summary>
         /// txtPassword control.
@@ -19,15 +19,15 @@ namespace Steag.Web.Presentation.Security.UserAccount {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.PasswordEntryControl txtPassword;
+        protected global::Telerik.Web.UI.RadTextBox txtPassword;
         
         /// <summary>
-        /// cboUserRole control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.UserRoleDropDown cboUserRole;
+        protected global::Telerik.Web.UI.RadTextBox txtConfirmPassword;
     }
 }
