@@ -27,6 +27,14 @@
 }
 
 /* Width */
+.width-5
+{
+    width: 5px;    
+}
+.width-10
+{
+    width: 10px;    
+}
 .width-80
 {
     width: 80px;    
@@ -188,4 +196,22 @@
     color: #133e82;
     font-weight: bold;    
     height: 25px;
+}
+
+.invisible
+{
+    visibility: hidden;
+}
+.validator
+{
+    color: #ff0000;
+}
+.validation-summary ul
+{
+    color: #ff0000;
+    list-style: none;
+}
+.validation-summary ul li
+{
+    padding-bottom: 5px;
 }

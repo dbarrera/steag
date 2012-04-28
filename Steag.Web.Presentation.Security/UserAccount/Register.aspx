@@ -12,9 +12,20 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
 <asp:Content ID="contentMain" runat="server" ContentPlaceHolderID="MainContent">
     <span class="heading-5">System User Registration</span>
     <hr class="line-rule" />
+
+    <div>
+        <asp:ValidationSummary ID="valSummary" runat="server" CssClass="validation-summary" />        
+        <asp:CustomValidator ID="valConfirmPassword" runat="server" CssClass="validation-summary" Visible="true"
+            ErrorMessage="Password didn't match" Text="*" OnServerValidate="valConfirmPassword_Validate" 
+            ValidateEmptyText="True" Display="Dynamic" ControlToValidate="txtUsername" />
+    </div>
     <div class="height-39 margin-top-40">
         <div class="fleft width-120">
             <span class="label-font">Username</span>
+        </div>
+        <div class="fleft width-10">
+            <asp:RequiredFieldValidator runat="server" ID="valUsername" ErrorMessage="Username is Required" Text="*"
+                ControlToValidate="txtUsername" CssClass="validator" />
         </div>
         <div class="fleft width-200">
             <telerik:RadTextBox ID="txtUsername" runat="server" Width="100%">
@@ -25,6 +36,10 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
     <div class="clear height-39">
         <div class="fleft width-120">
             <span class="label-font">User Role</span>
+        </div>
+        <div class="fleft width-10">
+            <asp:RequiredFieldValidator runat="server" ID="valUserRole" ErrorMessage="UserRole is Required" Text="*"
+                ControlToValidate="cboUserRole" CssClass="validator" />
         </div>
         <div class="fleft">
             <cc1:UserRoleDropDown ID="cboUserRole" runat="server" />
@@ -39,6 +54,10 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
         <div class="fleft width-120">
             <span class="label-font">First Name</span>
         </div>
+        <div class="fleft width-10">
+            <asp:RequiredFieldValidator runat="server" ID="valFirstName" ErrorMessage="Firstname is Required" Text="*"
+                ControlToValidate="txtFirstName" CssClass="validator" />
+        </div>
         <div class="fleft width-200">
             <telerik:RadTextBox ID="txtFirstName" runat="server" Width="100%">
             </telerik:RadTextBox>
@@ -48,6 +67,9 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
     <div class="height-39 clear">
         <div class="fleft width-120">
             <span class="label-font">Middle Name</span>
+        </div>
+        <div class="fleft width-10">
+            &nbsp;
         </div>
         <div class="fleft width-200">
             <telerik:RadTextBox ID="txtMiddleName" runat="server" Width="100%">
@@ -59,6 +81,10 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
         <div class="fleft width-120">
             <span class="label-font">Last Name</span>
         </div>
+        <div class="fleft width-10">
+            <asp:RequiredFieldValidator runat="server" ID="valLastName" ErrorMessage="Lastname is Required" Text="*"
+                ControlToValidate="txtLastName" CssClass="validator" />
+        </div>
         <div class="fleft width-200">
             <telerik:RadTextBox ID="txtLastName" runat="server" Width="100%">
             </telerik:RadTextBox>
@@ -68,6 +94,9 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
     <div class="height-39 clear">
         <div class="fleft width-120">
             <span class="label-font">Email Address</span>
+        </div>
+        <div class="fleft width-10">
+            &nbsp;
         </div>
         <div class="fleft width-200">
             <telerik:RadTextBox ID="txtEmailAddress" runat="server" Width="100%">
@@ -80,10 +109,9 @@ MasterPageFile="~/Masters/AuthenticatedUser.Master" %>
             &nbsp;
         </div>
         <div class="fleft width-200 align-right">
-            <telerik:RadButton ID="btnSubmit" runat="server" Text="Submit">
-            </telerik:RadButton>
-             <telerik:RadButton ID="btnCancel" runat="server" Text="Cancel">
-            </telerik:RadButton>
+            <telerik:RadButton ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" CausesValidation="true" />
+            
+            <telerik:RadButton ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="false" />            
         </div>
     </div>
 

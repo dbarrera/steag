@@ -9,6 +9,14 @@ namespace Steag.Web.Presentation.Security.Controls
 {
     public partial class PasswordEntryControl : System.Web.UI.UserControl
     {
+        public bool IsPasswordMatch
+        {
+            get
+            {
+                return txtPassword.Text.Equals(txtConfirmPassword.Text);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

@@ -41,6 +41,16 @@ namespace Steag.Data
             return from u in DataContext.UserAccount where u.IsActive == isactive select u;
         }
 
+        public virtual UserAccount NewUserAccount()
+        {
+            return new UserAccount();
+        }
+
+        public virtual UserAccount NewUserAccount(long roleID)
+        {
+            return new UserAccount() { UserRoleID = roleID };
+        }
+
         public void AddUserAccount(UserAccount account)
         {
             DataContext.UserAccount.InsertOnSubmit(account);

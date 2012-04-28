@@ -4,6 +4,10 @@
 <div class="fleft width-120 height-39">
     <span class="label-font">Password</span>
 </div>
+<div class="fleft width-10">
+    <asp:RequiredFieldValidator runat="server" ID="valPassword" ErrorMessage="Password is Required" Text="*"
+        ControlToValidate="txtPassword" CssClass="validator" />
+</div>
 <div class="fleft height-39 width-200">
     <telerik:RadTextBox ID="txtPassword" runat="server" Width="100%" TextMode="Password">
     </telerik:RadTextBox>
@@ -11,6 +15,9 @@
 <div class="clear"></div>
 <div class="fleft width-120 height-39">
     <span class="label-font">Confirm Password</span>
+</div>
+<div class="fleft width-10">
+    &nbsp;
 </div>
 <div class="fleft height-39  width-200">
     <telerik:RadTextBox ID="txtConfirmPassword" runat="server" Width="100%" TextMode="Password">

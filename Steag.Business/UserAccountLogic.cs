@@ -48,6 +48,16 @@ namespace Steag.Business
 
         #region Methods
 
+        public UserAccount NewUserAccount()
+        {
+            return DataSession.NewUserAccount();
+        }
+
+        public UserAccount NewUserAccount(long roleID)
+        {
+            return DataSession.NewUserAccount(roleID);
+        }
+
         public UserAccount GetUserByID(long id)
         {
             return DataSession.GetUserByID(id);

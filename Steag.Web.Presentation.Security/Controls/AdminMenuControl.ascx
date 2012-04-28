@@ -22,7 +22,7 @@
         </telerik:RadMenuItem>
         <telerik:RadMenuItem Text="System Administration">
             <Items>
-                <telerik:RadMenuItem Text="User Management" NavigateUrl="DefaultCS.aspx?Page=Products" />
+                <telerik:RadMenuItem Text="User Management" NavigateUrl="~/UserAccount/UserManagement.aspx" />
                 <telerik:RadMenuItem Text="User Entry" NavigateUrl="~/UserAccount/Register.aspx" />
             </Items>
         </telerik:RadMenuItem>
