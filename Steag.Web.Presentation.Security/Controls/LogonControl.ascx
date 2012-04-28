@@ -5,6 +5,11 @@
         Welcome <asp:Literal ID="txtUser" runat="server" EnableViewState="false" />
     </li>
     <li>
+        <a runat="server" href="~/UserHome.aspx">
+            Home
+        </a>
+    </li>
+    <li>
         <a href="~/AccountSettings.aspx">
             Account Settings
         </a>

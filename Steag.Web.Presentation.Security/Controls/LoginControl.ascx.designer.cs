@@ -28,7 +28,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::Telerik.Web.UI.RadTextBox txtUserName;
         
         /// <summary>
         /// txtPassword control.
@@ -37,7 +37,7 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::Telerik.Web.UI.RadTextBox txtPassword;
         
         /// <summary>
         /// btnLogin control.
@@ -46,6 +46,6 @@ namespace Steag.Web.Presentation.Security.Controls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::Telerik.Web.UI.RadButton btnLogin;
     }
 }

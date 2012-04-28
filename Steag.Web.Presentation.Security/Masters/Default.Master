@@ -25,11 +25,13 @@
     <div id="content-wrapper">   
         <div id="content">
         <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            <asp:ScriptManager ID="mainScriptManager" runat="server">
+            </asp:ScriptManager>
+            <div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
-            </asp:ContentPlaceHolder>
-        </div>
+                </asp:ContentPlaceHolder>
+            </div>
         </form>
         </div>
     </div>

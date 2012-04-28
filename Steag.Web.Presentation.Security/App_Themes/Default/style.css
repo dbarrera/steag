@@ -16,6 +16,14 @@
 .label-font
 {
     font-weight: bold;    
+	color: #323030;
+}
+
+/* HR */
+.line-rule
+{
+    height: 0;   
+    border: 1px solid #aaa;
 }
 
 /* Width */
@@ -35,6 +43,10 @@
 .width-200
 {
     width: 200px;
+}
+.width-320
+{
+    width: 320px;
 }
 .width-500
 {
@@ -138,14 +150,33 @@
 {
     margin: auto;    
 }
-
+.margin-top-20
+{
+    margin-top: 20px;
+}
+.margin-top-40
+{
+    margin-top: 40px;    
+}
 .heading-1
 {
     font-size: 40px;
     font-weight: bold;
     color: #323030;
 }
-
+.heading-5
+{
+    font-size: 30px;
+    font-weight: bold;    
+    color: #133e82;
+	text-shadow: 2px 3px 3px #aaa;
+}
+.bread-crumb-heading
+{
+    font-size: 20px;
+    font-weight: bold;    
+    color: #323030;
+}
 .error-text
 {
     color: Red;

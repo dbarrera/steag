@@ -119,6 +119,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="UserAccount\EditPassword.aspx" />
     <Content Include="UserAccount\Register.aspx" />
+    <Content Include="UserAccount\UserManagement.aspx" />
     <Content Include="UserHome.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -146,27 +147,6 @@
     </Compile>
     <Compile Include="Base\SecurePage.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\AdminMenuControl.ascx.cs">
-      <DependentUpon>AdminMenuControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\AdminMenuControl.ascx.designer.cs">
-      <DependentUpon>AdminMenuControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Guard1MenuControl.ascx.cs">
-      <DependentUpon>Guard1MenuControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\Guard1MenuControl.ascx.designer.cs">
-      <DependentUpon>Guard1MenuControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Guard2MenuControl.ascx.cs">
-      <DependentUpon>Guard2MenuControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\Guard2MenuControl.ascx.designer.cs">
-      <DependentUpon>Guard2MenuControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\LoginControl.ascx.cs">
       <DependentUpon>LoginControl.ascx</DependentUpon>
@@ -245,6 +225,13 @@
     </Compile>
     <Compile Include="UserAccount\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserHome.aspx.cs">
       <DependentUpon>UserHome.aspx</DependentUpon>

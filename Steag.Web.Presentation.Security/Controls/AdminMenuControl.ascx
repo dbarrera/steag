@@ -1,40 +1,36 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AdminMenuControl.ascx.cs" Inherits="Steag.Web.Presentation.Security.Controls.AdminMenuControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MenuControl.cs" Inherits="Steag.Web.Presentation.Security.Controls.MenuControl" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
-<div class="width-960 height-39 margin-auto">
-    <ul class="ul-user-menu">
-        <li>
-            <a href="#">File</a>
-            <ul class="sub-menu">
-                <li>Save</li>
-                <li>Save As</li>
-            </ul>
-        </li>
-        <li>            
-            <a href="#">Edit</a>
-            <ul class="sub-menu">
-                <li>Copy</li>
-                <li>Cut</li>
-                <li>Paste</li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">View</a>
-            <ul class="sub-menu">
-                <li>Toolbar</li>
-                <li>Code</li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">System Management</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="#">User Management</a>
-                    
-                </li>
-                <li>
-                    <a href="#">Reports</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+<telerik:RadMenu ID="mnuAdmin" runat="server" Width="100%">
+    <Items>
+        <telerik:RadMenuItem Text="SARF Management" NavigateUrl="DefaultCS.aspx?Page=Products">
+            <Items>
+                <telerik:RadMenuItem Text="SARF Entry" NavigateUrl="DefaultCS.aspx?Page=Products" />
+                <telerik:RadMenuItem Text="SARF Inquiry" NavigateUrl="DefaultCS.aspx?Page=Products" />
+            </Items>
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem Text="EACS Management" NavigateUrl="DefaultCS.aspx?Page=Products">
+            <Items>
+                <telerik:RadMenuItem Text="EACS Inquiry" NavigateUrl="DefaultCS.aspx?Page=Products" />
+            </Items>
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem Text="Visitors Management" NavigateUrl="DefaultCS.aspx?Page=Products">
+            <Items>
+                <telerik:RadMenuItem Text="Visitors Entry" NavigateUrl="DefaultCS.aspx?Page=Products" />
+                <telerik:RadMenuItem Text="Visitors Inquiry" NavigateUrl="DefaultCS.aspx?Page=Products" />
+            </Items>
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem Text="System Administration">
+            <Items>
+                <telerik:RadMenuItem Text="User Management" NavigateUrl="DefaultCS.aspx?Page=Products" />
+                <telerik:RadMenuItem Text="User Entry" NavigateUrl="~/UserAccount/Register.aspx" />
+            </Items>
+        </telerik:RadMenuItem>
+    </Items>
+</telerik:RadMenu>
+
+<div class="clear padding-top-10">
+    <telerik:RadSiteMap ID="BreadCrumbSiteMap" runat="server" DataTextField="Text" DataNavigateUrlField="NavigateUrl" CssClass="breadcrumb">
+        <DefaultLevelSettings ListLayout-RepeatDirection="Horizontal" SeparatorText="->" Layout="Flow" />
+    </telerik:RadSiteMap>
 </div>
