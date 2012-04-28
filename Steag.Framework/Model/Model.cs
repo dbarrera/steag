@@ -7,7 +7,7 @@ using System.Data.Linq;
 
 namespace Steag.Framework.Model
 {
-    public partial class BadgeRegistry : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class BadgeRegistry : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -255,7 +255,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -710,7 +710,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class EACS : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class EACS : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1398,7 +1398,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class EACSPersons : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class EACSPersons : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1722,7 +1722,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class EACSVehicles : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class EACSVehicles : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2282,7 +2282,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class ECDAP : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class ECDAP : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2761,7 +2761,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3310,7 +3310,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class SARF : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class SARF : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3889,7 +3889,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class SARFPersons : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class SARFPersons : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4259,7 +4259,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class SystemSettings : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class SystemSettings : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4641,7 +4641,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class UserAccount : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class UserAccount : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -5229,7 +5229,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -5527,7 +5527,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class UserRoleWebPage : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class UserRoleWebPage : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -5546,7 +5546,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<long> _UserModified;
 
-        private System.Nullable<System.DateTime> _DateModififed;
+        private System.Nullable<System.DateTime> _DateModified;
 
         private EntityRef<UserRole> _UserRole;
 
@@ -5722,19 +5722,19 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<System.DateTime> DateModififed
+        public System.Nullable<System.DateTime> DateModified
         {
             get
             {
-                return this._DateModififed;
+                return this._DateModified;
             }
             set
             {
-                if ((this._DateModififed != value))
+                if ((this._DateModified != value))
                 {
                     this.OnDateModififedChanging(value);
                     this.SendPropertyChanging();
-                    this._DateModififed = value;
+                    this._DateModified = value;
                     this.SendPropertyChanged("DateModififed");
                     this.OnDateModififedChanged();
                 }
@@ -5828,7 +5828,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class WatchList : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class WatchList : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -6141,7 +6141,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class WebPageRegistry : INotifyPropertyChanging, INotifyPropertyChanged
+    public partial class WebPageRegistry : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);

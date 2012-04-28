@@ -8,6 +8,7 @@ using System.Text;
 using System.IO;
 using System.Configuration;
 using Steag.Framework.Configuration;
+using Steag.Framework.Model;
 using Steag.Framework.Authentication;
 using System.Reflection;
 
@@ -15,6 +16,9 @@ namespace Steag.Data
 {
     public abstract class DataSession: IDataSession, IDisposable
     {
+        #region Auditor
+        private static IAuditor _auditor;
+        #endregion
 
         #region DataSource
         protected virtual IDataSource DataSource { get; set; }
@@ -88,6 +92,20 @@ namespace Steag.Data
         }
         #endregion
 
+        #region Audit
+        protected virtual void Audit(IAuditable item)
+        {
+            if (Equals(item, null))
+                throw new ArgumentNullException("item");
+
+            if (Equals(CurrentUser, null))
+                throw new Exception("Unable to Audit, this DataSessions' CurrentUser is not set");
+
+            Audit(item, CurrentUser);
+
+        }
+        #endregion
+
         #region Dispose
          public void Dispose()
         {
@@ -105,6 +123,26 @@ namespace Steag.Data
                     CurrentUser = null;
                 }                
             }
+        }
+        #endregion
+
+        #region Auditor
+        protected static void Audit(IAuditable auditable, User user)
+        {
+            Auditor.Audit(auditable, user);
+        }
+
+        private static IAuditor Auditor
+        {
+            get
+            {
+                return _auditor;
+            }
+        }
+
+        public static void SetAuditor(IAuditor auditor)
+        {
+            _auditor = auditor;
         }
         #endregion
     }

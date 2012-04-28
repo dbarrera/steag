@@ -79,6 +79,7 @@
     <Compile Include="Event\IEventListener.cs" />
     <Compile Include="IIdentifiable.cs" />
     <Compile Include="Logging\LogWriterTraceListener.cs" />
+    <Compile Include="Model\IAuditable.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\MD5Crypto.cs" />

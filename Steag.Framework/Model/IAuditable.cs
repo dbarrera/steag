@@ -7,10 +7,12 @@ namespace Steag.Framework.Model
 {
     public interface IAuditable
     {
-        Int64 UserCreated { get; set; }
-        DateTime DateCreated { get;  set; }
+        long ID { get; set; }
 
-        Int64 UserModified { get; set; }
-        DateTime DateModified { get; set; }
+        long? UserCreated { get; set; }
+        DateTime? DateCreated { get; set; }
+
+        long? UserModified { get; set; }
+        DateTime? DateModified { get; set; }
     }
 }

@@ -52,6 +52,13 @@ namespace Steag.Business
         }
         #endregion
 
+        #region Methods
+        protected virtual bool Validate(object entity)
+        {
+            return true;
+        }
+        #endregion
+
         #region Dispose
         public void Dispose()
         {

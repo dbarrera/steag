@@ -15,7 +15,7 @@
 <body>
     <div id="header">
         <div id="header-logo" class="fleft">
-            <img src="images/steaglogo-small.png" alt="STEAG Stage Power Inc." />
+            <img id="imgLogo" src="~/images/steaglogo-small.png" alt="STEAG Stage Power Inc." runat="server" />
         </div>
         <div class="fright padding-top-10">
             <steag:LogonControl runat="server" ID="logonControl" EnableViewState="false"></steag:LogonControl>
@@ -28,6 +28,8 @@
     </div>    
     <div id="content-wrapper">   
         <form id="form1" runat="server">
+        <asp:ScriptManager ID="mainScriptManager" runat="server">
+        </asp:ScriptManager>
             <div id="menu">
                 <asp:ContentPlaceHolder ID="Menu" runat="server"></asp:ContentPlaceHolder>
             </div>

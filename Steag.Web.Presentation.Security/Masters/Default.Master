@@ -14,7 +14,7 @@
 <body>
     <div id="header">
         <div id="header-logo" class="fleft">
-            <img src="images/steaglogo-small.png" alt="STEAG Stage Power Inc." />
+            <img id="imgLogo" src="~/images/steaglogo-small.png" alt="STEAG Stage Power Inc." runat="server" />
         </div>
         <div id="system-caption" class="fleft padding-left-30 padding-top-30">
             <span class="heading-1">

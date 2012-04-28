@@ -64,14 +64,14 @@ namespace Steag.Web.Presentation.Security.Base
         protected virtual void RedirectToLogin()
         {
             if (!string.IsNullOrEmpty(Request.Url.PathAndQuery))
-                Response.Redirect(string.Format("Login.aspx?returnUrl={0}", Request.Url.PathAndQuery));
+                Response.Redirect(string.Format("~/Login.aspx?returnUrl={0}", Server.UrlEncode(Request.Url.AbsoluteUri)));
             else
-                Response.Redirect("Login.aspx");
+                Response.Redirect("~/Login.aspx");
         }
 
         protected virtual void RedirectTo404()
         {
-            Response.Redirect("404.aspx");
+            Response.Redirect("~/404.aspx");
         }
     }
 }

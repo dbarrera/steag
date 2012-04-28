@@ -8,6 +8,10 @@ using System.Web.SessionState;
 using Steag.Framework.Diagnostics;
 using Steag.Framework.Logging;
 using Steag.Business;
+using Steag.Data;
+using Steag.Web.Presentation.Security.Audit;
+using Steag.Web.Presentation.Security.Authentication;
+using Steag.Business.Handler;
 
 namespace Steag.Web.Presentation.Security
 {
@@ -17,11 +21,18 @@ namespace Steag.Web.Presentation.Security
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+
+            //Setup TraceUtil Listener
             var listener = new LogWriterTraceListener();
             TraceUtil.AddListener(listener);
 
-            var systemAccessHandler = new Authentication.SteagSystemAccessHandler();
-            Steag.Business.Handler.SystemAccessHandler.SetCurrentSystemAccessHandler(systemAccessHandler);
+            //Set System Access Handler
+            var systemAccessHandler = new SteagSystemAccessHandler();
+            SystemAccessHandler.SetCurrentSystemAccessHandler(systemAccessHandler);
+
+            //Set Model Entity Auditor
+            var auditor = new Audit.Auditor();
+            DataSession.SetAuditor(auditor);
         }
 
         void Application_End(object sender, EventArgs e)
