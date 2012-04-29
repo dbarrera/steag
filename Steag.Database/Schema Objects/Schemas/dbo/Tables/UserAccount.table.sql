@@ -8,6 +8,8 @@
 	[MiddleName] [nvarchar](250) NULL,
 	[LastName] [nvarchar](250) NULL,
 	[EmailAddress] [nvarchar](250) NULL,
+	[LastPasswordChanged] [datetime] NULL,
+	[LastLogIn] [datetime] NULL,
 	[IsActive] [bit] NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
@@ -30,5 +32,8 @@ GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'UserRole FK' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UserAccount', @level2type=N'CONSTRAINT',@level2name=N'FK_UserAccount_UserRole'
 GO
+
+
+
 
 

@@ -9,7 +9,7 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[SystemSettings]
+INSERT INTO [dbo].[SystemSettings]
            ([CompanyName]
            ,[Address1]
            ,[Address2]
@@ -17,9 +17,9 @@ INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[SystemSettings]
            ,[State]
            ,[PostalCode]
 		   ,[FiscalYear]
-           ,[LastSARFID]
-           ,[LastEACSID]
-           ,[LastECDAPID]
+           ,[LastSARFCode]
+           ,[LastEACSCode]
+           ,[LastECDAPCode]
            ,[UserCreated]
            ,[DateCreated]
            ,[UserModified]
@@ -50,7 +50,7 @@ INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive
 INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Gate 1 Security','Gate 1 Security Personnel',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
 INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Gate 2 Security','Gate 2 Security Personnel',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
 INSERT INTO [dbo].[UserRole] ([RoleCode] ,[Description] ,[IsTemplate], [IsActive], [UserCreated], [DateCreated], [UserModified], [DateModified]) VALUES('Employee','STEAG Employee',0,1,1,'Apr 17 2012 11:18PM',1,'Apr 17 2012 11:18PM')
-INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
+INSERT INTO [dbo].[UserAccount]
            ([UserName]
            ,[Password]
            ,[Salt]
@@ -79,7 +79,7 @@ INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
            1,
            GETDATE())
 
-INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
+INSERT INTO [dbo].[UserAccount]
            ([UserName]
            ,[Password]
            ,[Salt]
@@ -108,7 +108,7 @@ INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
            1,
            GETDATE())
 
-INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
+INSERT INTO [dbo].[UserAccount]
            ([UserName]
            ,[Password]
            ,[Salt]
@@ -127,6 +127,64 @@ INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[UserAccount]
            'fzyjtTarbKBuxvu3eKriYQ==',
            '82AP+PZTRfKLlKVlGayPZb/55SkXvzj6bIVZh3sr9nrFUX7zPcKh2/vUs7vD1IaVt7PrDJjHaAmHdHSjjRrNeg==',
            7,
+           NULL,
+           NULL,
+           NULL,
+           NULL,
+           1,
+           1,
+            GETDATE(),
+           1,
+           GETDATE())
+		   
+INSERT INTO [dbo].[UserAccount]
+           ([UserName]
+           ,[Password]
+           ,[Salt]
+           ,[UserRoleID]
+           ,[FirstName]
+           ,[MiddleName]
+           ,[LastName]
+           ,[EmailAddress]
+           ,[IsActive]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('Employee1',
+           'fzyjtTarbKBuxvu3eKriYQ==',
+           '82AP+PZTRfKLlKVlGayPZb/55SkXvzj6bIVZh3sr9nrFUX7zPcKh2/vUs7vD1IaVt7PrDJjHaAmHdHSjjRrNeg==',
+           8,
+           NULL,
+           NULL,
+           NULL,
+           NULL,
+           1,
+           1,
+            GETDATE(),
+           1,
+           GETDATE())
+		   
+INSERT INTO [dbo].[UserAccount]
+           ([UserName]
+           ,[Password]
+           ,[Salt]
+           ,[UserRoleID]
+           ,[FirstName]
+           ,[MiddleName]
+           ,[LastName]
+           ,[EmailAddress]
+           ,[IsActive]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('Employee2',
+           'fzyjtTarbKBuxvu3eKriYQ==',
+           '82AP+PZTRfKLlKVlGayPZb/55SkXvzj6bIVZh3sr9nrFUX7zPcKh2/vUs7vD1IaVt7PrDJjHaAmHdHSjjRrNeg==',
+           8,
            NULL,
            NULL,
            NULL,

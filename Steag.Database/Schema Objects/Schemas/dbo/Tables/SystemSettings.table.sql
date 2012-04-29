@@ -7,9 +7,9 @@
 	[State] [nvarchar](250) NULL,
 	[PostalCode] [nvarchar](10) NULL,
 	[FiscalYear] [int] NULL,
-	[LastSARFID] [bigint] NULL,
-	[LastEACSID] [bigint] NULL,
-	[LastECDAPID] [bigint] NULL,
+	[LastSARFCode] [bigint] NULL,
+	[LastEACSCode] [bigint] NULL,
+	[LastECDAPCode] [bigint] NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -21,5 +21,8 @@
 ) ON [PRIMARY]
 
 GO
+
+
+
 
 
