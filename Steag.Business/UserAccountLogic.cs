@@ -140,6 +140,29 @@ namespace Steag.Business
             return false;
         }
 
+        public void SetUserPassword(UserAccount userAccount, string password)
+        {
+            var crypto = new MD5Crypto();
+            crypto.SaltSize = 64;
+            crypto.SaltHash = true;
+
+            var encoding = new UTF8Encoding();
+            var passwordBytes = encoding.GetBytes(password);
+            
+            var hash = crypto.ComputeHash(passwordBytes);
+            var salt = crypto.Salt;
+
+            userAccount.Salt = Convert.ToBase64String(salt);
+            userAccount.Password = Convert.ToBase64String(hash);
+        }  
+
+        public bool UsernameExists(string username)
+        {
+            if (Equals(username, null))
+                throw new ArgumentNullException("username");
+
+            return DataSession.UserNameExists(username);
+        }
         #endregion
     }
 }

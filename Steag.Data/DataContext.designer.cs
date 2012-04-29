@@ -70,125 +70,133 @@ namespace Steag.Data
 		{
 			OnCreated();
 		}
-		
-		public System.Data.Linq.Table<BadgeRegistry> BadgeRegistry
-		{
-			get
-			{
-				return this.GetTable<BadgeRegistry>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Company> Company
-		{
-			get
-			{
-				return this.GetTable<Company>();
-			}
-		}
-		
-		public System.Data.Linq.Table<EACS> EACS
-		{
-			get
-			{
-				return this.GetTable<EACS>();
-			}
-		}
-		
-		public System.Data.Linq.Table<EACSPersons> EACSPersons
-		{
-			get
-			{
-				return this.GetTable<EACSPersons>();
-			}
-		}
-		
-		public System.Data.Linq.Table<EACSVehicles> EACSVehicles
-		{
-			get
-			{
-				return this.GetTable<EACSVehicles>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ECDAP> ECDAP
-		{
-			get
-			{
-				return this.GetTable<ECDAP>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Person> Person
-		{
-			get
-			{
-				return this.GetTable<Person>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SARF> SARF
-		{
-			get
-			{
-				return this.GetTable<SARF>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SARFPersons> SARFPersons
-		{
-			get
-			{
-				return this.GetTable<SARFPersons>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SystemSettings> SystemSettings
-		{
-			get
-			{
-				return this.GetTable<SystemSettings>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UserAccount> UserAccount
-		{
-			get
-			{
-				return this.GetTable<UserAccount>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UserRole> UserRole
-		{
-			get
-			{
-				return this.GetTable<UserRole>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UserRoleWebPage> UserRoleWebPage
-		{
-			get
-			{
-				return this.GetTable<UserRoleWebPage>();
-			}
-		}
-		
-		public System.Data.Linq.Table<WatchList> WatchList
-		{
-			get
-			{
-				return this.GetTable<WatchList>();
-			}
-		}
-		
-		public System.Data.Linq.Table<WebPageRegistry> WebPageRegistry
-		{
-			get
-			{
-				return this.GetTable<WebPageRegistry>();
-			}
-		}
+
+        public System.Data.Linq.Table<AutoNumbering> AutoNumbering
+        {
+            get
+            {
+                return this.GetTable<AutoNumbering>();
+            }
+        }
+
+        public System.Data.Linq.Table<BadgeRegistry> BadgeRegistry
+        {
+            get
+            {
+                return this.GetTable<BadgeRegistry>();
+            }
+        }
+
+        public System.Data.Linq.Table<Company> Company
+        {
+            get
+            {
+                return this.GetTable<Company>();
+            }
+        }
+
+        public System.Data.Linq.Table<EACS> EACS
+        {
+            get
+            {
+                return this.GetTable<EACS>();
+            }
+        }
+
+        public System.Data.Linq.Table<EACSPersons> EACSPersons
+        {
+            get
+            {
+                return this.GetTable<EACSPersons>();
+            }
+        }
+
+        public System.Data.Linq.Table<EACSVehicles> EACSVehicles
+        {
+            get
+            {
+                return this.GetTable<EACSVehicles>();
+            }
+        }
+
+        public System.Data.Linq.Table<ECDAP> ECDAP
+        {
+            get
+            {
+                return this.GetTable<ECDAP>();
+            }
+        }
+
+        public System.Data.Linq.Table<Person> Person
+        {
+            get
+            {
+                return this.GetTable<Person>();
+            }
+        }
+
+        public System.Data.Linq.Table<SARF> SARF
+        {
+            get
+            {
+                return this.GetTable<SARF>();
+            }
+        }
+
+        public System.Data.Linq.Table<SARFPersons> SARFPersons
+        {
+            get
+            {
+                return this.GetTable<SARFPersons>();
+            }
+        }
+
+        public System.Data.Linq.Table<SystemSettings> SystemSettings
+        {
+            get
+            {
+                return this.GetTable<SystemSettings>();
+            }
+        }
+
+        public System.Data.Linq.Table<UserAccount> UserAccount
+        {
+            get
+            {
+                return this.GetTable<UserAccount>();
+            }
+        }
+
+        public System.Data.Linq.Table<UserRole> UserRole
+        {
+            get
+            {
+                return this.GetTable<UserRole>();
+            }
+        }
+
+        public System.Data.Linq.Table<UserRoleWebPage> UserRoleWebPage
+        {
+            get
+            {
+                return this.GetTable<UserRoleWebPage>();
+            }
+        }
+
+        public System.Data.Linq.Table<WatchList> WatchList
+        {
+            get
+            {
+                return this.GetTable<WatchList>();
+            }
+        }
+
+        public System.Data.Linq.Table<WebPageRegistry> WebPageRegistry
+        {
+            get
+            {
+                return this.GetTable<WebPageRegistry>();
+            }
+        }
     }
 }

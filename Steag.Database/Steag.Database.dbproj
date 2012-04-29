@@ -190,6 +190,9 @@
     <Build Include="Schema Objects\Schemas\dbo\Views\PersonView.view.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\AutoNumbering.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <NotInBuild Include="Scripts\Post-Deployment\DefaultData\UserRoleDefault.sql">
@@ -199,6 +202,9 @@
       <SubType>NotInBuild</SubType>
     </NotInBuild>
     <NotInBuild Include="Scripts\Post-Deployment\DefaultData\SystemSettingsDefault.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Post-Deployment\DefaultData\AutoNumberingDefault.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>

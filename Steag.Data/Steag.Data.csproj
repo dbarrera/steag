@@ -67,12 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoNumberingDataSession.cs" />
     <Compile Include="DataCachingManager.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContext.designer.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="DataSession.cs" />
     <Compile Include="DataSource.cs" />
+    <Compile Include="EACSDataSession.cs" />
     <Compile Include="IAuditor.cs" />
     <Compile Include="IDataCachingManager.cs" />
     <Compile Include="IDataSession.cs" />

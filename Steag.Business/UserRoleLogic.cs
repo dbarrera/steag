@@ -18,9 +18,8 @@ namespace Steag.Business
         protected override IDataSession CurrentDataSession
         {
             get 
-            { 
-                _userRoleDataSession = _userRoleDataSession ?? new UserRoleDataSession(CurrentUser, CurrentDataSource);
-                return _userRoleDataSession;
+            {
+                return DataSession;
             }
         }
 
@@ -28,7 +27,8 @@ namespace Steag.Business
         {
             get
             {
-                return CurrentDataSession as UserRoleDataSession;
+                _userRoleDataSession = _userRoleDataSession ?? new UserRoleDataSession(CurrentUser, CurrentDataSource);
+                return _userRoleDataSession;
             }
         }
 

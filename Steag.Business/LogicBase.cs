@@ -57,6 +57,33 @@ namespace Steag.Business
         {
             return true;
         }
+
+        public virtual string GenerateDocumentCode(string transactionCode)
+        {
+            if (Equals(transactionCode, null))
+                throw new ArgumentNullException("transactionCode");
+
+            var autoNumberingLogic = new AutoNumberingLogic(CurrentUser, CurrentDataSource);
+            var documentCode = autoNumberingLogic.GenerateDocumentCode(transactionCode);
+            if (Equals(CurrentDataSource, null))
+                throw new Exception("CurrentDataSource is not set to an instance");
+            CurrentDataSource.SubmitChanges();
+            return documentCode;
+        }
+
+        public virtual void SubmitChanges()
+        {
+            if (Equals(CurrentDataSource, null))
+                throw new Exception("CurrentDataSource is not set to an instance");
+            CurrentDataSource.SubmitChanges();
+        }
+
+        public virtual void RollBackChanges()
+        {
+            if (Equals(CurrentDataSource, null))
+                throw new Exception("CurrentDataSource is not set to an instance");
+            CurrentDataSource.RollBackChanges();
+        }
         #endregion
 
         #region Dispose

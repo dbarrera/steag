@@ -6,9 +6,6 @@
            ,[State]
            ,[PostalCode]
 		   ,[FiscalYear]
-           ,[LastSARFCode]
-           ,[LastEACSCode]
-           ,[LastECDAPCode]
            ,[UserCreated]
            ,[DateCreated]
            ,[UserModified]
@@ -20,10 +17,7 @@
            NULL,
            NULL,
            NULL,
-		   0,
-           0,
-           0,
-           0,
+		   2012,          
            1,
            GETDATE(),
            1,

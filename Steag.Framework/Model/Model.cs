@@ -7,7 +7,354 @@ using System.Data.Linq;
 
 namespace Steag.Framework.Model
 {
-    public partial class BadgeRegistry : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class AutoNumbering : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private long _ID;
+
+        private string _TransactionCode;
+
+        private string _Prefix;
+
+        private string _Suffix;
+
+        private System.Nullable<long> _Counter;
+
+        private string _Format;
+
+        private System.Nullable<long> _UserCreated;
+
+        private System.Nullable<System.DateTime> _DateCreated;
+
+        private System.Nullable<long> _UserModified;
+
+        private System.Nullable<System.DateTime> _DateModified;
+
+        private EntityRef<UserAccount> _UserAccount;
+
+        private EntityRef<UserAccount> _UserModifiedUserAccount;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnIDChanging(long value);
+        partial void OnIDChanged();
+        partial void OnTransactionCodeChanging(string value);
+        partial void OnTransactionCodeChanged();
+        partial void OnPrefixChanging(string value);
+        partial void OnPrefixChanged();
+        partial void OnSuffixChanging(string value);
+        partial void OnSuffixChanged();
+        partial void OnCounterChanging(System.Nullable<long> value);
+        partial void OnCounterChanged();
+        partial void OnFormatChanging(string value);
+        partial void OnFormatChanged();
+        partial void OnUserCreatedChanging(System.Nullable<long> value);
+        partial void OnUserCreatedChanged();
+        partial void OnDateCreatedChanging(System.Nullable<System.DateTime> value);
+        partial void OnDateCreatedChanged();
+        partial void OnUserModifiedChanging(System.Nullable<long> value);
+        partial void OnUserModifiedChanged();
+        partial void OnDateModifiedChanging(System.Nullable<System.DateTime> value);
+        partial void OnDateModifiedChanged();
+        #endregion
+
+        public AutoNumbering()
+        {
+            this._UserAccount = default(EntityRef<UserAccount>);
+            this._UserModifiedUserAccount = default(EntityRef<UserAccount>);
+            OnCreated();
+        }
+
+        public long ID
+        {
+            get
+            {
+                return this._ID;
+            }
+            set
+            {
+                if ((this._ID != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ID = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        public string TransactionCode
+        {
+            get
+            {
+                return this._TransactionCode;
+            }
+            set
+            {
+                if ((this._TransactionCode != value))
+                {
+                    this.OnTransactionCodeChanging(value);
+                    this.SendPropertyChanging();
+                    this._TransactionCode = value;
+                    this.SendPropertyChanged("TransactionCode");
+                    this.OnTransactionCodeChanged();
+                }
+            }
+        }
+
+        public string Prefix
+        {
+            get
+            {
+                return this._Prefix;
+            }
+            set
+            {
+                if ((this._Prefix != value))
+                {
+                    this.OnPrefixChanging(value);
+                    this.SendPropertyChanging();
+                    this._Prefix = value;
+                    this.SendPropertyChanged("Prefix");
+                    this.OnPrefixChanged();
+                }
+            }
+        }
+
+        public string Suffix
+        {
+            get
+            {
+                return this._Suffix;
+            }
+            set
+            {
+                if ((this._Suffix != value))
+                {
+                    this.OnSuffixChanging(value);
+                    this.SendPropertyChanging();
+                    this._Suffix = value;
+                    this.SendPropertyChanged("Suffix");
+                    this.OnSuffixChanged();
+                }
+            }
+        }
+
+        public System.Nullable<long> Counter
+        {
+            get
+            {
+                return this._Counter;
+            }
+            set
+            {
+                if ((this._Counter != value))
+                {
+                    this.OnCounterChanging(value);
+                    this.SendPropertyChanging();
+                    this._Counter = value;
+                    this.SendPropertyChanged("Counter");
+                    this.OnCounterChanged();
+                }
+            }
+        }
+
+        public string Format
+        {
+            get
+            {
+                return this._Format;
+            }
+            set
+            {
+                if ((this._Format != value))
+                {
+                    this.OnFormatChanging(value);
+                    this.SendPropertyChanging();
+                    this._Format = value;
+                    this.SendPropertyChanged("Format");
+                    this.OnFormatChanged();
+                }
+            }
+        }
+
+        public System.Nullable<long> UserCreated
+        {
+            get
+            {
+                return this._UserCreated;
+            }
+            set
+            {
+                if ((this._UserCreated != value))
+                {
+                    if (this._UserAccount.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.OnUserCreatedChanging(value);
+                    this.SendPropertyChanging();
+                    this._UserCreated = value;
+                    this.SendPropertyChanged("UserCreated");
+                    this.OnUserCreatedChanged();
+                }
+            }
+        }
+
+        public System.Nullable<System.DateTime> DateCreated
+        {
+            get
+            {
+                return this._DateCreated;
+            }
+            set
+            {
+                if ((this._DateCreated != value))
+                {
+                    this.OnDateCreatedChanging(value);
+                    this.SendPropertyChanging();
+                    this._DateCreated = value;
+                    this.SendPropertyChanged("DateCreated");
+                    this.OnDateCreatedChanged();
+                }
+            }
+        }
+
+        public System.Nullable<long> UserModified
+        {
+            get
+            {
+                return this._UserModified;
+            }
+            set
+            {
+                if ((this._UserModified != value))
+                {
+                    if (this._UserModifiedUserAccount.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.OnUserModifiedChanging(value);
+                    this.SendPropertyChanging();
+                    this._UserModified = value;
+                    this.SendPropertyChanged("UserModified");
+                    this.OnUserModifiedChanged();
+                }
+            }
+        }
+
+        public System.Nullable<System.DateTime> DateModified
+        {
+            get
+            {
+                return this._DateModified;
+            }
+            set
+            {
+                if ((this._DateModified != value))
+                {
+                    this.OnDateModifiedChanging(value);
+                    this.SendPropertyChanging();
+                    this._DateModified = value;
+                    this.SendPropertyChanged("DateModified");
+                    this.OnDateModifiedChanged();
+                }
+            }
+        }
+
+        public UserAccount UserAccount
+        {
+            get
+            {
+                return this._UserAccount.Entity;
+            }
+            set
+            {
+                UserAccount previousValue = this._UserAccount.Entity;
+                if (((previousValue != value)
+                            || (this._UserAccount.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._UserAccount.Entity = null;
+                        previousValue.AutoNumbering.Remove(this);
+                    }
+                    this._UserAccount.Entity = value;
+                    if ((value != null))
+                    {
+                        value.AutoNumbering.Add(this);
+                        this._UserCreated = value.ID;
+                    }
+                    else
+                    {
+                        this._UserCreated = default(Nullable<long>);
+                    }
+                    this.SendPropertyChanged("UserAccount");
+                }
+            }
+        }
+
+        public UserAccount UserModifiedUserAccount
+        {
+            get
+            {
+                return this._UserModifiedUserAccount.Entity;
+            }
+            set
+            {
+                UserAccount previousValue = this._UserModifiedUserAccount.Entity;
+                if (((previousValue != value)
+                            || (this._UserModifiedUserAccount.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._UserModifiedUserAccount.Entity = null;
+                        previousValue.AutoNumbering_UserModified.Remove(this);
+                    }
+                    this._UserModifiedUserAccount.Entity = value;
+                    if ((value != null))
+                    {
+                        value.AutoNumbering_UserModified.Add(this);
+                        this._UserModified = value.ID;
+                    }
+                    else
+                    {
+                        this._UserModified = default(Nullable<long>);
+                    }
+                    this.SendPropertyChanged("UserModifiedUserAccount");
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    public partial class BadgeRegistry : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -255,7 +602,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -710,7 +1057,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class EACS : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class EACS : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1398,7 +1745,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class EACSPersons : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class EACSPersons : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1722,7 +2069,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class EACSVehicles : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class EACSVehicles : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2282,7 +2629,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class ECDAP : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class ECDAP : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2761,7 +3108,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3310,7 +3657,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class SARF : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class SARF : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3889,7 +4236,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class SARFPersons : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class SARFPersons : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4259,7 +4606,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class SystemSettings : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class SystemSettings : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4279,12 +4626,6 @@ namespace Steag.Framework.Model
         private string _PostalCode;
 
         private System.Nullable<int> _FiscalYear;
-
-        private System.Nullable<long> _LastSARFID;
-
-        private System.Nullable<long> _LastEACSID;
-
-        private System.Nullable<long> _LastECDAPID;
 
         private System.Nullable<long> _UserCreated;
 
@@ -4314,12 +4655,6 @@ namespace Steag.Framework.Model
         partial void OnPostalCodeChanged();
         partial void OnFiscalYearChanging(System.Nullable<int> value);
         partial void OnFiscalYearChanged();
-        partial void OnLastSARFIDChanging(System.Nullable<long> value);
-        partial void OnLastSARFIDChanged();
-        partial void OnLastEACSIDChanging(System.Nullable<long> value);
-        partial void OnLastEACSIDChanged();
-        partial void OnLastECDAPIDChanging(System.Nullable<long> value);
-        partial void OnLastECDAPIDChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
         partial void OnDateCreatedChanging(System.Nullable<System.DateTime> value);
@@ -4487,63 +4822,6 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<long> LastSARFID
-        {
-            get
-            {
-                return this._LastSARFID;
-            }
-            set
-            {
-                if ((this._LastSARFID != value))
-                {
-                    this.OnLastSARFIDChanging(value);
-                    this.SendPropertyChanging();
-                    this._LastSARFID = value;
-                    this.SendPropertyChanged("LastSARFID");
-                    this.OnLastSARFIDChanged();
-                }
-            }
-        }
-
-        public System.Nullable<long> LastEACSID
-        {
-            get
-            {
-                return this._LastEACSID;
-            }
-            set
-            {
-                if ((this._LastEACSID != value))
-                {
-                    this.OnLastEACSIDChanging(value);
-                    this.SendPropertyChanging();
-                    this._LastEACSID = value;
-                    this.SendPropertyChanged("LastEACSID");
-                    this.OnLastEACSIDChanged();
-                }
-            }
-        }
-
-        public System.Nullable<long> LastECDAPID
-        {
-            get
-            {
-                return this._LastECDAPID;
-            }
-            set
-            {
-                if ((this._LastECDAPID != value))
-                {
-                    this.OnLastECDAPIDChanging(value);
-                    this.SendPropertyChanging();
-                    this._LastECDAPID = value;
-                    this.SendPropertyChanged("LastECDAPID");
-                    this.OnLastECDAPIDChanged();
-                }
-            }
-        }
-
         public System.Nullable<long> UserCreated
         {
             get
@@ -4641,7 +4919,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class UserAccount : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class UserAccount : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4664,6 +4942,10 @@ namespace Steag.Framework.Model
 
         private string _EmailAddress;
 
+        private System.Nullable<System.DateTime> _LastPasswordChanged;
+
+        private System.Nullable<System.DateTime> _LastLogIn;
+
         private System.Nullable<bool> _IsActive;
 
         private System.Nullable<long> _UserCreated;
@@ -4673,6 +4955,10 @@ namespace Steag.Framework.Model
         private System.Nullable<long> _UserModified;
 
         private System.Nullable<System.DateTime> _DateModified;
+
+        private EntitySet<AutoNumbering> _AutoNumbering;
+
+        private EntitySet<AutoNumbering> _AutoNumbering_UserModified;
 
         private EntitySet<EACS> _EACS;
 
@@ -4712,6 +4998,10 @@ namespace Steag.Framework.Model
         partial void OnLastNameChanged();
         partial void OnEmailAddressChanging(string value);
         partial void OnEmailAddressChanged();
+        partial void OnLastPasswordChangedChanging(System.Nullable<System.DateTime> value);
+        partial void OnLastPasswordChangedChanged();
+        partial void OnLastLogInChanging(System.Nullable<System.DateTime> value);
+        partial void OnLastLogInChanged();
         partial void OnIsActiveChanging(System.Nullable<bool> value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
@@ -4726,6 +5016,8 @@ namespace Steag.Framework.Model
 
         public UserAccount()
         {
+            this._AutoNumbering = new EntitySet<AutoNumbering>(new Action<AutoNumbering>(this.attach_AutoNumbering), new Action<AutoNumbering>(this.detach_AutoNumbering));
+            this._AutoNumbering_UserModified = new EntitySet<AutoNumbering>(new Action<AutoNumbering>(this.attach_AutoNumbering_UserModified), new Action<AutoNumbering>(this.detach_AutoNumbering_UserModified));
             this._EACS = new EntitySet<EACS>(new Action<EACS>(this.attach_EACS), new Action<EACS>(this.detach_EACS));
             this._EACS_ProcessedBy = new EntitySet<EACS>(new Action<EACS>(this.attach_EACS_ProcessedBy), new Action<EACS>(this.detach_EACS_ProcessedBy));
             this._EACS_VerifiedBy = new EntitySet<EACS>(new Action<EACS>(this.attach_EACS_VerifiedBy), new Action<EACS>(this.detach_EACS_VerifiedBy));
@@ -4912,6 +5204,44 @@ namespace Steag.Framework.Model
             }
         }
 
+        public System.Nullable<System.DateTime> LastPasswordChanged
+        {
+            get
+            {
+                return this._LastPasswordChanged;
+            }
+            set
+            {
+                if ((this._LastPasswordChanged != value))
+                {
+                    this.OnLastPasswordChangedChanging(value);
+                    this.SendPropertyChanging();
+                    this._LastPasswordChanged = value;
+                    this.SendPropertyChanged("LastPasswordChanged");
+                    this.OnLastPasswordChangedChanged();
+                }
+            }
+        }
+
+        public System.Nullable<System.DateTime> LastLogIn
+        {
+            get
+            {
+                return this._LastLogIn;
+            }
+            set
+            {
+                if ((this._LastLogIn != value))
+                {
+                    this.OnLastLogInChanging(value);
+                    this.SendPropertyChanging();
+                    this._LastLogIn = value;
+                    this.SendPropertyChanged("LastLogIn");
+                    this.OnLastLogInChanged();
+                }
+            }
+        }
+
         public System.Nullable<bool> IsActive
         {
             get
@@ -5004,6 +5334,30 @@ namespace Steag.Framework.Model
                     this.SendPropertyChanged("DateModified");
                     this.OnDateModifiedChanged();
                 }
+            }
+        }
+
+        public EntitySet<AutoNumbering> AutoNumbering
+        {
+            get
+            {
+                return this._AutoNumbering;
+            }
+            set
+            {
+                this._AutoNumbering.Assign(value);
+            }
+        }
+
+        public EntitySet<AutoNumbering> AutoNumbering_UserModified
+        {
+            get
+            {
+                return this._AutoNumbering_UserModified;
+            }
+            set
+            {
+                this._AutoNumbering_UserModified.Assign(value);
             }
         }
 
@@ -5144,6 +5498,30 @@ namespace Steag.Framework.Model
             }
         }
 
+        private void attach_AutoNumbering(AutoNumbering entity)
+        {
+            this.SendPropertyChanging();
+            entity.UserAccount = this;
+        }
+
+        private void detach_AutoNumbering(AutoNumbering entity)
+        {
+            this.SendPropertyChanging();
+            entity.UserAccount = null;
+        }
+
+        private void attach_AutoNumbering_UserModified(AutoNumbering entity)
+        {
+            this.SendPropertyChanging();
+            entity.UserModifiedUserAccount = this;
+        }
+
+        private void detach_AutoNumbering_UserModified(AutoNumbering entity)
+        {
+            this.SendPropertyChanging();
+            entity.UserModifiedUserAccount = null;
+        }
+
         private void attach_EACS(EACS entity)
         {
             this.SendPropertyChanging();
@@ -5229,7 +5607,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -5527,7 +5905,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class UserRoleWebPage : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class UserRoleWebPage : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -5546,7 +5924,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<long> _UserModified;
 
-        private System.Nullable<System.DateTime> _DateModified;
+        private System.Nullable<System.DateTime> _DateModififed;
 
         private EntityRef<UserRole> _UserRole;
 
@@ -5722,19 +6100,19 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<System.DateTime> DateModified
+        public System.Nullable<System.DateTime> DateModififed
         {
             get
             {
-                return this._DateModified;
+                return this._DateModififed;
             }
             set
             {
-                if ((this._DateModified != value))
+                if ((this._DateModififed != value))
                 {
                     this.OnDateModififedChanging(value);
                     this.SendPropertyChanging();
-                    this._DateModified = value;
+                    this._DateModififed = value;
                     this.SendPropertyChanged("DateModififed");
                     this.OnDateModififedChanged();
                 }
@@ -5828,7 +6206,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class WatchList : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class WatchList : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -6141,7 +6519,7 @@ namespace Steag.Framework.Model
         }
     }
 
-    public partial class WebPageRegistry : INotifyPropertyChanging, INotifyPropertyChanged, IAuditable
+    public partial class WebPageRegistry : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);

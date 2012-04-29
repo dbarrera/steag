@@ -31,6 +31,15 @@ namespace Steag.Web.Presentation.Security.UserAccount {
         protected global::System.Web.UI.WebControls.CustomValidator valConfirmPassword;
         
         /// <summary>
+        /// valCheckUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator valCheckUsername;
+        
+        /// <summary>
         /// valUsername control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,31 @@ namespace Steag.Web.Presentation.Security.UserAccount {
         protected global::Steag.Web.Presentation.Security.Controls.UserRoleDropDown cboUserRole;
         
         /// <summary>
+        /// valPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPassword;
+        
+        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.PasswordEntryControl txtPassword;
+        protected global::Telerik.Web.UI.RadTextBox txtPassword;
+        
+        /// <summary>
+        /// txtConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadTextBox txtConfirmPassword;
         
         /// <summary>
         /// valFirstName control.

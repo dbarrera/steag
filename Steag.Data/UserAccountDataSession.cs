@@ -64,8 +64,13 @@ namespace Steag.Data
         }
 
         public void DeleteUserAccount(UserAccount account)
-        {
+        {            
             DataContext.UserAccount.DeleteOnSubmit(account);
+        }
+
+        public bool UserNameExists(string username)
+        {
+            return DataContext.UserAccount.Count(u => u.UserName == username) > 0;
         }
 
     }

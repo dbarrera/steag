@@ -1,8 +1,228 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="Steag.Security.DEVELOPMENT" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+  <Table Name="dbo.AutoNumbering" Member="AutoNumbering">
+    <Type Name="Steag.Framework.Model.AutoNumbering">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="TransactionCode" Member="TransactionCode" Storage="_TransactionCode" DbType="NVarChar(60)" />
+      <Column Name="Prefix" Member="Prefix" Storage="_Prefix" DbType="NVarChar(60)" />
+      <Column Name="Suffix" Member="Suffix" Storage="_Suffix" DbType="NVarChar(60)" />
+      <Column Name="Counter" Member="Counter" Storage="_Counter" DbType="BigInt" />
+      <Column Name="Format" Member="Format" Storage="_Format" DbType="NVarChar(60)" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_AutoNumbering_UserCreated" Member="UserAccount" Storage="_UserAccount" ThisKey="UserCreated" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_AutoNumbering_UserModified" Member="UserModifiedUserAccount" Storage="_UserModifiedUserAccount" ThisKey="UserModified" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BadgeRegistry" Member="BadgeRegistry">
+    <Type Name="Steag.Framework.Model.BadgeRegistry">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="BadgeCode" Member="BadgeCode" Storage="_BadgeCode" DbType="NVarChar(60)" />
+      <Column Name="IsIssued" Member="IsIssued" Storage="_IsIssued" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_ECDAP_BadgeRegistry" Member="ECDAP" Storage="_ECDAP" ThisKey="ID" OtherKey="BadgeID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Company">
+    <Type Name="Steag.Framework.Model.Company">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL" IsPrimaryKey="true" />
+      <Column Name="CompanyName" Member="CompanyName" Storage="_CompanyName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Member="Address1" Storage="_Address1" DbType="NVarChar(250)" />
+      <Column Name="Address2" Member="Address2" Storage="_Address2" DbType="NVarChar(250)" />
+      <Column Name="State" Member="State" Storage="_State" DbType="NVarChar(250)" />
+      <Column Name="Country" Member="Country" Storage="_Country" DbType="NVarChar(250)" />
+      <Column Name="PostalCode" Member="PostalCode" Storage="_PostalCode" DbType="NVarChar(250)" />
+      <Column Name="EmailAddress2" Member="EmailAddress2" Storage="_EmailAddress2" DbType="NVarChar(250)" />
+      <Column Name="EmailAddrses2" Member="EmailAddrses2" Storage="_EmailAddrses2" DbType="NVarChar(250)" />
+      <Column Name="ContactPerson" Member="ContactPerson" Storage="_ContactPerson" DbType="BigInt" />
+      <Column Name="TelNo1" Member="TelNo1" Storage="_TelNo1" DbType="NVarChar(15)" />
+      <Column Name="TelNo2" Member="TelNo2" Storage="_TelNo2" DbType="NVarChar(15)" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_CompanyEmployee_Company" Member="Person" Storage="_Person" ThisKey="ID" OtherKey="CompanyID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EACS" Member="EACS">
+    <Type Name="Steag.Framework.Model.EACS">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="SARFID" Member="SARFID" Storage="_SARFID" DbType="BigInt NOT NULL" />
+      <Column Name="EACSCode" Member="EACSCode" Storage="_EACSCode" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionDate" Member="TransactionDate" Storage="_TransactionDate" DbType="DateTime" />
+      <Column Name="Purpose" Member="Purpose" Storage="_Purpose" DbType="NVarChar(250)" />
+      <Column Name="IsFirstVisit" Member="IsFirstVisit" Storage="_IsFirstVisit" DbType="Bit" />
+      <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(500)" />
+      <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
+      <Column Name="ProcessedDate" Member="ProcessedDate" Storage="_ProcessedDate" DbType="DateTime" />
+      <Column Name="ProcessedBy" Member="ProcessedBy" Storage="_ProcessedBy" DbType="BigInt" />
+      <Column Name="VerifiedDate" Member="VerifiedDate" Storage="_VerifiedDate" DbType="DateTime" />
+      <Column Name="VerifiedBy" Member="VerifiedBy" Storage="_VerifiedBy" DbType="BigInt" />
+      <Column Name="ClosedDate" Member="ClosedDate" Storage="_ClosedDate" DbType="DateTime" />
+      <Column Name="ClosedBy" Member="ClosedBy" Storage="_ClosedBy" DbType="BigInt" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_EACS_ClosedBy" Member="UserAccount" Storage="_UserAccount" ThisKey="ClosedBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_EACS_ProcessedBy" Member="ProcessedByUserAccount" Storage="_ProcessedByUserAccount" ThisKey="ProcessedBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_EACS_SARF" Member="SARF" Storage="_SARF" ThisKey="SARFID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_EACS_VerifiedBy" Member="VerifiedByUserAccount" Storage="_VerifiedByUserAccount" ThisKey="VerifiedBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_EACSPersons_EACS" Member="EACSPersons" Storage="_EACSPersons" ThisKey="ID" OtherKey="EACSID" DeleteRule="NO ACTION" />
+      <Association Name="FK_EACSVehicles_EACS" Member="EACSVehicles" Storage="_EACSVehicles" ThisKey="ID" OtherKey="EACSID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EACSPersons" Member="EACSPersons">
+    <Type Name="Steag.Framework.Model.EACSPersons">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="EACSID" Member="EACSID" Storage="_EACSID" DbType="BigInt NOT NULL" />
+      <Column Name="PersonID" Member="PersonID" Storage="_PersonID" DbType="BigInt NOT NULL" />
+      <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_EACSPersons_EACS" Member="EACS" Storage="_EACS" ThisKey="EACSID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_EACSPersons_Person" Member="Person" Storage="_Person" ThisKey="PersonID" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EACSVehicles" Member="EACSVehicles">
+    <Type Name="Steag.Framework.Model.EACSVehicles">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="EACSID" Member="EACSID" Storage="_EACSID" DbType="BigInt NOT NULL" />
+      <Column Name="RegistrationNumber" Member="RegistrationNumber" Storage="_RegistrationNumber" DbType="NVarChar(60)" />
+      <Column Name="SequenceNumber" Member="SequenceNumber" Storage="_SequenceNumber" DbType="NVarChar(60)" />
+      <Column Name="VehicleType" Member="VehicleType" Storage="_VehicleType" DbType="NVarChar(60)" />
+      <Column Name="DriversName" Member="DriversName" Storage="_DriversName" DbType="NVarChar(250)" />
+      <Column Name="DriversLicenseNumber" Member="DriversLicenseNumber" Storage="_DriversLicenseNumber" DbType="NVarChar(60)" />
+      <Column Name="IsInspectionDone" Member="IsInspectionDone" Storage="_IsInspectionDone" DbType="Bit" />
+      <Column Name="IssuedParkingPermit" Member="IssuedParkingPermit" Storage="_IssuedParkingPermit" DbType="NVarChar(60)" />
+      <Column Name="ParkingPermitColor" Member="ParkingPermitColor" Storage="_ParkingPermitColor" DbType="NVarChar(60)" />
+      <Column Name="NumberOfPassengers" Member="NumberOfPassengers" Storage="_NumberOfPassengers" DbType="SmallInt" />
+      <Column Name="HasLiquor" Member="HasLiquor" Storage="_HasLiquor" DbType="Bit" />
+      <Column Name="HasFireArm" Member="HasFireArm" Storage="_HasFireArm" DbType="Bit" />
+      <Column Name="HasAmmunition" Member="HasAmmunition" Storage="_HasAmmunition" DbType="Bit" />
+      <Column Name="HasDeadlyWeapon" Member="HasDeadlyWeapon" Storage="_HasDeadlyWeapon" DbType="Bit" />
+      <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_EACSVehicles_EACS" Member="EACS" Storage="_EACS" ThisKey="EACSID" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ECDAP" Member="ECDAP">
+    <Type Name="Steag.Framework.Model.ECDAP">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="EACSID" Member="EACSID" Storage="_EACSID" DbType="BigInt NOT NULL" />
+      <Column Name="ECDAPCode" Member="ECDAPCode" Storage="_ECDAPCode" DbType="NVarChar(60)" />
+      <Column Name="BadgeID" Member="BadgeID" Storage="_BadgeID" DbType="BigInt NOT NULL" />
+      <Column Name="DateIssued" Member="DateIssued" Storage="_DateIssued" DbType="DateTime" />
+      <Column Name="IssuedTo" Member="IssuedTo" Storage="_IssuedTo" DbType="BigInt NOT NULL" />
+      <Column Name="IssuedBy" Member="IssuedBy" Storage="_IssuedBy" DbType="BigInt" />
+      <Column Name="DateReturned" Member="DateReturned" Storage="_DateReturned" DbType="DateTime" />
+      <Column Name="IsReturned" Member="IsReturned" Storage="_IsReturned" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_ECDAP_BadgeRegistry" Member="BadgeRegistry" Storage="_BadgeRegistry" ThisKey="BadgeID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ECDAP_Person" Member="Person" Storage="_Person" ThisKey="IssuedTo" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ECDAP_UserAccount" Member="UserAccount" Storage="_UserAccount" ThisKey="IssuedBy" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Person">
+    <Type Name="Steag.Framework.Model.Person">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL" IsPrimaryKey="true" />
+      <Column Name="LastName" Member="LastName" Storage="_LastName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Member="FirstName" Storage="_FirstName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Member="MiddleName" Storage="_MiddleName" DbType="NVarChar(250)" />
+      <Column Name="Birthday" Member="Birthday" Storage="_Birthday" DbType="DateTime" />
+      <Column Name="Sex" Member="Sex" Storage="_Sex" DbType="NVarChar(10)" />
+      <Column Name="Position" Member="Position" Storage="_Position" DbType="NVarChar(60)" />
+      <Column Name="Photo" Member="Photo" Storage="_Photo" DbType="Image" UpdateCheck="Never" />
+      <Column Name="CompanyID" Member="CompanyID" Storage="_CompanyID" DbType="BigInt" />
+      <Column Name="HasVisited" Member="HasVisited" Storage="_HasVisited" DbType="Bit" />
+      <Column Name="DateOfFirstVisit" Member="DateOfFirstVisit" Storage="_DateOfFirstVisit" DbType="DateTime" />
+      <Column Name="LastVisited" Member="LastVisited" Storage="_LastVisited" DbType="DateTime" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_CompanyEmployee_Company" Member="Company" Storage="_Company" ThisKey="CompanyID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_EACSPersons_Person" Member="EACSPersons" Storage="_EACSPersons" ThisKey="ID" OtherKey="PersonID" DeleteRule="NO ACTION" />
+      <Association Name="FK_ECDAP_Person" Member="ECDAP" Storage="_ECDAP" ThisKey="ID" OtherKey="IssuedTo" DeleteRule="NO ACTION" />
+      <Association Name="FK_SARFPersons_Person" Member="SARFPersons" Storage="_SARFPersons" ThisKey="ID" OtherKey="PersonID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SARF" Member="SARF">
+    <Type Name="Steag.Framework.Model.SARF">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="SARFCode" Member="SARFCode" Storage="_SARFCode" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="DateFiled" Member="DateFiled" Storage="_DateFiled" DbType="DateTime" />
+      <Column Name="DateOfVisit" Member="DateOfVisit" Storage="_DateOfVisit" DbType="DateTime" />
+      <Column Name="FiledBy" Member="FiledBy" Storage="_FiledBy" DbType="BigInt NOT NULL" />
+      <Column Name="Purpose" Member="Purpose" Storage="_Purpose" DbType="NVarChar(250)" />
+      <Column Name="SourceIP" Member="SourceIP" Storage="_SourceIP" DbType="NVarChar(60)" />
+      <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="ApprovedBy" Member="ApprovedBy" Storage="_ApprovedBy" DbType="BigInt" />
+      <Column Name="DateVisited" Member="DateVisited" Storage="_DateVisited" DbType="DateTime" />
+      <Column Name="VisitVerifiedBy" Member="VisitVerifiedBy" Storage="_VisitVerifiedBy" DbType="BigInt NOT NULL" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_EACS_SARF" Member="EACS" Storage="_EACS" ThisKey="ID" OtherKey="SARFID" DeleteRule="NO ACTION" />
+      <Association Name="FK_SARF_ApprovedBy" Member="UserAccount" Storage="_UserAccount" ThisKey="ApprovedBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_SARF_FiledBy" Member="FiledByUserAccount" Storage="_FiledByUserAccount" ThisKey="FiledBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_SARF_VerifiedBy" Member="VisitVerifiedByUserAccount" Storage="_VisitVerifiedByUserAccount" ThisKey="VisitVerifiedBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_SARFPersons_SARF" Member="SARFPersons" Storage="_SARFPersons" ThisKey="ID" OtherKey="SARFID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SARFPersons" Member="SARFPersons">
+    <Type Name="Steag.Framework.Model.SARFPersons">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="SARFID" Member="SARFID" Storage="_SARFID" DbType="BigInt NOT NULL" />
+      <Column Name="PersonID" Member="PersonID" Storage="_PersonID" DbType="BigInt NOT NULL" />
+      <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
+      <Column Name="FirstVisit" Member="FirstVisit" Storage="_FirstVisit" DbType="Bit" />
+      <Column Name="WasInVisit" Member="WasInVisit" Storage="_WasInVisit" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_SARFPersons_Person" Member="Person" Storage="_Person" ThisKey="PersonID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_SARFPersons_SARF" Member="SARF" Storage="_SARF" ThisKey="SARFID" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.SystemSettings" Member="SystemSettings">
     <Type Name="Steag.Framework.Model.SystemSettings">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="CompanyName" Member="CompanyName" Storage="_CompanyName" DbType="NVarChar(250)" />
+      <Column Name="Address1" Member="Address1" Storage="_Address1" DbType="NVarChar(250)" />
+      <Column Name="Address2" Member="Address2" Storage="_Address2" DbType="NVarChar(250)" />
+      <Column Name="Country" Member="Country" Storage="_Country" DbType="NVarChar(250)" />
+      <Column Name="State" Member="State" Storage="_State" DbType="NVarChar(250)" />
+      <Column Name="PostalCode" Member="PostalCode" Storage="_PostalCode" DbType="NVarChar(10)" />
+      <Column Name="FiscalYear" Member="FiscalYear" Storage="_FiscalYear" DbType="Int" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
     </Type>
   </Table>
   <Table Name="dbo.UserAccount" Member="UserAccount">
@@ -11,15 +231,28 @@
       <Column Name="UserName" Member="UserName" Storage="_UserName" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Member="Password" Storage="_Password" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
       <Column Name="Salt" Member="Salt" Storage="_Salt" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
-      <Column Name="UserRoleID" Member="UserRoleID" Storage="_UserRoleID" DbType="BigInt" />
+      <Column Name="UserRoleID" Member="UserRoleID" Storage="_UserRoleID" DbType="BigInt NOT NULL" />
       <Column Name="FirstName" Member="FirstName" Storage="_FirstName" DbType="NVarChar(250)" />
       <Column Name="MiddleName" Member="MiddleName" Storage="_MiddleName" DbType="NVarChar(250)" />
       <Column Name="LastName" Member="LastName" Storage="_LastName" DbType="NVarChar(250)" />
+      <Column Name="EmailAddress" Member="EmailAddress" Storage="_EmailAddress" DbType="NVarChar(250)" />
+      <Column Name="LastPasswordChanged" Member="LastPasswordChanged" Storage="_LastPasswordChanged" DbType="DateTime" />
+      <Column Name="LastLogIn" Member="LastLogIn" Storage="_LastLogIn" DbType="DateTime" />
       <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
       <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_AutoNumbering_UserCreated" Member="AutoNumbering" Storage="_AutoNumbering" ThisKey="ID" OtherKey="UserCreated" DeleteRule="NO ACTION" />
+      <Association Name="FK_AutoNumbering_UserModified" Member="AutoNumbering_UserModified" Storage="_AutoNumbering_UserModified" ThisKey="ID" OtherKey="UserModified" DeleteRule="NO ACTION" />
+      <Association Name="FK_EACS_ClosedBy" Member="EACS" Storage="_EACS" ThisKey="ID" OtherKey="ClosedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_EACS_ProcessedBy" Member="EACS_ProcessedBy" Storage="_EACS_ProcessedBy" ThisKey="ID" OtherKey="ProcessedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_EACS_VerifiedBy" Member="EACS_VerifiedBy" Storage="_EACS_VerifiedBy" ThisKey="ID" OtherKey="VerifiedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_ECDAP_UserAccount" Member="ECDAP" Storage="_ECDAP" ThisKey="ID" OtherKey="IssuedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_SARF_ApprovedBy" Member="SARF" Storage="_SARF" ThisKey="ID" OtherKey="ApprovedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_SARF_FiledBy" Member="SARF_FiledBy" Storage="_SARF_FiledBy" ThisKey="ID" OtherKey="FiledBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_SARF_VerifiedBy" Member="SARF_VerifiedBy" Storage="_SARF_VerifiedBy" ThisKey="ID" OtherKey="VisitVerifiedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_UserAccount_UserRole" Member="UserRole" Storage="_UserRole" ThisKey="UserRoleID" OtherKey="ID" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.UserRole" Member="UserRole">
@@ -33,6 +266,8 @@
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
       <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_UserAccount_UserRole" Member="UserAccount" Storage="_UserAccount" ThisKey="ID" OtherKey="UserRoleID" DeleteRule="NO ACTION" />
+      <Association Name="FK_UserRoleWebPage_UserRole" Member="UserRoleWebPage" Storage="_UserRoleWebPage" ThisKey="ID" OtherKey="UserRoleID" DeleteRule="NO ACTION" />
     </Type>
   </Table>
   <Table Name="dbo.UserRoleWebPage" Member="UserRoleWebPage">
@@ -45,20 +280,39 @@
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
       <Column Name="DateModififed" Member="DateModififed" Storage="_DateModififed" DbType="DateTime" />
+      <Association Name="FK_UserRoleWebPage_UserRole" Member="UserRole" Storage="_UserRole" ThisKey="UserRoleID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_UserRoleWebPage_WebPage" Member="WebPageRegistry" Storage="_WebPageRegistry" ThisKey="WebPageID" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WatchList" Member="WatchList">
+    <Type Name="Steag.Framework.Model.WatchList">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="LastName" Member="LastName" Storage="_LastName" DbType="NVarChar(250)" />
+      <Column Name="FirstName" Member="FirstName" Storage="_FirstName" DbType="NVarChar(250)" />
+      <Column Name="MiddleName" Member="MiddleName" Storage="_MiddleName" DbType="NVarChar(250)" />
+      <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(500)" />
+      <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(500)" />
+      <Column Name="Photo" Member="Photo" Storage="_Photo" DbType="Image" UpdateCheck="Never" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
     </Type>
   </Table>
   <Table Name="dbo.WebPageRegistry" Member="WebPageRegistry">
     <Type Name="Steag.Framework.Model.WebPageRegistry">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
-      <Column Name="PageIdentity" Member="PageIdentity" Storage="_PageIdentity" DbType="NVarChar(250)" />
-      <Column Name="FullName" Member="FullName" Storage="_FullName" DbType="NVarChar(250)" />
-      <Column Name="AssemblyName" Member="AssemblyName" Storage="_AssemblyName" DbType="NVarChar(250)" />
+      <Column Name="PageIdentity" Member="PageIdentity" Storage="_PageIdentity" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Member="FullName" Storage="_FullName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="AssemblyName" Member="AssemblyName" Storage="_AssemblyName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(250)" />
       <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
       <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_UserRoleWebPage_WebPage" Member="UserRoleWebPage" Storage="_UserRoleWebPage" ThisKey="ID" OtherKey="WebPageID" DeleteRule="NO ACTION" />
     </Type>
   </Table>
 </Database>

@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoNumberingLogic.cs" />
+    <Compile Include="EACSLogic.cs" />
     <Compile Include="Handler\ISystemAccessHandler.cs" />
     <Compile Include="ILogic.cs" />
     <Compile Include="Handler\IUserRoleHandler.cs" />
