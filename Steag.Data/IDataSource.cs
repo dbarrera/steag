@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Steag.Framework.Authentication;
 
 namespace Steag.Data
 {
@@ -17,5 +18,6 @@ namespace Steag.Data
         void BeginTransaction();
         void CommitTransaction();
         void RollbackTransaction();
+                
     }
 }

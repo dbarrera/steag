@@ -48,6 +48,8 @@ namespace Steag.Data
 
         public virtual UserAccount NewUserAccount(long roleID)
         {
+            var usrAccount = new UserAccount() { UserRoleID = roleID };
+            
             return new UserAccount() { UserRoleID = roleID };
         }
 

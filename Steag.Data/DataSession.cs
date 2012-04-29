@@ -84,6 +84,8 @@ namespace Steag.Data
         {
             DataSource = dataSource;
             CurrentUser = user;
+            DataContext.CurrentUser = CurrentUser;
+
         }        
 
          protected DataSession(IDataSource dataSource)
@@ -127,7 +129,7 @@ namespace Steag.Data
         #endregion
 
         #region Auditor
-        protected static void Audit(IAuditable auditable, User user)
+        public static void Audit(IAuditable auditable, User user)
         {
             Auditor.Audit(auditable, user);
         }
