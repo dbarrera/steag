@@ -6,7 +6,7 @@
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
-	[DateModififed] [datetime] NULL,
+	[DateModified] [datetime] NULL,
  CONSTRAINT [PK_UserRoleWebPage] PRIMARY KEY CLUSTERED 
 (
 	[UserRoleID] ASC,
