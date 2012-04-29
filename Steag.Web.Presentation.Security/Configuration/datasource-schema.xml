@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Database Name="Steag.Security.DEVELOPMENT" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+<Database xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
   <Table Name="dbo.AutoNumbering" Member="AutoNumbering">
     <Type Name="Steag.Framework.Model.AutoNumbering">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
@@ -49,6 +49,31 @@
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
       <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
       <Association Name="FK_CompanyEmployee_Company" Member="Person" Storage="_Person" ThisKey="ID" OtherKey="CompanyID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contractor" Member="Contractor">
+    <Type Name="Steag.Framework.Model.Contractor">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="ContractorName" Member="ContractorName" Storage="_ContractorName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactPerson" Member="ContactPerson" Storage="_ContactPerson" DbType="NVarChar(250)" />
+      <Column Name="ContactNumber1" Member="ContactNumber1" Storage="_ContactNumber1" DbType="NVarChar(30)" />
+      <Column Name="ContactNumber2" Member="ContactNumber2" Storage="_ContactNumber2" DbType="NVarChar(30)" />
+      <Column Name="EmailAddress" Member="EmailAddress" Storage="_EmailAddress" DbType="NVarChar(250)" />
+      <Column Name="Address1" Member="Address1" Storage="_Address1" DbType="NVarChar(250)" />
+      <Column Name="Address2" Member="Address2" Storage="_Address2" DbType="NVarChar(250)" />
+      <Column Name="State" Member="State" Storage="_State" DbType="NVarChar(250)" />
+      <Column Name="Country" Member="Country" Storage="_Country" DbType="NVarChar(250)" />
+      <Column Name="PostalCode" Member="PostalCode" Storage="_PostalCode" DbType="NVarChar(10)" />
+      <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(250)" />
+      <Column Name="LastProjectInvolvement" Member="LastProjectInvolvement" Storage="_LastProjectInvolvement" DbType="DateTime" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_Contractor_UserCreated" Member="UserAccount" Storage="_UserAccount" ThisKey="UserCreated" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_Contractor_UserModified" Member="UserModifiedUserAccount" Storage="_UserModifiedUserAccount" ThisKey="UserModified" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ProjectContractor_Contractor" Member="ProjectContractor" Storage="_ProjectContractor" ThisKey="ID" OtherKey="ContractorID" DeleteRule="NO ACTION" />
     </Type>
   </Table>
   <Table Name="dbo.EACS" Member="EACS">
@@ -167,6 +192,51 @@
       <Association Name="FK_SARFPersons_Person" Member="SARFPersons" Storage="_SARFPersons" ThisKey="ID" OtherKey="PersonID" DeleteRule="NO ACTION" />
     </Type>
   </Table>
+  <Table Name="dbo.Project" Member="Project">
+    <Type Name="Steag.Framework.Model.Project">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="ProjectName" Member="ProjectName" Storage="_ProjectName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(500)" />
+      <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(500)" />
+      <Column Name="StartDate" Member="StartDate" Storage="_StartDate" DbType="DateTime" />
+      <Column Name="EndDate" Member="EndDate" Storage="_EndDate" DbType="DateTime" />
+      <Column Name="DateStarted" Member="DateStarted" Storage="_DateStarted" DbType="DateTime" />
+      <Column Name="DateEnded" Member="DateEnded" Storage="_DateEnded" DbType="DateTime" />
+      <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(30)" />
+      <Column Name="ProjectFiled" Member="ProjectFiled" Storage="_ProjectFiled" DbType="DateTime" />
+      <Column Name="FiledBy" Member="FiledBy" Storage="_FiledBy" DbType="BigInt" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_Project_FiledBy" Member="UserAccount" Storage="_UserAccount" ThisKey="FiledBy" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_Project_UserCreated" Member="UserCreatedUserAccount" Storage="_UserCreatedUserAccount" ThisKey="UserCreated" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_Project_UserModified" Member="UserModifiedUserAccount" Storage="_UserModifiedUserAccount" ThisKey="UserModified" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ProjectContractor_Project" Member="ProjectContractor" Storage="_ProjectContractor" ThisKey="ID" OtherKey="ProjectID" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProjectContractor" Member="ProjectContractor">
+    <Type Name="Steag.Framework.Model.ProjectContractor">
+      <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="ProjectID" Member="ProjectID" Storage="_ProjectID" DbType="BigInt NOT NULL" />
+      <Column Name="ContractorID" Member="ContractorID" Storage="_ContractorID" DbType="BigInt NOT NULL" />
+      <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(500)" />
+      <Column Name="StartDate" Member="StartDate" Storage="_StartDate" DbType="DateTime" />
+      <Column Name="EndDate" Member="EndDate" Storage="_EndDate" DbType="DateTime" />
+      <Column Name="DateStarted" Member="DateStarted" Storage="_DateStarted" DbType="DateTime" />
+      <Column Name="DateEnded" Member="DateEnded" Storage="_DateEnded" DbType="DateTime" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
+      <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
+      <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
+      <Association Name="FK_ProjectContractor_Contractor" Member="Contractor" Storage="_Contractor" ThisKey="ContractorID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ProjectContractor_Project" Member="Project" Storage="_Project" ThisKey="ProjectID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ProjectContractor_UserCreated" Member="UserAccount" Storage="_UserAccount" ThisKey="UserCreated" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="FK_ProjectContractor_UserModified" Member="UserModifiedUserAccount" Storage="_UserModifiedUserAccount" ThisKey="UserModified" OtherKey="ID" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.SARF" Member="SARF">
     <Type Name="Steag.Framework.Model.SARF">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
@@ -245,10 +315,17 @@
       <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
       <Association Name="FK_AutoNumbering_UserCreated" Member="AutoNumbering" Storage="_AutoNumbering" ThisKey="ID" OtherKey="UserCreated" DeleteRule="NO ACTION" />
       <Association Name="FK_AutoNumbering_UserModified" Member="AutoNumbering_UserModified" Storage="_AutoNumbering_UserModified" ThisKey="ID" OtherKey="UserModified" DeleteRule="NO ACTION" />
+      <Association Name="FK_Contractor_UserCreated" Member="Contractor" Storage="_Contractor" ThisKey="ID" OtherKey="UserCreated" DeleteRule="NO ACTION" />
+      <Association Name="FK_Contractor_UserModified" Member="Contractor_UserModified" Storage="_Contractor_UserModified" ThisKey="ID" OtherKey="UserModified" DeleteRule="NO ACTION" />
       <Association Name="FK_EACS_ClosedBy" Member="EACS" Storage="_EACS" ThisKey="ID" OtherKey="ClosedBy" DeleteRule="NO ACTION" />
       <Association Name="FK_EACS_ProcessedBy" Member="EACS_ProcessedBy" Storage="_EACS_ProcessedBy" ThisKey="ID" OtherKey="ProcessedBy" DeleteRule="NO ACTION" />
       <Association Name="FK_EACS_VerifiedBy" Member="EACS_VerifiedBy" Storage="_EACS_VerifiedBy" ThisKey="ID" OtherKey="VerifiedBy" DeleteRule="NO ACTION" />
       <Association Name="FK_ECDAP_UserAccount" Member="ECDAP" Storage="_ECDAP" ThisKey="ID" OtherKey="IssuedBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_Project_FiledBy" Member="Project" Storage="_Project" ThisKey="ID" OtherKey="FiledBy" DeleteRule="NO ACTION" />
+      <Association Name="FK_Project_UserCreated" Member="Project_UserCreated" Storage="_Project_UserCreated" ThisKey="ID" OtherKey="UserCreated" DeleteRule="NO ACTION" />
+      <Association Name="FK_Project_UserModified" Member="Project_UserModified" Storage="_Project_UserModified" ThisKey="ID" OtherKey="UserModified" DeleteRule="NO ACTION" />
+      <Association Name="FK_ProjectContractor_UserCreated" Member="ProjectContractor" Storage="_ProjectContractor" ThisKey="ID" OtherKey="UserCreated" DeleteRule="NO ACTION" />
+      <Association Name="FK_ProjectContractor_UserModified" Member="ProjectContractor_UserModified" Storage="_ProjectContractor_UserModified" ThisKey="ID" OtherKey="UserModified" DeleteRule="NO ACTION" />
       <Association Name="FK_SARF_ApprovedBy" Member="SARF" Storage="_SARF" ThisKey="ID" OtherKey="ApprovedBy" DeleteRule="NO ACTION" />
       <Association Name="FK_SARF_FiledBy" Member="SARF_FiledBy" Storage="_SARF_FiledBy" ThisKey="ID" OtherKey="FiledBy" DeleteRule="NO ACTION" />
       <Association Name="FK_SARF_VerifiedBy" Member="SARF_VerifiedBy" Storage="_SARF_VerifiedBy" ThisKey="ID" OtherKey="VisitVerifiedBy" DeleteRule="NO ACTION" />
@@ -279,7 +356,7 @@
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
-      <Column Name="DateModififed" Member="DateModififed" Storage="_DateModififed" DbType="DateTime" />
+      <Column Name="DateModified" Member="DateModified" Storage="_DateModified" DbType="DateTime" />
       <Association Name="FK_UserRoleWebPage_UserRole" Member="UserRole" Storage="_UserRole" ThisKey="UserRoleID" OtherKey="ID" IsForeignKey="true" />
       <Association Name="FK_UserRoleWebPage_WebPage" Member="WebPageRegistry" Storage="_WebPageRegistry" ThisKey="WebPageID" OtherKey="ID" IsForeignKey="true" />
     </Type>

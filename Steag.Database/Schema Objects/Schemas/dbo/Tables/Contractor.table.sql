@@ -1,4 +1,4 @@
-﻿REATE TABLE [dbo].[Contractor](
+﻿CREATE TABLE [dbo].[Contractor](
 	[ID] [bigint] IDENTITY(1,1) NOT NULL,
 	[ContractorName] [nvarchar](250) NOT NULL,
 	[ContactPerson] [nvarchar](250) NULL,

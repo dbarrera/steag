@@ -14,7 +14,7 @@
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
-	[DateModifiefd] [datetime] NULL,
+	[DateModified] [datetime] NULL,
  CONSTRAINT [PK_Project] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC

@@ -12,12 +12,18 @@ namespace Steag.Data
     {
         #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertAutoNumbering(AutoNumbering instance);
+    partial void UpdateAutoNumbering(AutoNumbering instance);
+    partial void DeleteAutoNumbering(AutoNumbering instance);
     partial void InsertBadgeRegistry(BadgeRegistry instance);
     partial void UpdateBadgeRegistry(BadgeRegistry instance);
     partial void DeleteBadgeRegistry(BadgeRegistry instance);
     partial void InsertCompany(Company instance);
     partial void UpdateCompany(Company instance);
     partial void DeleteCompany(Company instance);
+    partial void InsertContractor(Contractor instance);
+    partial void UpdateContractor(Contractor instance);
+    partial void DeleteContractor(Contractor instance);
     partial void InsertEACS(EACS instance);
     partial void UpdateEACS(EACS instance);
     partial void DeleteEACS(EACS instance);
@@ -33,6 +39,12 @@ namespace Steag.Data
     partial void InsertPerson(Person instance);
     partial void UpdatePerson(Person instance);
     partial void DeletePerson(Person instance);
+    partial void InsertProject(Project instance);
+    partial void UpdateProject(Project instance);
+    partial void DeleteProject(Project instance);
+    partial void InsertProjectContractor(ProjectContractor instance);
+    partial void UpdateProjectContractor(ProjectContractor instance);
+    partial void DeleteProjectContractor(ProjectContractor instance);
     partial void InsertSARF(SARF instance);
     partial void UpdateSARF(SARF instance);
     partial void DeleteSARF(SARF instance);
@@ -95,6 +107,14 @@ namespace Steag.Data
             }
         }
 
+        public System.Data.Linq.Table<Contractor> Contractor
+        {
+            get
+            {
+                return this.GetTable<Contractor>();
+            }
+        }
+
         public System.Data.Linq.Table<EACS> EACS
         {
             get
@@ -132,6 +152,22 @@ namespace Steag.Data
             get
             {
                 return this.GetTable<Person>();
+            }
+        }
+
+        public System.Data.Linq.Table<Project> Project
+        {
+            get
+            {
+                return this.GetTable<Project>();
+            }
+        }
+
+        public System.Data.Linq.Table<ProjectContractor> ProjectContractor
+        {
+            get
+            {
+                return this.GetTable<ProjectContractor>();
             }
         }
 
