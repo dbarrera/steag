@@ -68,6 +68,7 @@
     <Compile Include="LogicBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Handler\SystemAccessHandler.cs" />
+    <Compile Include="SARFLogic.cs" />
     <Compile Include="UserAccountLogic.cs" />
     <Compile Include="UserRoleLogic.cs" />
   </ItemGroup>

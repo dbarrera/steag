@@ -5,7 +5,7 @@
     <Items>
         <telerik:RadMenuItem Text="SARF Management" NavigateUrl="DefaultCS.aspx?Page=Products">
             <Items>
-                <telerik:RadMenuItem Text="SARF Entry" NavigateUrl="DefaultCS.aspx?Page=Products" />
+                <telerik:RadMenuItem Text="SARF Entry" NavigateUrl="~/Sarf/New.aspx" />
                 <telerik:RadMenuItem Text="SARF Inquiry" NavigateUrl="DefaultCS.aspx?Page=Products" />
             </Items>
         </telerik:RadMenuItem>

@@ -5,7 +5,7 @@
     <Items>
         <telerik:RadMenuItem Text="SARF Management">
             <Items>
-                <telerik:RadMenuItem Text="SARF Entry" NavigateUrl="" />
+                <telerik:RadMenuItem Text="SARF Entry" NavigateUrl="~/Sarf/New.aspx" />
                 <telerik:RadMenuItem Text="SARF Inquiry" NavigateUrl="" />
             </Items>
         </telerik:RadMenuItem>        

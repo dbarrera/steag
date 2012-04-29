@@ -42,7 +42,7 @@ namespace Steag.Business
 
         public EACS GetEACS(long id)
         {            
-            return DataSession.GetEACS(id);
+            return DataSession.GetEACSByID(id);
         }
 
         protected virtual string GenerateEACSCode()

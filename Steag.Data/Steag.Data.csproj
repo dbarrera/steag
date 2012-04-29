@@ -82,6 +82,7 @@
     <Compile Include="Mapping\IMappingSource.cs" />
     <Compile Include="Mapping\MappingSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SARFDataSession.cs" />
     <Compile Include="UserAccountDataSession.cs" />
     <Compile Include="UserRoleAcccessDataSession.cs" />
     <Compile Include="UserRoleDataSession.cs" />

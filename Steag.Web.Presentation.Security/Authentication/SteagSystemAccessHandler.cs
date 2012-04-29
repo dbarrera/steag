@@ -44,6 +44,7 @@ namespace Steag.Web.Presentation.Security.Authentication
         private static void AddGuard1Access()
         {
             Guard1AccessList.Add("Steag.Web.Presentation.Security.UserHome");
+            Guard1AccessList.Add("Steag.Web.Presentation.Security.Sarf.New");
         }
 
         private static void AddGuard2Access()
