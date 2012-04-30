@@ -13,7 +13,7 @@ namespace Steag.Web.Presentation.Security
         protected void Page_Load(object sender, EventArgs e)
         {
             UserHandle.Current.ExpireUser();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

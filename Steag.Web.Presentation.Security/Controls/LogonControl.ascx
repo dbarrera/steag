@@ -10,7 +10,7 @@
         </a>
     </li>
     <li>
-        <a href="~/AccountSettings.aspx">
+        <a runat="server" href="~/UserAccount/EditUser.aspx">
             Account Settings
         </a>
     </li>

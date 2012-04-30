@@ -117,7 +117,25 @@
     height: 32px;
     display: inline-block;
 }
-/*
+.grid-edit-user-link span
+{
+    display: none;
+}
+.user-register-link
+{
+    background: url('images/user_add.png') no-repeat 0 0;
+    width: 100px;
+    height: 32px;
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 10px;
+}
+.user-register-link span
+{
+    margin-left: 40px;
+}
+
+
 
 
 

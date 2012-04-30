@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Steag.Web.Presentation.Security.Login"
  MasterPageFile="~/Masters/Default.Master" %>
 
-<%@ Register src="Controls/LoginControl.ascx" tagname="LoginControl" tagprefix="steag" %>
+<%@ Register src="~/Controls/LoginControl.ascx" tagname="LoginControl" tagprefix="steag" %>
 
 <asp:Content ID="ContentTitle" ContentPlaceHolderID="title" runat="server">
     STEAG Security Management System Login

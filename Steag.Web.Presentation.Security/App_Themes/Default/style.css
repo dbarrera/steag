@@ -35,6 +35,14 @@
 {
     width: 10px;    
 }
+.width-50
+{
+    width: 50px;
+}
+.width-60
+{
+    width: 50px;
+}
 .width-80
 {
     width: 80px;    
@@ -80,6 +88,10 @@
 .height-39
 {
     height: 39px;
+}
+.height-50
+{
+    height: 40px;
 }
 .min-height-300
 {
@@ -174,6 +186,10 @@
 {
     margin-top: 40px;    
 }
+.margin-left-10
+{
+    margin-left: 10px;    
+}
 .heading-1
 {
     font-size: 40px;
@@ -227,4 +243,13 @@
 .grid-link
 {
     text-decoration: none;
+}
+.link
+{
+    text-decoration: none;
+    color: #133E82;
+}
+.link:hover
+{
+    text-decoration: underline;
 }

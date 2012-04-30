@@ -13,10 +13,10 @@ namespace Steag.Web.Presentation.Security.UserAccount
 
         protected void Page_Load(object sender, EventArgs e)
         {            
-            if (!IsPostBack)
-            {
-                cboUserRole.SelectedIndex = 3;
-            }
+            if (IsPostBack)
+                return;
+            
+            cboUserRole.SelectedIndex = 3;
         }
 
         protected virtual void btnSubmit_Click(object sender, EventArgs e)
@@ -38,6 +38,7 @@ namespace Steag.Web.Presentation.Security.UserAccount
                 user.MiddleName = txtMiddleName.Text ?? string.Empty;
                 user.LastName = txtLastName.Text;
                 user.EmailAddress = txtEmailAddress.Text ?? string.Empty;
+                user.IsActive = true;
 
                 userAccountLogic.AddUserAccount(user);
 

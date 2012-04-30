@@ -98,9 +98,7 @@
     <Content Include="App_Themes\Default\images\login-header-background.png" />
     <Content Include="App_Themes\Default\images\menu-background.png" />
     <Content Include="App_Themes\Default\images\menu-separator.png" />
-    <Content Include="App_Themes\Default\images\steaglogo-medium.png" />
-    <Content Include="App_Themes\Default\images\steaglogo-small.png" />
-    <Content Include="App_Themes\Default\images\steaglogo-smaller.png" />
+    <Content Include="App_Themes\Default\images\user_add.png" />
     <Content Include="App_Themes\Default\images\user_edit.png" />
     <Content Include="App_Themes\Default\layout.css" />
     <Content Include="App_Themes\Default\login-control.css" />
@@ -114,14 +112,17 @@
     <Content Include="Controls\PasswordEntryControl.ascx" />
     <Content Include="Controls\RadScriptManagerDefault.ascx" />
     <Content Include="Controls\SarfInputControl.ascx" />
+    <Content Include="Controls\SearchControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\steaglogo-medium.png" />
     <Content Include="images\steaglogo-small.png" />
+    <Content Include="images\steaglogo-smaller.png" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Sarf\New.aspx" />
     <Content Include="UserAccount\EditPassword.aspx" />
+    <Content Include="UserAccount\EditUser.aspx" />
     <Content Include="UserAccount\Register.aspx" />
     <Content Include="UserAccount\UserManagement.aspx" />
     <Content Include="UserHome.aspx" />
@@ -190,6 +191,13 @@
     <Compile Include="Controls\SarfInputControl.ascx.designer.cs">
       <DependentUpon>SarfInputControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SearchControl.ascx.cs">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchControl.ascx.designer.cs">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UserHomeDashboardControl.cs" />
     <Compile Include="Controls\UserRoleDropDown.cs" />
     <Compile Include="Default.aspx.cs">
@@ -244,6 +252,13 @@
     </Compile>
     <Compile Include="UserAccount\EditPassword.aspx.designer.cs">
       <DependentUpon>EditPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserAccount\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

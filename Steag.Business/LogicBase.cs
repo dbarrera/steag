@@ -97,12 +97,6 @@ namespace Steag.Business
         {
             if (disposing)
             {
-                if (!Equals(CurrentUser, null))
-                {
-                    CurrentUser.Dispose();
-                    CurrentUser = null;
-                }
-
                 if(!Equals(CurrentDataSession, null))
                     CurrentDataSession.Dispose();
             }

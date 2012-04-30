@@ -31,8 +31,13 @@ namespace Steag.Web.Presentation.Security.Controls
         }
 
         protected override void OnLoad(EventArgs e)
-        {
+        {           
+ 
             base.OnLoad(e);
+
+            if (Page.IsPostBack)
+                return;
+
             IEnumerable<UserRole> dataSource;
 
             if (RoleType == UserRoleType.ActiveUserRolesOnly)

@@ -118,12 +118,7 @@ namespace Steag.Data
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
-            {
-                if (!Equals(CurrentUser, null))
-                {
-                    CurrentUser.Dispose();
-                    CurrentUser = null;
-                }                
+            {                             
             }
         }
         #endregion

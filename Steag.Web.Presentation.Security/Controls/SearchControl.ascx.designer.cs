@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Steag.Web.Presentation.Security.UserAccount {
+namespace Steag.Web.Presentation.Security.Controls {
     
     
-    public partial class UserManagement {
+    public partial class SearchControl {
         
         /// <summary>
-        /// cboFilter control.
+        /// cboKey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadComboBox cboFilter;
+        protected global::Telerik.Web.UI.RadComboBox cboKey;
         
         /// <summary>
-        /// searchControl control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Steag.Web.Presentation.Security.Controls.SearchControl searchControl;
+        protected global::Telerik.Web.UI.RadTextBox txtSearch;
         
         /// <summary>
-        /// gridUsers control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid gridUsers;
+        protected global::Telerik.Web.UI.RadButton btnSearch;
     }
 }

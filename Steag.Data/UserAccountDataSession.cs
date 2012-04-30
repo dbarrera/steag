@@ -73,5 +73,10 @@ namespace Steag.Data
             return DataContext.UserAccount.Count(u => u.UserName == username) > 0;
         }
 
+        public IEnumerable<UserAccount> GetUserAccountsByExpression(Expression<Func<UserAccount, bool>> expression)
+        {            
+            return DataContext.UserAccount.Where(expression);
+        }
+
     }
 }

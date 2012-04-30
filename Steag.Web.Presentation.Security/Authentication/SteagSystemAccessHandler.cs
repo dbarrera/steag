@@ -45,11 +45,15 @@ namespace Steag.Web.Presentation.Security.Authentication
         {
             Guard1AccessList.Add("Steag.Web.Presentation.Security.UserHome");
             Guard1AccessList.Add("Steag.Web.Presentation.Security.Sarf.New");
+            Guard1AccessList.Add("Steag.Web.Presentation.Security.UserAccount.EditUser");
+            Guard1AccessList.Add("Steag.Web.Presentation.Security.UserAccount.EditPassword");
         }
 
         private static void AddGuard2Access()
         {
             Guard2AccessList.Add("Steag.Web.Presentation.Security.UserHome");
+            Guard2AccessList.Add("Steag.Web.Presentation.Security.UserAccount.EditUser");
+            Guard2AccessList.Add("Steag.Web.Presentation.Security.UserAccount.EditPassword");
         }
 
         public bool HasAccess(Int64 roleID, string identity)

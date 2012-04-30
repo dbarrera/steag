@@ -10,7 +10,7 @@
 namespace Steag.Web.Presentation.Security.UserAccount {
     
     
-    public partial class EditPassword {
+    public partial class EditUser {
         
         /// <summary>
         /// valSummary control.
@@ -22,76 +22,94 @@ namespace Steag.Web.Presentation.Security.UserAccount {
         protected global::System.Web.UI.WebControls.ValidationSummary valSummary;
         
         /// <summary>
-        /// valConfirmPassword control.
+        /// txtUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator valConfirmPassword;
+        protected global::System.Web.UI.WebControls.Literal txtUsername;
         
         /// <summary>
-        /// divOldPassword control.
+        /// valUserRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divOldPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valUserRole;
         
         /// <summary>
-        /// valPassword control.
+        /// cboUserRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPassword;
+        protected global::Steag.Web.Presentation.Security.Controls.UserRoleDropDown cboUserRole;
         
         /// <summary>
-        /// valCheckOldPassword control.
+        /// valFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator valCheckOldPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valFirstName;
         
         /// <summary>
-        /// txtOldPassword control.
+        /// txtFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadTextBox txtOldPassword;
+        protected global::Telerik.Web.UI.RadTextBox txtFirstName;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// txtMiddleName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::Telerik.Web.UI.RadTextBox txtMiddleName;
         
         /// <summary>
-        /// txtPassword control.
+        /// valLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadTextBox txtPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastName;
         
         /// <summary>
-        /// txtConfirmPassword control.
+        /// txtLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadTextBox txtConfirmPassword;
+        protected global::Telerik.Web.UI.RadTextBox txtLastName;
+        
+        /// <summary>
+        /// txtEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadTextBox txtEmailAddress;
+        
+        /// <summary>
+        /// cboActive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadComboBox cboActive;
         
         /// <summary>
         /// btnSubmit control.

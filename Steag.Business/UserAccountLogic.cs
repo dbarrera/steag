@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using Steag.Framework.Authentication;
 using Steag.Framework.Security;
@@ -149,6 +150,28 @@ namespace Steag.Business
             return false;
         }
 
+        public bool IsUserPasswordValid(long userID, string password)
+        {
+            var userAccount = GetUserByID(userID);
+
+            if (Equals(userAccount, null))
+                return false;
+            
+            var encoding = new UTF8Encoding();
+            var passwordBytes = encoding.GetBytes(password);
+
+            var salt = Convert.FromBase64String(userAccount.Salt);
+
+            var crypto = new MD5Crypto();
+            crypto.Salt = salt;
+            var hash = crypto.ComputeHash(passwordBytes, salt);
+
+            var stringHash = Convert.ToBase64String(hash);
+
+
+            return Equals(stringHash, userAccount.Password);
+        }
+
         public void SetUserPassword(UserAccount userAccount, string password)
         {
             var crypto = new MD5Crypto();
@@ -163,7 +186,19 @@ namespace Steag.Business
 
             userAccount.Salt = Convert.ToBase64String(salt);
             userAccount.Password = Convert.ToBase64String(hash);
-        }  
+        }
+
+        public void SetUserPassword(long userID, string password)
+        {
+            if (string.IsNullOrEmpty(password))
+                throw new ArgumentNullException("password");
+
+            var userAccount = GetUserByID(userID);
+            if (Equals(userAccount, null))
+                throw new Exception("User not found");
+
+            SetUserPassword(userAccount, password);
+        }
 
         public bool UsernameExists(string username)
         {
@@ -171,6 +206,11 @@ namespace Steag.Business
                 throw new ArgumentNullException("username");
 
             return DataSession.UserNameExists(username);
+        }
+
+        public IEnumerable<UserAccount> GetUserAccountsByExpression(Expression<Func<UserAccount, bool>> expression)
+        {
+            return DataSession.GetUserAccountsByExpression(expression);
         }
         #endregion
     }
