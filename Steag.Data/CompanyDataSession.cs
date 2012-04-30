@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Steag.Framework.Authentication;
 using Steag.Framework.Model;
@@ -18,22 +19,22 @@ namespace Steag.Data
 
         }
 
-        public Company GetCompanyByID(long id)
+        public Company GetByID(Int64 id)
         {
             return DataContext.Company.SingleOrDefault(c => c.ID == id);
         }
 
-        public Company GetCompanyByName(string companyName)
+        public Company GetByName(string companyName)
         {
             return DataContext.Company.SingleOrDefault(c => c.CompanyName == companyName);
         }
 
-        public IEnumerable<Company> GetAllCompanies()
+        public IEnumerable<Company> GetAll()
         {
             return from c in DataContext.Company select c;
         }
 
-        public IEnumerable<Company> GetAllUsers(bool isActive)
+        public IEnumerable<Company> GetAll(bool isActive)
         {
             return from c in DataContext.Company where c.IsActive == isActive select c;
         }

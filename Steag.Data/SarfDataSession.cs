@@ -2,6 +2,7 @@
 using System.Linq;
 using Steag.Framework.Authentication;
 using Steag.Framework.Model;
+using System;
 
 namespace Steag.Data
 {
@@ -17,17 +18,17 @@ namespace Steag.Data
         {
         }
 
-        public SARF GetSarfByID(long id)
+        public SARF GetByID(Int64 id)
         {
             return DataContext.SARF.SingleOrDefault(u => u.ID == id);
         }
 
-        public SARF GetSarfByCode(string sarfCode)
+        public SARF GetByCode(string sarfCode)
         {
             return DataContext.SARF.SingleOrDefault(u => u.SARFCode.Equals(sarfCode));
         }
 
-        public IEnumerable<SARF> GetAllSarf(bool isActive)
+        public IEnumerable<SARF> GetAll(bool isActive)
         {
             return from u in DataContext.SARF where u.IsActive == isActive select u;
         }

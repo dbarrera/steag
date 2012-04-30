@@ -75,6 +75,7 @@
     <Compile Include="DataSession.cs" />
     <Compile Include="DataSource.cs" />
     <Compile Include="EacsDataSession.cs" />
+    <Compile Include="EacsPersonDataSession.cs" />
     <Compile Include="IDataCachingManager.cs" />
     <Compile Include="IDataSession.cs" />
     <Compile Include="IDataSource.cs" />

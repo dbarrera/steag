@@ -43,19 +43,19 @@ namespace Steag.Business
         #region Methods
         public SARF GetSarfByID(long id)
         {
-            return DataSession.GetSarfByID(id);
+            return DataSession.GetByID(id);
         }
 
         public SARF GetSarfByCode(string sarfCode)
         {
-            return DataSession.GetSarfByCode(sarfCode);
+            return DataSession.GetByCode(sarfCode);
         }
 
         public IEnumerable<SARF> GetAllRecord()
         {
             bool excludeInactive = true;
 
-            return DataSession.GetAllSarf(excludeInactive);
+            return DataSession.GetAll(excludeInactive);
         }
 
         public void AddSarf(SARF sarf)
