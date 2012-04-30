@@ -116,6 +116,9 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="SarfTest.aspx" />
+    <Content Include="Telerik.Web.Design.dll" />
+    <Content Include="Telerik.Web.UI.dll" />
+    <Content Include="Telerik.Web.UI.Skins.dll" />
     <Content Include="UserHome.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
