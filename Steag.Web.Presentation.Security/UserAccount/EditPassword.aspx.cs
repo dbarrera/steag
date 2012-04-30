@@ -51,7 +51,7 @@ namespace Steag.Web.Presentation.Security.UserAccount
         {
             using (var userAccountLogic = new UserAccountLogic(NewDataSource()))
             {
-                e.IsValid = userAccountLogic.IsUserPasswordValid(UserID, txtPassword.Text ?? string.Empty);
+                e.IsValid = userAccountLogic.IsUserPasswordValid(UserID, txtOldPassword.Text ?? string.Empty);
             }
         }
 
