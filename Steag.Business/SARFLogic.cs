@@ -87,6 +87,11 @@ namespace Steag.Business
 
             DataSession.DeleteSARF(sarf);
         }
+
+        public IEnumerable<SARF> GetApprovedSARFSByVisitDate(DateTime dateOfVisit)
+        {
+            return DataSession.GetApprovedSARFsByVisitDate(dateOfVisit);
+        }
         #endregion
     }
 }

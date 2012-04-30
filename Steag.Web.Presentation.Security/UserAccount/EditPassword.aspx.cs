@@ -62,7 +62,10 @@ namespace Steag.Web.Presentation.Security.UserAccount
 
             using (var userAccountLogic = new UserAccountLogic(CurrentUser, NewDataSource()))
             {                
-                userAccountLogic.SetUserPassword(UserID, txtPassword.Text, true);
+                if(CurrentUser.UserID == UserID)
+                    userAccountLogic.SetUserPassword(UserID, txtPassword.Text, DateTime.Now);
+                else
+                    userAccountLogic.SetUserPassword(UserID, txtPassword.Text, null);
                 userAccountLogic.SubmitChanges();
             }
 

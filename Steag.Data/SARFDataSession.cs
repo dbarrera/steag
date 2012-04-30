@@ -48,6 +48,19 @@ namespace Steag.Data
         public void DeleteSARF(SARF sarf)
         {
             DataContext.SARF.DeleteOnSubmit(sarf);
-        }        
+        }
+
+        public IEnumerable<SARF> GetSARFsByVisitDate(DateTime dateOfVisit, string status)
+        { 
+            if(Equals(status, null))
+                throw new ArgumentNullException("status");
+
+            return DataContext.SARF.Where(s => s.DateOfVisit == dateOfVisit && s.Status == status);
+        }
+
+        public IEnumerable<SARF> GetApprovedSARFsByVisitDate(DateTime dateOfVisit)
+        {
+            return GetSARFsByVisitDate(dateOfVisit, "Approved");
+        }
     }
 }

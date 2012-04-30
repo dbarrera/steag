@@ -302,6 +302,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Themes\Dark\" />
+    <Folder Include="Eacs\" />
+    <Folder Include="Project\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Default.Master" />

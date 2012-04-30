@@ -200,7 +200,7 @@ namespace Steag.Business
             SetUserPassword(userAccount, password);
         }
 
-        public void SetUserPassword(long userID, string password, bool updateLastPasswordChanged)
+        public void SetUserPassword(long userID, string password, DateTime? dateChanged)
         {
             if (string.IsNullOrEmpty(password))
                 throw new ArgumentNullException("password");
@@ -210,8 +210,16 @@ namespace Steag.Business
                 throw new Exception("User not found");
 
             SetUserPassword(userAccount, password);
-            if (updateLastPasswordChanged)
-                userAccount.LastPasswordChanged = DateTime.Now;
+            userAccount.LastPasswordChanged = dateChanged;
+        }        
+
+        public bool HasUserChangedPassword(long userID)
+        {
+            var user = GetUserByID(userID);
+            if (Equals(user, null))
+                return false;
+
+            return !Equals(user.LastPasswordChanged, null);
         }
 
 
