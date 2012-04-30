@@ -88,9 +88,39 @@ namespace Steag.Business
             DataSession.DeleteSARF(sarf);
         }
 
-        public IEnumerable<SARF> GetApprovedSARFSByVisitDate(DateTime dateOfVisit)
+        public void ApproveSARF(SARF sarf)
+        {
+            sarf.Status = "Approved";
+        }
+
+        public void RejectSARF(SARF sarf)
+        {
+            sarf.Status = "Denied";
+        }
+
+        public void CloseSARF(SARF sarf)
+        {            
+            sarf.Status = "Closed";
+        }
+
+        public IEnumerable<SARF> GetApprovedSARFsByVisitDate(DateTime dateOfVisit)
         {
             return DataSession.GetApprovedSARFsByVisitDate(dateOfVisit);
+        }
+
+        public IEnumerable<SARF> GetSARFsByVisitDate(DateTime dateofVisit, string status)
+        {
+            return DataSession.GetSARFsByVisitDate(dateofVisit, status);
+        }
+
+        /// <summary>
+        /// Create an EACS out of a SARF entity
+        /// </summary>
+        /// <param name="sarf"></param>
+        /// <returns></returns>
+        public EACS CreateEACSFromSARF(SARF sarf)
+        {
+            return default(EACS);
         }
         #endregion
     }
