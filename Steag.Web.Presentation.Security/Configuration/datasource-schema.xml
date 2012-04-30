@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Database xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+<Database Name="STEAG.DATABASE" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
   <Table Name="dbo.AutoNumbering" Member="AutoNumbering">
     <Type Name="Steag.Framework.Model.AutoNumbering">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />

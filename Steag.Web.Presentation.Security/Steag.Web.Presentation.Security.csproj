@@ -101,6 +101,7 @@
     <Content Include="App_Themes\Default\images\steaglogo-medium.png" />
     <Content Include="App_Themes\Default\images\steaglogo-small.png" />
     <Content Include="App_Themes\Default\images\steaglogo-smaller.png" />
+    <Content Include="App_Themes\Default\images\user_edit.png" />
     <Content Include="App_Themes\Default\layout.css" />
     <Content Include="App_Themes\Default\login-control.css" />
     <Content Include="App_Themes\Default\style.css" />
@@ -189,6 +190,7 @@
     <Compile Include="Controls\SarfInputControl.ascx.designer.cs">
       <DependentUpon>SarfInputControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UserHomeDashboardControl.cs" />
     <Compile Include="Controls\UserRoleDropDown.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

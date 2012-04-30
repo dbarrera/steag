@@ -50,7 +50,7 @@ namespace Steag.Web.Presentation.Security
                 {
                     userAccountLogic.UserNotFound += UserNotFound;
                     userAccountLogic.InvalidPassword += InvalidPassword;
-
+                    userAccountLogic.UserInActive += UserInActive;
                     allowLogin = userAccountLogic.AllowLogin(args.UserName, args.Password, ref user);
                 }
             }
@@ -70,6 +70,12 @@ namespace Steag.Web.Presentation.Security
             RaiseEvent("Login.aspx#UserNotFound", sender, e);
             loginControl.SetErrorMessage("User not found");
             
+        }
+
+        protected void UserInActive(object sender, EventArgs e)
+        {
+            RaiseEvent("Login.aspx#UserInActive", sender, e);
+            loginControl.SetErrorMessage("User Blocked. Please contact your System Administrator");
         }
 
         protected void InvalidPassword(object sender, EventArgs e)

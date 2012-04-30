@@ -14,6 +14,7 @@ namespace Steag.Business
         #region Events
         public event EventHandler UserNotFound;
         public event EventHandler InvalidPassword;
+        public event EventHandler UserInActive;
         #endregion
 
         #region DataSession
@@ -114,6 +115,14 @@ namespace Steag.Business
                     UserNotFound.Invoke(this, EventArgs.Empty);
                 return false;
             }
+
+            if (!userAccount.IsActive.Value)
+            {
+                if (!Equals(UserInActive, null))
+                    UserInActive.Invoke(this, EventArgs.Empty);
+                return false;
+            }
+
             var encoding = new UTF8Encoding();
             var passwordBytes = encoding.GetBytes(password);
 

@@ -110,6 +110,13 @@
     text-decoration: underline;    
 }
 
+.grid-edit-user-link
+{
+    background: url('images/user_edit.png') no-repeat 0 0;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
 /*
 
 
