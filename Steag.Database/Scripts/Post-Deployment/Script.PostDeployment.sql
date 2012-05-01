@@ -12,3 +12,4 @@ Post-Deployment Script Template
 :r .\DefaultData\SystemSettingsDefault.sql
 :r .\DefaultData\UserRoleDefault.sql
 :r .\DefaultData\UserAccountDefault.sql
+:r .\DefaultData\AutoNumberingDefault.sql

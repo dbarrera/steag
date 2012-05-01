@@ -8,7 +8,7 @@
 	[IssuedBy] [bigint] NULL,
 	[DateReturned] [datetime] NULL,
 	[IsReturned] [bit] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -40,6 +40,9 @@ REFERENCES [dbo].[UserAccount] ([ID])
 GO
 
 ALTER TABLE [dbo].[ECDAP] CHECK CONSTRAINT [FK_ECDAP_UserAccount]
+GO
+
+ALTER TABLE [dbo].[ECDAP] ADD  CONSTRAINT [DF_ECDAP_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

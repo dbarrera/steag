@@ -6,7 +6,7 @@
 	[VehicleType] [nvarchar](60) NULL,
 	[DriversName] [nvarchar](250) NULL,
 	[DriversLicenseNumber] [nvarchar](60) NULL,
-	[IsInspectionDone] [bit] NULL,
+	[IsInspectionDone] [bit] NOT NULL,
 	[IssuedParkingPermit] [nvarchar](60) NULL,
 	[ParkingPermitColor] [nvarchar](60) NULL,
 	[NumberOfPassengers] [smallint] NULL,
@@ -15,7 +15,7 @@
 	[HasAmmunition] [bit] NULL,
 	[HasDeadlyWeapon] [bit] NULL,
 	[Status] [nvarchar](60) NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -33,6 +33,12 @@ REFERENCES [dbo].[EACS] ([ID])
 GO
 
 ALTER TABLE [dbo].[EACSVehicles] CHECK CONSTRAINT [FK_EACSVehicles_EACS]
+GO
+
+ALTER TABLE [dbo].[EACSVehicles] ADD  CONSTRAINT [DF_EACSVehicles_IsInspectionDone]  DEFAULT ((0)) FOR [IsInspectionDone]
+GO
+
+ALTER TABLE [dbo].[EACSVehicles] ADD  CONSTRAINT [DF_EACSVehicles_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

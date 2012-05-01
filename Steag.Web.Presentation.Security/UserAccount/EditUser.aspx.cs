@@ -76,7 +76,7 @@ namespace Steag.Web.Presentation.Security.UserAccount
                         break;
                 }
 
-                if (user.IsActive ?? false)
+                if (user.IsActive)
                     cboActive.SelectedIndex = 0;
                 else
                     cboActive.SelectedIndex = 1;

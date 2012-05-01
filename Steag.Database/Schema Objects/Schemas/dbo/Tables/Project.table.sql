@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[Project](
 	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[ProjectCode] [nvarchar](60) NOT NULL,
 	[ProjectName] [nvarchar](250) NOT NULL,
 	[Description] [nvarchar](500) NULL,
 	[Notes] [nvarchar](500) NULL,

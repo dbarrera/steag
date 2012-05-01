@@ -10,7 +10,7 @@
 	[EmailAddress] [nvarchar](250) NULL,
 	[LastPasswordChanged] [datetime] NULL,
 	[LastLogIn] [datetime] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -33,7 +33,7 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'UserRole FK' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UserAccount', @level2type=N'CONSTRAINT',@level2name=N'FK_UserAccount_UserRole'
 GO
 
-
-
+ALTER TABLE [dbo].[UserAccount] ADD  CONSTRAINT [DF_UserAccount_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
 
 

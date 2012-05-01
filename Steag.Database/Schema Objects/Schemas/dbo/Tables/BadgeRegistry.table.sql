@@ -2,7 +2,7 @@
 	[ID] [bigint] IDENTITY(1,1) NOT NULL,
 	[BadgeCode] [nvarchar](60) NULL,
 	[IsIssued] [bit] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -14,3 +14,8 @@
 ) ON [PRIMARY]
 
 GO
+
+ALTER TABLE [dbo].[BadgeRegistry] ADD  CONSTRAINT [DF_BadgeRegistry_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+

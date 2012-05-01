@@ -365,7 +365,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<bool> _IsIssued;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -387,7 +387,7 @@ namespace Steag.Framework.Model
         partial void OnBadgeCodeChanged();
         partial void OnIsIssuedChanging(System.Nullable<bool> value);
         partial void OnIsIssuedChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -462,7 +462,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -631,7 +631,7 @@ namespace Steag.Framework.Model
 
         private string _TelNo2;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -671,7 +671,7 @@ namespace Steag.Framework.Model
         partial void OnTelNo1Changed();
         partial void OnTelNo2Changing(string value);
         partial void OnTelNo2Changed();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -917,7 +917,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -1064,6 +1064,8 @@ namespace Steag.Framework.Model
 
         private long _ID;
 
+        private string _ContractorCode;
+
         private string _ContractorName;
 
         private string _ContactPerson;
@@ -1110,6 +1112,8 @@ namespace Steag.Framework.Model
         partial void OnCreated();
         partial void OnIDChanging(long value);
         partial void OnIDChanged();
+        partial void OnContractorCodeChanging(string value);
+        partial void OnContractorCodeChanged();
         partial void OnContractorNameChanging(string value);
         partial void OnContractorNameChanged();
         partial void OnContactPersonChanging(string value);
@@ -1169,6 +1173,25 @@ namespace Steag.Framework.Model
                     this._ID = value;
                     this.SendPropertyChanged("ID");
                     this.OnIDChanged();
+                }
+            }
+        }
+
+        public string ContractorCode
+        {
+            get
+            {
+                return this._ContractorCode;
+            }
+            set
+            {
+                if ((this._ContractorCode != value))
+                {
+                    this.OnContractorCodeChanging(value);
+                    this.SendPropertyChanging();
+                    this._ContractorCode = value;
+                    this.SendPropertyChanged("ContractorCode");
+                    this.OnContractorCodeChanged();
                 }
             }
         }
@@ -1648,7 +1671,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<long> _ClosedBy;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -1702,7 +1725,7 @@ namespace Steag.Framework.Model
         partial void OnClosedDateChanged();
         partial void OnClosedByChanging(System.Nullable<long> value);
         partial void OnClosedByChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -2007,7 +2030,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -2316,7 +2339,7 @@ namespace Steag.Framework.Model
 
         private string _Status;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -2342,7 +2365,7 @@ namespace Steag.Framework.Model
         partial void OnPersonIDChanged();
         partial void OnStatusChanging(string value);
         partial void OnStatusChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -2445,7 +2468,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -2646,7 +2669,7 @@ namespace Steag.Framework.Model
 
         private string _DriversLicenseNumber;
 
-        private System.Nullable<bool> _IsInspectionDone;
+        private bool _IsInspectionDone;
 
         private string _IssuedParkingPermit;
 
@@ -2664,7 +2687,7 @@ namespace Steag.Framework.Model
 
         private string _Status;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -2694,7 +2717,7 @@ namespace Steag.Framework.Model
         partial void OnDriversNameChanged();
         partial void OnDriversLicenseNumberChanging(string value);
         partial void OnDriversLicenseNumberChanged();
-        partial void OnIsInspectionDoneChanging(System.Nullable<bool> value);
+        partial void OnIsInspectionDoneChanging(bool value);
         partial void OnIsInspectionDoneChanged();
         partial void OnIssuedParkingPermitChanging(string value);
         partial void OnIssuedParkingPermitChanged();
@@ -2712,7 +2735,7 @@ namespace Steag.Framework.Model
         partial void OnHasDeadlyWeaponChanged();
         partial void OnStatusChanging(string value);
         partial void OnStatusChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -2867,7 +2890,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsInspectionDone
+        public bool IsInspectionDone
         {
             get
             {
@@ -3038,7 +3061,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -3210,7 +3233,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<bool> _IsReturned;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -3248,7 +3271,7 @@ namespace Steag.Framework.Model
         partial void OnDateReturnedChanged();
         partial void OnIsReturnedChanging(System.Nullable<bool> value);
         partial void OnIsReturnedChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -3451,7 +3474,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -3695,7 +3718,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<System.DateTime> _LastVisited;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -3741,7 +3764,7 @@ namespace Steag.Framework.Model
         partial void OnDateOfFirstVisitChanged();
         partial void OnLastVisitedChanging(System.Nullable<System.DateTime> value);
         partial void OnLastVisitedChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -3994,7 +4017,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -4222,6 +4245,8 @@ namespace Steag.Framework.Model
 
         private long _ID;
 
+        private string _ProjectCode;
+
         private string _ProjectName;
 
         private string _Description;
@@ -4266,6 +4291,8 @@ namespace Steag.Framework.Model
         partial void OnCreated();
         partial void OnIDChanging(long value);
         partial void OnIDChanged();
+        partial void OnProjectCodeChanging(string value);
+        partial void OnProjectCodeChanged();
         partial void OnProjectNameChanging(string value);
         partial void OnProjectNameChanged();
         partial void OnDescriptionChanging(string value);
@@ -4322,6 +4349,25 @@ namespace Steag.Framework.Model
                     this._ID = value;
                     this.SendPropertyChanged("ID");
                     this.OnIDChanged();
+                }
+            }
+        }
+
+        public string ProjectCode
+        {
+            get
+            {
+                return this._ProjectCode;
+            }
+            set
+            {
+                if ((this._ProjectCode != value))
+                {
+                    this.OnProjectCodeChanging(value);
+                    this.SendPropertyChanging();
+                    this._ProjectCode = value;
+                    this.SendPropertyChanged("ProjectCode");
+                    this.OnProjectCodeChanged();
                 }
             }
         }
@@ -5288,9 +5334,9 @@ namespace Steag.Framework.Model
 
         private System.Nullable<System.DateTime> _DateVisited;
 
-        private long _VisitVerifiedBy;
+        private System.Nullable<long> _VisitVerifiedBy;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -5334,9 +5380,9 @@ namespace Steag.Framework.Model
         partial void OnApprovedByChanged();
         partial void OnDateVisitedChanging(System.Nullable<System.DateTime> value);
         partial void OnDateVisitedChanged();
-        partial void OnVisitVerifiedByChanging(long value);
+        partial void OnVisitVerifiedByChanging(System.Nullable<long> value);
         partial void OnVisitVerifiedByChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -5556,7 +5602,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public long VisitVerifiedBy
+        public System.Nullable<long> VisitVerifiedBy
         {
             get
             {
@@ -5579,7 +5625,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -5778,7 +5824,7 @@ namespace Steag.Framework.Model
                     }
                     else
                     {
-                        this._VisitVerifiedBy = default(long);
+                        this._VisitVerifiedBy = default(Nullable<long>);
                     }
                     this.SendPropertyChanged("VisitVerifiedByUserAccount");
                 }
@@ -5859,7 +5905,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<bool> _WasInVisit;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -5889,7 +5935,7 @@ namespace Steag.Framework.Model
         partial void OnFirstVisitChanged();
         partial void OnWasInVisitChanging(System.Nullable<bool> value);
         partial void OnWasInVisitChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -6030,7 +6076,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -6552,7 +6598,7 @@ namespace Steag.Framework.Model
 
         private System.Nullable<System.DateTime> _LastLogIn;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -6622,7 +6668,7 @@ namespace Steag.Framework.Model
         partial void OnLastPasswordChangedChanged();
         partial void OnLastLogInChanging(System.Nullable<System.DateTime> value);
         partial void OnLastLogInChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -6869,7 +6915,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -7415,7 +7461,7 @@ namespace Steag.Framework.Model
 
         private bool _IsTemplate;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -7441,7 +7487,7 @@ namespace Steag.Framework.Model
         partial void OnDescriptionChanged();
         partial void OnIsTemplateChanging(bool value);
         partial void OnIsTemplateChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -7536,7 +7582,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -7711,7 +7757,7 @@ namespace Steag.Framework.Model
 
         private long _WebPageID;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -7735,7 +7781,7 @@ namespace Steag.Framework.Model
         partial void OnUserRoleIDChanged();
         partial void OnWebPageIDChanging(long value);
         partial void OnWebPageIDChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -7819,7 +7865,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -8020,7 +8066,7 @@ namespace Steag.Framework.Model
 
         private System.Data.Linq.Binary _Photo;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -8048,7 +8094,7 @@ namespace Steag.Framework.Model
         partial void OnNotesChanged();
         partial void OnPhotoChanging(System.Data.Linq.Binary value);
         partial void OnPhotoChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -8198,7 +8244,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {
@@ -8329,7 +8375,7 @@ namespace Steag.Framework.Model
 
         private string _Description;
 
-        private System.Nullable<bool> _IsActive;
+        private bool _IsActive;
 
         private System.Nullable<long> _UserCreated;
 
@@ -8355,7 +8401,7 @@ namespace Steag.Framework.Model
         partial void OnAssemblyNameChanged();
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
-        partial void OnIsActiveChanging(System.Nullable<bool> value);
+        partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnUserCreatedChanging(System.Nullable<long> value);
         partial void OnUserCreatedChanged();
@@ -8468,7 +8514,7 @@ namespace Steag.Framework.Model
             }
         }
 
-        public System.Nullable<bool> IsActive
+        public bool IsActive
         {
             get
             {

@@ -28,7 +28,7 @@ namespace Steag.Web.Presentation.Security.UserAccount
 
             using(var userAccountLogic = new UserAccountLogic(NewDataSource()))
             {
-                var users = userAccountLogic.GetUserAccountsByExpression(u => u.IsActive.Value);
+                var users = userAccountLogic.GetUserAccountsByExpression(u => u.IsActive);
                 gridUsers.DataSource = users;
                 gridUsers.DataBind();
             }               
@@ -81,13 +81,13 @@ namespace Steag.Web.Presentation.Security.UserAccount
                 switch (e.SearchKey)
                 {
                     case "Username":
-                        deg = u => u.UserName.Contains(e.SearchValue.Trim()) && u.IsActive.Value == true;
+                        deg = u => u.UserName.Contains(e.SearchValue.Trim()) && u.IsActive;
                         break;
                     case "First Name":
-                        deg = u => u.FirstName.Contains(e.SearchValue.Trim()) && u.IsActive.Value == true;
+                        deg = u => u.FirstName.Contains(e.SearchValue.Trim()) && u.IsActive;
                         break;
                     case "Last Name":
-                        deg = u => u.LastName.Contains(e.SearchValue.Trim()) && u.IsActive.Value == true;
+                        deg = u => u.LastName.Contains(e.SearchValue.Trim()) && u.IsActive;
                         break;
                 }
             }
@@ -96,13 +96,13 @@ namespace Steag.Web.Presentation.Security.UserAccount
                 switch (e.SearchKey)
                 {
                     case "Username":
-                        deg = u => u.UserName.Contains(e.SearchValue.Trim()) && (u.IsActive.Value == false || u.IsActive == null);
+                        deg = u => u.UserName.Contains(e.SearchValue.Trim()) && !u.IsActive;
                         break;
                     case "First Name":
-                        deg = u => u.FirstName.Contains(e.SearchValue.Trim()) && (u.IsActive.Value == false || u.IsActive == null);
+                        deg = u => u.FirstName.Contains(e.SearchValue.Trim()) && !u.IsActive;
                         break;
                     case "Last Name":
-                        deg = u => u.LastName.Contains(e.SearchValue.Trim()) && (u.IsActive.Value == false || u.IsActive == null);
+                        deg = u => u.LastName.Contains(e.SearchValue.Trim()) && !u.IsActive;
                         break;
                 }
             }
@@ -123,9 +123,9 @@ namespace Steag.Web.Presentation.Security.UserAccount
                 if (cboFilter.SelectedValue == "All")
                     users = userAccountLogic.GetAllUsers();
                 else if (cboFilter.SelectedValue == "Active")
-                    users = userAccountLogic.GetUserAccountsByExpression(u => u.IsActive == true);
+                    users = userAccountLogic.GetUserAccountsByExpression(u => u.IsActive);
                 else
-                    users = userAccountLogic.GetUserAccountsByExpression(u => u.IsActive == false || u.IsActive == null);
+                    users = userAccountLogic.GetUserAccountsByExpression(u => !u.IsActive);
                 
                 gridUsers.DataSource = users;
                 gridUsers.DataBind();

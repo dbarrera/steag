@@ -188,3 +188,68 @@ INSERT INTO [dbo].[UserAccount]
             GETDATE(),
            1,
            GETDATE())
+INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[AutoNumbering]
+           ([TransactionCode]
+           ,[Prefix]
+           ,[Suffix]
+           ,[Counter]
+           ,[Format]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('SARF'
+           ,'SARF'
+           ,NULL
+           ,0
+           ,'{:prefix}0112{:counter:000000}'
+           ,1
+           ,GETDATE()
+           ,NULL
+           ,NULL)
+GO
+
+INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[AutoNumbering]
+           ([TransactionCode]
+           ,[Prefix]
+           ,[Suffix]
+           ,[Counter]
+           ,[Format]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('EACS'
+           ,'EACS'
+           ,NULL
+           ,0
+           ,'{:prefix}0212{:counter:000000}'
+           ,1
+           ,GETDATE()
+           ,NULL
+           ,NULL)
+GO
+
+INSERT INTO [Steag.Security.DEVELOPMENT].[dbo].[AutoNumbering]
+           ([TransactionCode]
+           ,[Prefix]
+           ,[Suffix]
+           ,[Counter]
+           ,[Format]
+           ,[UserCreated]
+           ,[DateCreated]
+           ,[UserModified]
+           ,[DateModified])
+     VALUES
+           ('ECDAP'
+           ,'ECDAP'
+           ,NULL
+           ,0
+           ,'{:prefix}0312{:counter:000000}'
+           ,1
+           ,GETDATE()
+           ,NULL
+           ,NULL)
+GO

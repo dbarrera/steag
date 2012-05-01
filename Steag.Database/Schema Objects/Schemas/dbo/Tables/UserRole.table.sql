@@ -3,7 +3,7 @@
 	[RoleCode] [nvarchar](60) NOT NULL,
 	[Description] [nvarchar](250) NULL,
 	[IsTemplate] [bit] NOT NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -17,6 +17,9 @@
 GO
 
 ALTER TABLE [dbo].[UserRole] ADD  CONSTRAINT [DF_UserRole_IsTemplate]  DEFAULT ((0)) FOR [IsTemplate]
+GO
+
+ALTER TABLE [dbo].[UserRole] ADD  CONSTRAINT [DF_UserRole_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

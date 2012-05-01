@@ -13,7 +13,7 @@
 	[VerifiedBy] [bigint] NULL,
 	[ClosedDate] [datetime] NULL,
 	[ClosedBy] [bigint] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -52,6 +52,9 @@ REFERENCES [dbo].[UserAccount] ([ID])
 GO
 
 ALTER TABLE [dbo].[EACS] CHECK CONSTRAINT [FK_EACS_VerifiedBy]
+GO
+
+ALTER TABLE [dbo].[EACS] ADD  CONSTRAINT [DF_EACS_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

@@ -6,7 +6,7 @@
 	[Description] [nvarchar](500) NULL,
 	[Notes] [nvarchar](500) NULL,
 	[Photo] [image] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -18,3 +18,8 @@
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
+
+ALTER TABLE [dbo].[WatchList] ADD  CONSTRAINT [DF_WatchList_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+

@@ -21,7 +21,7 @@
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
       <Column Name="BadgeCode" Member="BadgeCode" Storage="_BadgeCode" DbType="NVarChar(60)" />
       <Column Name="IsIssued" Member="IsIssued" Storage="_IsIssued" DbType="Bit" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -43,7 +43,7 @@
       <Column Name="ContactPerson" Member="ContactPerson" Storage="_ContactPerson" DbType="BigInt" />
       <Column Name="TelNo1" Member="TelNo1" Storage="_TelNo1" DbType="NVarChar(15)" />
       <Column Name="TelNo2" Member="TelNo2" Storage="_TelNo2" DbType="NVarChar(15)" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -54,6 +54,7 @@
   <Table Name="dbo.Contractor" Member="Contractor">
     <Type Name="Steag.Framework.Model.Contractor">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="ContractorCode" Member="ContractorCode" Storage="_ContractorCode" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="ContractorName" Member="ContractorName" Storage="_ContractorName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="ContactPerson" Member="ContactPerson" Storage="_ContactPerson" DbType="NVarChar(250)" />
       <Column Name="ContactNumber1" Member="ContactNumber1" Storage="_ContactNumber1" DbType="NVarChar(30)" />
@@ -92,7 +93,7 @@
       <Column Name="VerifiedBy" Member="VerifiedBy" Storage="_VerifiedBy" DbType="BigInt" />
       <Column Name="ClosedDate" Member="ClosedDate" Storage="_ClosedDate" DbType="DateTime" />
       <Column Name="ClosedBy" Member="ClosedBy" Storage="_ClosedBy" DbType="BigInt" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -111,7 +112,7 @@
       <Column Name="EACSID" Member="EACSID" Storage="_EACSID" DbType="BigInt NOT NULL" />
       <Column Name="PersonID" Member="PersonID" Storage="_PersonID" DbType="BigInt NOT NULL" />
       <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -129,7 +130,7 @@
       <Column Name="VehicleType" Member="VehicleType" Storage="_VehicleType" DbType="NVarChar(60)" />
       <Column Name="DriversName" Member="DriversName" Storage="_DriversName" DbType="NVarChar(250)" />
       <Column Name="DriversLicenseNumber" Member="DriversLicenseNumber" Storage="_DriversLicenseNumber" DbType="NVarChar(60)" />
-      <Column Name="IsInspectionDone" Member="IsInspectionDone" Storage="_IsInspectionDone" DbType="Bit" />
+      <Column Name="IsInspectionDone" Member="IsInspectionDone" Storage="_IsInspectionDone" DbType="Bit NOT NULL" />
       <Column Name="IssuedParkingPermit" Member="IssuedParkingPermit" Storage="_IssuedParkingPermit" DbType="NVarChar(60)" />
       <Column Name="ParkingPermitColor" Member="ParkingPermitColor" Storage="_ParkingPermitColor" DbType="NVarChar(60)" />
       <Column Name="NumberOfPassengers" Member="NumberOfPassengers" Storage="_NumberOfPassengers" DbType="SmallInt" />
@@ -138,7 +139,7 @@
       <Column Name="HasAmmunition" Member="HasAmmunition" Storage="_HasAmmunition" DbType="Bit" />
       <Column Name="HasDeadlyWeapon" Member="HasDeadlyWeapon" Storage="_HasDeadlyWeapon" DbType="Bit" />
       <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -157,7 +158,7 @@
       <Column Name="IssuedBy" Member="IssuedBy" Storage="_IssuedBy" DbType="BigInt" />
       <Column Name="DateReturned" Member="DateReturned" Storage="_DateReturned" DbType="DateTime" />
       <Column Name="IsReturned" Member="IsReturned" Storage="_IsReturned" DbType="Bit" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -181,7 +182,7 @@
       <Column Name="HasVisited" Member="HasVisited" Storage="_HasVisited" DbType="Bit" />
       <Column Name="DateOfFirstVisit" Member="DateOfFirstVisit" Storage="_DateOfFirstVisit" DbType="DateTime" />
       <Column Name="LastVisited" Member="LastVisited" Storage="_LastVisited" DbType="DateTime" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -195,6 +196,7 @@
   <Table Name="dbo.Project" Member="Project">
     <Type Name="Steag.Framework.Model.Project">
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" AutoSync="OnInsert" />
+      <Column Name="ProjectCode" Member="ProjectCode" Storage="_ProjectCode" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="ProjectName" Member="ProjectName" Storage="_ProjectName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(500)" />
       <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(500)" />
@@ -249,8 +251,8 @@
       <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="ApprovedBy" Member="ApprovedBy" Storage="_ApprovedBy" DbType="BigInt" />
       <Column Name="DateVisited" Member="DateVisited" Storage="_DateVisited" DbType="DateTime" />
-      <Column Name="VisitVerifiedBy" Member="VisitVerifiedBy" Storage="_VisitVerifiedBy" DbType="BigInt NOT NULL" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="VisitVerifiedBy" Member="VisitVerifiedBy" Storage="_VisitVerifiedBy" DbType="BigInt" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -270,7 +272,7 @@
       <Column Name="Status" Member="Status" Storage="_Status" DbType="NVarChar(60)" />
       <Column Name="FirstVisit" Member="FirstVisit" Storage="_FirstVisit" DbType="Bit" />
       <Column Name="WasInVisit" Member="WasInVisit" Storage="_WasInVisit" DbType="Bit" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -308,7 +310,7 @@
       <Column Name="EmailAddress" Member="EmailAddress" Storage="_EmailAddress" DbType="NVarChar(250)" />
       <Column Name="LastPasswordChanged" Member="LastPasswordChanged" Storage="_LastPasswordChanged" DbType="DateTime" />
       <Column Name="LastLogIn" Member="LastLogIn" Storage="_LastLogIn" DbType="DateTime" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -338,7 +340,7 @@
       <Column Name="RoleCode" Member="RoleCode" Storage="_RoleCode" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(250)" />
       <Column Name="IsTemplate" Member="IsTemplate" Storage="_IsTemplate" DbType="Bit NOT NULL" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -352,7 +354,7 @@
       <Column Name="ID" Member="ID" Storage="_ID" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" AutoSync="Always" />
       <Column Name="UserRoleID" Member="UserRoleID" Storage="_UserRoleID" DbType="BigInt NOT NULL" IsPrimaryKey="true" />
       <Column Name="WebPageID" Member="WebPageID" Storage="_WebPageID" DbType="BigInt NOT NULL" IsPrimaryKey="true" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -370,7 +372,7 @@
       <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(500)" />
       <Column Name="Notes" Member="Notes" Storage="_Notes" DbType="NVarChar(500)" />
       <Column Name="Photo" Member="Photo" Storage="_Photo" DbType="Image" UpdateCheck="Never" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />
@@ -384,7 +386,7 @@
       <Column Name="FullName" Member="FullName" Storage="_FullName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="AssemblyName" Member="AssemblyName" Storage="_AssemblyName" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Member="Description" Storage="_Description" DbType="NVarChar(250)" />
-      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit" />
+      <Column Name="IsActive" Member="IsActive" Storage="_IsActive" DbType="Bit NOT NULL" />
       <Column Name="UserCreated" Member="UserCreated" Storage="_UserCreated" DbType="BigInt" />
       <Column Name="DateCreated" Member="DateCreated" Storage="_DateCreated" DbType="DateTime" />
       <Column Name="UserModified" Member="UserModified" Storage="_UserModified" DbType="BigInt" />

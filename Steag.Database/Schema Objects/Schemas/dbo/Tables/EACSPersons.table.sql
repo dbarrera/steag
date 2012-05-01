@@ -3,7 +3,7 @@
 	[EACSID] [bigint] NOT NULL,
 	[PersonID] [bigint] NOT NULL,
 	[Status] [nvarchar](60) NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -28,6 +28,9 @@ REFERENCES [dbo].[Person] ([ID])
 GO
 
 ALTER TABLE [dbo].[EACSPersons] CHECK CONSTRAINT [FK_EACSPersons_Person]
+GO
+
+ALTER TABLE [dbo].[EACSPersons] ADD  CONSTRAINT [DF_EACSPersons_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

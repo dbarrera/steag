@@ -2,7 +2,7 @@
 	[ID] [bigint] IDENTITY(1,1) NOT NULL,
 	[UserRoleID] [bigint] NOT NULL,
 	[WebPageID] [bigint] NOT NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -29,3 +29,8 @@ GO
 
 ALTER TABLE [dbo].[UserRoleWebPage] CHECK CONSTRAINT [FK_UserRoleWebPage_WebPage]
 GO
+
+ALTER TABLE [dbo].[UserRoleWebPage] ADD  CONSTRAINT [DF_UserRoleWebPage_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+

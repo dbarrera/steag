@@ -5,7 +5,7 @@
 	[Status] [nvarchar](60) NULL,
 	[FirstVisit] [bit] NULL,
 	[WasInVisit] [bit] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -30,6 +30,9 @@ REFERENCES [dbo].[SARF] ([ID])
 GO
 
 ALTER TABLE [dbo].[SARFPersons] CHECK CONSTRAINT [FK_SARFPersons_SARF]
+GO
+
+ALTER TABLE [dbo].[SARFPersons] ADD  CONSTRAINT [DF_SARFPersons_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

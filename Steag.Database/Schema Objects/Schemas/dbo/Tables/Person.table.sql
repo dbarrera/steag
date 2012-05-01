@@ -11,7 +11,7 @@
 	[HasVisited] [bit] NULL,
 	[DateOfFirstVisit] [datetime] NULL,
 	[LastVisited] [datetime] NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -33,3 +33,5 @@ GO
 
 ALTER TABLE [dbo].[Person] ADD  CONSTRAINT [DF_CompanyEmployee_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
+
+

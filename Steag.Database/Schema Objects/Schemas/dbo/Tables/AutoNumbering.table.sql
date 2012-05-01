@@ -32,4 +32,3 @@ ALTER TABLE [dbo].[AutoNumbering] CHECK CONSTRAINT [FK_AutoNumbering_UserModifie
 GO
 
 
-

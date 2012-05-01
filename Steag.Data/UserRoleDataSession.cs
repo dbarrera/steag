@@ -22,7 +22,7 @@ namespace Steag.Data
 
         public IEnumerable<UserRole> GetActiveUserRoles()
         {
-            var activeRoles = from u in DataContext.UserRole where !u.IsTemplate && u.IsActive.Value select u;
+            var activeRoles = from u in DataContext.UserRole where !u.IsTemplate && u.IsActive select u;
             return activeRoles;
         }
 

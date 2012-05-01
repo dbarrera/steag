@@ -9,8 +9,8 @@
 	[Status] [nvarchar](60) NOT NULL,
 	[ApprovedBy] [bigint] NULL,
 	[DateVisited] [datetime] NULL,
-	[VisitVerifiedBy] [bigint] NOT NULL,
-	[IsActive] [bit] NULL,
+	[VisitVerifiedBy] [bigint] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -42,6 +42,9 @@ REFERENCES [dbo].[UserAccount] ([ID])
 GO
 
 ALTER TABLE [dbo].[SARF] CHECK CONSTRAINT [FK_SARF_VerifiedBy]
+GO
+
+ALTER TABLE [dbo].[SARF] ADD  CONSTRAINT [DF_SARF_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 
 

@@ -117,7 +117,7 @@ namespace Steag.Business
                 return false;
             }
 
-            if (!userAccount.IsActive.Value)
+            if (!userAccount.IsActive)
             {
                 if (!Equals(UserInActive, null))
                     UserInActive.Invoke(this, EventArgs.Empty);

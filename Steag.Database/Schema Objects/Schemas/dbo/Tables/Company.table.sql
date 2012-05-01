@@ -11,7 +11,7 @@
 	[ContactPerson] [bigint] NULL,
 	[TelNo1] [nvarchar](15) NULL,
 	[TelNo2] [nvarchar](15) NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[UserCreated] [bigint] NULL,
 	[DateCreated] [datetime] NULL,
 	[UserModified] [bigint] NULL,
@@ -23,3 +23,8 @@
 ) ON [PRIMARY]
 
 GO
+
+ALTER TABLE [dbo].[Company] ADD  CONSTRAINT [DF_Company_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+
